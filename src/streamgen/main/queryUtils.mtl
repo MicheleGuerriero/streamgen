@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module queryUtils('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[query public hasStereotype (aElement : Element, stereotype : String) : Boolean = 
+aElement.getAppliedStereotypes() ->asSequence() -> exists(s | s.name = stereotype)
+/]
+
+[query public getInputNames (aClass : Class) : Sequence(String) = 
+aClass.getTargetDirectedRelationships()->asSequence() -> collect(r | r.eGet('name'))
+/]
+
+[query public getInputs (aClass : Class) : Sequence(DirectedRelationship) = 
+aClass.getTargetDirectedRelationships() ->asSequence()
+/]
+
+[query public getOutputNames (aClass : Class) : Sequence(String) = 
+aClass.getSourceDirectedRelationships()->asSequence() -> collect(r | r.eGet('name'))
+/]
+
+[query public getOutputs (aClass : Class) : Sequence(DirectedRelationship) = 
+aClass.getSourceDirectedRelationships() ->asSequence()
+/]
+
+
+[query public getInputsConveyed (aClass : Class) : Sequence(String) = 
+aClass.getTargetDirectedRelationships()->asSequence() -> collect(r | r.eGet('conveyed').name)
+/]
+
+[query public getOutputsConveyed (aClass : Class) : Sequence(String) = 
+aClass.getSourceDirectedRelationships()->asSequence() -> collect(r | r.eGet('conveyed').name)
+/]
+
+[query public getStereotypeProperty (aElement : Element, stereotype: String, property: String) : OclAny = 
+aElement.getValue(aElement.getAppliedStereotypes() -> select(e | e.name = stereotype)->asSequence() ->first(), property)
+/]
+
+[query public getParallelism (aClass : Element, stereotype: String) : Integer = 
+aClass.getValue(aClass.getAppliedStereotypes() -> select(e | e.name = stereotype)->asSequence() ->first(), 'parallelism').toString().toInteger()
+/]
+
+[query public getSparkApplicationParallelism (aClass : Element, stereotype: String) : Integer = 
+getStereotypeProperty(aClass.getModel(), 'SparkApplication', 'applicationParallelism').toString().toInteger()
+/]
+
+[query public getFlinkApplicationParallelism (aClass : Element, stereotype: String) : Integer = 
+getStereotypeProperty(aClass.getModel(), 'FlinkApplication', 'applicationParallelism').toString().toInteger()
+/]

@@ -1,0 +1,106 @@
+[comment encoding = UTF-8 /]
+[module generateFlinkTransformations('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import streamgen::main::queryUtils/]
+
+[template public generateFlinkMapOperation(aClass : Class) 
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+      	[/if]
+		.map(new [aClass.name/]())
+		[if getParallelism(aClass, 'MapOperation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'MapOperation')/]);
+		[else]
+		;
+		[/if]
+[/template]
+
+[template public generateFlinkFlatmapOperation(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+      	[/if]
+		.flatMap(new [aClass.name/]())
+		[if getParallelism(aClass, 'FlatmapOperation').toString().toInteger() > 1 ]
+		.setParallelism([getParallelism(aClass, 'FlatmapOperation')/]);
+		[else]
+		;
+		[/if]
+[/template]
+
+[template public generateFlinkReduceOperation(aClass : Class)]
+[/template]
+
+[template public generateFlinkFilterOperation(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+      	[/if]
+		.filter(([getInputsConveyed(aClass) ->first()/] tuple) -> [getStereotypeProperty(aClass, 'FilterOperation', 'filteringCondition')/])
+		[if getParallelism(aClass, 'FilterOperation').toString().toInteger() > 1 ]
+		.setParallelism([getParallelism(aClass, 'FilterOperation')/]);
+		[else]
+		;
+		[/if]
+[/template]
+
+[template public generateFlinkJoinOperation(aClass : Class)]
+[/template]
+
+[template public generateFlinkWindowOperation(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+      	[/if] 
+		[if input.hasStereotype('WindowedStream') ] [comment -- this should be actually guaranteed by the OCL constraint. /]
+            [if input.getStereotypeProperty('WindowedStream', 'window').eGet('isSessionInEventTime').toString().toBoolean() = true]
+		.timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](EventTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
+			[elseif input.getStereotypeProperty('WindowedStream', 'window').eGet('isSessionInProcessingTime').toString().toBoolean() = true]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](ProcesingTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
+            [else]
+              [if input.getStereotypeProperty('WindowedStream', 'window').eGet('isSliding').toString().toBoolean() = false]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]))
+              [else]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]),Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('size')/]))          
+              [/if]
+            [/if]
+      	[/if] 
+        .apply(new [aClass.name/]())
+		[if getParallelism(aClass, 'WindowOperation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'WindowOperation')/]);
+		[else]
+		;
+		[/if]
+[/template]
+
+[template public generateFlinkSumOperation(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+      	[/if] 
+		[if input.hasStereotype('WindowedStream') ] [comment -- this should be actually guaranteed by the OCL constraint. /]
+            [if input.getStereotypeProperty('WindowedDataStream', 'isSessionInEventTime').toString().toBoolean() = true]
+		.timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](EventTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
+			[elseif input.getStereotypeProperty('WindowedStream', 'isSessionInProcessingTime').toString().toBoolean() = true]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](ProcesingTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
+            [else]
+              [if input.getStereotypeProperty('WindowedStream', 'isSliding').toString().toBoolean() = false]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]))
+              [else]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]),Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('size')/]))          
+              [/if]
+            [/if]
+      	[/if] 
+		.sum("[getStereotypeProperty(aClass, 'SumOperation', 'field')/]")
+		[if getParallelism(aClass, 'WindowOperation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'WindowOperation')/]);
+		[else]
+		;
+		[/if]  
+[/template]

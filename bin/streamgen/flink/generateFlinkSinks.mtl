@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module generateFlinkSinks('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import streamgen::main::queryUtils/]
+ 
+[template public generateFlinkCassandraSink(aClass : Class)]
+[/template]
+
+[template public generateFlinkKafkaSink(aClass : Class)]
+[/template]
+
+[template public generateFlinkTextFileSink(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	[input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+		.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+		[/if]
+		.writeAsText("[getStereotypeProperty(aClass, 'TextFileSink', 'filepath')/]")
+		[comment: the parallelism should be set only if it differes from the topology level parallelism. This applies to every operation./]
+		.setParallelism([getParallelism(aClass, 'TextFileSink')/]);
+[/template]

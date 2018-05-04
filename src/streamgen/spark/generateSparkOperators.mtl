@@ -1,0 +1,126 @@
+[comment encoding = UTF-8 /]
+[module generateSparkOperators('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+[import streamgen::main::queryUtils /]
+
+
+[template public generateSparkMapFunction(aClass : Class)]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.spark.api.java.function.MapFunction;
+
+
+public class [aClass.name.toUpperFirst()/] implements MapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]>{
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public [getOutputsConveyed(aClass)->first()/] call([getInputsConveyed(aClass)->first()/] tuple) throws Exception {
+		return [getStereotypeProperty(aClass, 'MapOperation', 'mapFunction')/];
+	}
+
+}
+
+[/file]
+[/template]
+
+[template public generateSparkFlatmapFunction(aClass : Class)]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.spark.api.java.function.FlatMapFunction;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]> {
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public Iterator<[getOutputsConveyed(aClass)->first()/]> call([getInputsConveyed(aClass)->first()/] tuple) throws Exception {		
+		List<[getOutputsConveyed(aClass)->first()/]> out = new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
+		
+ 		[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction').toString().replace('collect', 'add')/]        
+        return out.iterator();
+
+	}
+}
+[/file]
+[/template]
+
+[template public generateSparkWindowFunction(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.spark.api.java.function.FlatMapFunction;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+[if hasStereotype(input, 'KeyedStream')]
+import scala.Tuple2;
+
+public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<Tuple2<String, List<[getInputsConveyed(aClass)->first()/]>>,[getOutputsConveyed(aClass)->first()/]>{
+
+private static final long serialVersionUID = 1L;
+
+@Override
+public Iterator<WordCount> call(Tuple2<[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/], List<[getInputsConveyed(aClass)->first()/]>> t) throws Exception {
+
+	List<[getInputsConveyed(aClass)->first()/]> windowContent = t._2;
+	[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/] key = t._1;
+	List<[getOutputsConveyed(aClass)->first()/]> out= new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
+	
+	[getStereotypeProperty(aClass, 'WindowOperation', 'windowFunction').toString().substituteAll('collect', 'add')/]        
+	
+	return out.iterator();
+}
+
+}
+[else]
+public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<List<[getInputsConveyed(aClass)->first()/]>,[getOutputsConveyed(aClass)->first()/]>{
+
+private static final long serialVersionUID = 1L;
+
+@Override
+public Iterator<WordCount> call(List<[getInputsConveyed(aClass)->first()/]> t) throws Exception {
+	int count = 0;
+
+	List<[getInputsConveyed(aClass)->first()/]> windowContent = t;
+	List<[getOutputsConveyed(aClass)->first()/]> out= new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
+	
+	[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction')/]        
+	
+	return out.iterator();
+}
+
+}
+	[/if]
+[/file]
+[/template]

@@ -1,0 +1,100 @@
+[comment encoding = UTF-8 /]
+[module generateFlinkOperators('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+[import streamgen::main::queryUtils /]
+
+[template public generateFlinkMapFunction(aClass : Class)]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.flink.api.java.tuple.Tuple;
+import org.apache.flink.api.common.functions.RichMapFunction;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.util.Collector;
+
+public class [aClass.name/] extends RichMapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]> {
+
+	@Override 
+	public void open(Configuration conf) {
+		
+	}
+	
+	@Override
+	public [getOutputsConveyed(aClass)->first()/] map([getInputsConveyed(aClass)->first()/] tuple) throws Exception {
+		[getStereotypeProperty(aClass, 'MapOperation', 'mapFunction')/]
+	}
+	
+}
+
+[/file]
+[/template]
+
+[template public generateFlinkFlatmapFunction(aClass : Class)]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.flink.api.java.tuple.Tuple;
+import org.apache.flink.api.common.functions.RichFlatMapFunction;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.util.Collector;
+
+public class [aClass.name/] extends RichFlatMapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]> {
+
+	@Override 
+	public void open(Configuration conf) {
+		
+	}
+	
+	@Override
+	public void flatMap([getInputsConveyed(aClass)->first()/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction')/]
+	}
+	
+}
+
+[/file]
+[/template]
+
+[template public generateFlinkWindowFunction(aClass : Class)]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.flink.api.java.tuple.Tuple;
+import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
+import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
+import org.apache.flink.util.Collector;
+
+public class [aClass.name/] implements WindowFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/], Tuple, TimeWindow> {
+	
+	@Override
+	public void apply(Tuple key, TimeWindow window, Iterable<[getInputsConveyed(aClass)->first()/]> windowContent, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		[getStereotypeProperty(aClass, 'WindowOperation', 'windowFunction').toString().substitute('key', 'key.getField(0)')/]
+	}
+
+
+}
+[/file]
+[/template]

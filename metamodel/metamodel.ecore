@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="">
+  <eClassifiers xsi:type="ecore:EClass" name="DataStream">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conveysDataType" lowerBound="1"
+        eType="#//UMLClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conveyedDatatype" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WindowedStream" eSuperTypes="#//DataStream">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isWindowedWith" lowerBound="1"
+        eType="#//WindowingPolicy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartitionedStream" eSuperTypes="#//DataStream"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WindowingPolicy"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CountWindow" eSuperTypes="#//WindowingPolicy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slideSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeWindow" eSuperTypes="#//WindowingPolicy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slideSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SessionWindow" eSuperTypes="#//WindowingPolicy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSource" eSuperTypes="#//StreamingOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="producedDataStream" lowerBound="1"
+        eType="#//DataStream"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSink" eSuperTypes="#//StreamingOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="emittedDataStream" lowerBound="1"
+        eType="#//DataStream"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transformation" eSuperTypes="#//StreamingOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputDataStream" lowerBound="1"
+        upperBound="-1" eType="#//DataStream"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputDataStream" lowerBound="1"
+        upperBound="-1" eType="#//DataStream"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamingOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parallelism" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RandomlyPartitonedStream" eSuperTypes="#//PartitionedStream">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distribution" lowerBound="1"
+        eType="#//RandomDistribution"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BalancedPartitionedStream" eSuperTypes="#//PartitionedStream">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="balancing" lowerBound="1"
+        eType="#//BalancingStrategy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RandomDistribution" instanceTypeName="newDataType1"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyedStream" eSuperTypes="#//PartitionedStream">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="BalancingStrategy" instanceTypeName="newDataType2"/>
+</ecore:EPackage>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Dataflow="http:///schemas/Dataflow/_7B854FDMEeiynfuxK6H26Q/77" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Dataflow/_7B854FDMEeiynfuxK6H26Q/77 ../profile/StreamUML.profile.uml#_7CDnkFDMEeiynfuxK6H26Q">
+  <uml:Model xmi:id="_4lHykOsoEeeFgI61BIgfhg" name="TempTrack">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_LFwIcE0OEeiV5tji1c_ulg" annotatedElement="_EFuvAOspEeeFgI61BIgfhg">
+      <body>host=&quot;131.175.21.165&quot;
+poer=9999
+parallelism=1</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_bDleIE0OEeiV5tji1c_ulg" annotatedElement="_ZEY6QOspEeeFgI61BIgfhg">
+      <body>mapFunction= 
+&quot;            String[] fields = tuple.split(&quot;,&quot;);
+            return new RoomTemperature(
+                    fields[0],
+                    Long.parseLong(fields[1])
+                    );&quot;
+parallelism=3</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_U682gE0PEeiV5tji1c_ulg" annotatedElement="_L9fIAEQWEei8PPfmmH1h8A">
+      <body>fileteringCondition = 
+&quot;tuple.getTemperature() &lt;9999 &amp; 
+tuple.getTemperature() > -9999 &amp; 
+tuple.getTemperature() != null &amp;
+tuple.getRoom() != null&quot;
+parallelism=3</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_S_W3EE0QEeiV5tji1c_ulg" annotatedElement="_Nc4eMEQWEei8PPfmmH1h8A">
+      <body>host=&quot;192.168.1.23&quot;
+port=9042</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_g429gE0QEeiV5tji1c_ulg" annotatedElement="_4lHykOsoEeeFgI61BIgfhg">
+      <body>filteringCondition = 
+&quot;tuple.getAvgTem() > 50&quot;
+parallelism = 5</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_kb9Q0E0QEeiV5tji1c_ulg" annotatedElement="_CwlHsOsuEeeFgI61BIgfhg">
+      <body>filePath=&quot;/home/user/room-statistics.csv&quot;
+parallelism=3</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_fUFtME0SEeiV5tji1c_ulg" annotatedElement="_djHIUOspEeeFgI61BIgfhg">
+      <body>windowSize=3 Seconds
+key=roomId</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EFuvAOspEeeFgI61BIgfhg" name="TemperatureSource"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FducsOspEeeFgI61BIgfhg" name="ComputeRoomStatistics"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Koji0OspEeeFgI61BIgfhg" name="CheckCriticalTemperature"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_M3HsIOspEeeFgI61BIgfhg" name="ReportCriticalTemperature"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZEY6QOspEeeFgI61BIgfhg" name="TemperatureParser"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_dAEFoOspEeeFgI61BIgfhg" name="rawTemperatures" informationSource="_EFuvAOspEeeFgI61BIgfhg" informationTarget="_ZEY6QOspEeeFgI61BIgfhg">
+      <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_djHIUOspEeeFgI61BIgfhg" name="parsedTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_ZEY6QOspEeeFgI61BIgfhg" informationTarget="_FducsOspEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_d-EmAOspEeeFgI61BIgfhg" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_Koji0OspEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_el5bAOspEeeFgI61BIgfhg" name="criticalTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_Koji0OspEeeFgI61BIgfhg" informationTarget="_M3HsIOspEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jPAUIOspEeeFgI61BIgfhg" name="CriticalTemperatureDatatypes">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_lf7N4OspEeeFgI61BIgfhg" name="RoomTemperature" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_w7OzkOspEeeFgI61BIgfhg" name="roomId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2HMiIOspEeeFgI61BIgfhg" name="temperature">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+        </ownedAttribute>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_kK3SAEQWEei8PPfmmH1h8A" name="RoomStatistics">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_pl5XUEQWEei8PPfmmH1h8A" name="roomId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_r3jQ4EQWEei8PPfmmH1h8A" name="avgTemp">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_uWmtQEQWEei8PPfmmH1h8A" name="maxTemp">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_zRrgIEQWEei8PPfmmH1h8A" name="timestamp">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+        </ownedAttribute>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_R_xvsEQYEei8PPfmmH1h8A" name="Room10MinAheadPrediction"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CwlHsOsuEeeFgI61BIgfhg" name="ReportStatistics"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_FdFxQOsuEeeFgI61BIgfhg" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_CwlHsOsuEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9fIAEQWEei8PPfmmH1h8A" name="CleanRawData"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Nc4eMEQWEei8PPfmmH1h8A" name="CassandraSink"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_PiVu0EQWEei8PPfmmH1h8A" name="parsedTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_EFuvAOspEeeFgI61BIgfhg _ZEY6QOspEeeFgI61BIgfhg _4lHykOsoEeeFgI61BIgfhg" informationTarget="_L9fIAEQWEei8PPfmmH1h8A _4lHykOsoEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_QM7j8EQWEei8PPfmmH1h8A" name="cleanedData" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_L9fIAEQWEei8PPfmmH1h8A" informationTarget="_Nc4eMEQWEei8PPfmmH1h8A"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lOomsEQXEei8PPfmmH1h8A" name="MonitorCriticalPrediction"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_O5QDoEQYEei8PPfmmH1h8A" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_lOomsEQXEei8PPfmmH1h8A"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_PgiGEEQYEei8PPfmmH1h8A" name="averageTemperatures" informationTarget="_lOomsEQXEei8PPfmmH1h8A"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XxqOwEQYEei8PPfmmH1h8A" name="ReportCriticalPrediction"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Z3kyYEQYEei8PPfmmH1h8A" name="10MinsPredictions" conveyed="_R_xvsEQYEei8PPfmmH1h8A" informationSource="_lOomsEQXEei8PPfmmH1h8A" informationTarget="_XxqOwEQYEei8PPfmmH1h8A"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="__AHLQEQYEei8PPfmmH1h8A" name="parsedTemperatures" informationSource="_ZEY6QOspEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="__l5Y4EQYEei8PPfmmH1h8A" name="avgTemp3Seconds"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_A3yW4OsqEeeFgI61BIgfhg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fogsgE2rEeiV5tji1c_ulg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fogsgU2rEeiV5tji1c_ulg" key="Version" value="0.0.77"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fogsgk2rEeiV5tji1c_ulg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fogsg02rEeiV5tji1c_ulg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fogshE2rEeiV5tji1c_ulg" key="Date" value="2018-05-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fogshU2rEeiV5tji1c_ulg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_A3zlAOsqEeeFgI61BIgfhg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="StreamUML.profile.uml#_0nCxYE2qEeiV5tji1c_ulg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_JQbvF0QaEei8PPfmmH1h8A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JQcWIEQaEei8PPfmmH1h8A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Aj3eQE-kEeiV5tji1c_ulg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Aj4sYE-kEeiV5tji1c_ulg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../uml/StreamUML.profile.uml#_0nCxYE2qEeiV5tji1c_ulg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../uml/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hF3V4FDNEeiynfuxK6H26Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hF5LEFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_7CDnkFDMEeiynfuxK6H26Q"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
+    </profileApplication>
+  </uml:Model>
+  <Dataflow:SocketSource xmi:id="_CgCHEOsqEeeFgI61BIgfhg" base_Class="_EFuvAOspEeeFgI61BIgfhg" host="131.175.21.165" port="9999"/>
+  <Dataflow:MapOperation xmi:id="_EAS_8OsqEeeFgI61BIgfhg" base_Class="_ZEY6QOspEeeFgI61BIgfhg" parallelism="2" mapFunction="            String[] fields = tuple.split(&quot;,&quot;);&#xA;            return new RoomTemperature(&#xA;                    fields[0],&#xA;                    Long.parseLong(fields[1])&#xA;                    );"/>
+  <Dataflow:WindowOperation xmi:id="_PkmwoOsqEeeFgI61BIgfhg" base_Class="_FducsOspEeeFgI61BIgfhg"/>
+  <Dataflow:KeyedStream xmi:id="_Wzv34OsqEeeFgI61BIgfhg" base_InformationFlow="_djHIUOspEeeFgI61BIgfhg" key="_w7OzkOspEeeFgI61BIgfhg"/>
+  <Dataflow:WindowedStream xmi:id="_W0SqcOsqEeeFgI61BIgfhg" base_InformationFlow="_djHIUOspEeeFgI61BIgfhg">
+    <window xmi:type="Dataflow:Window" xmi:id="_hF05oVDNEeiynfuxK6H26Q">
+      <size xmi:type="Dataflow:WindowSize" xmi:id="_hF05olDNEeiynfuxK6H26Q" size="3"/>
+    </window>
+  </Dataflow:WindowedStream>
+  <Dataflow:StreamDatatype xmi:id="_r7VVoOsqEeeFgI61BIgfhg" base_Class="_jPAUIOspEeeFgI61BIgfhg"/>
+  <Dataflow:CsvFileSink xmi:id="_Jr0nYEQWEei8PPfmmH1h8A" base_Class="_CwlHsOsuEeeFgI61BIgfhg" filepath="/home/user/room-statistics.csv"/>
+  <Dataflow:FilterOperation xmi:id="_4zZ78EQZEei8PPfmmH1h8A" base_Class="_L9fIAEQWEei8PPfmmH1h8A" parallelism="3" filteringCondition="tuple.getTemperature() &lt; 9999 &amp; &#xA;tuple.getTemperature() > -9999 &amp; &#xA;tuple.getTemperature() != null  &amp;&#xA;tuple.getRoom() !=  null"/>
+  <Dataflow:CassandraSink xmi:id="_8ZuiYEQZEei8PPfmmH1h8A" base_Class="_Nc4eMEQWEei8PPfmmH1h8A" cassandraHost="192.168.1.23"/>
+  <Dataflow:KafkaSink xmi:id="_Bo7yMEQaEei8PPfmmH1h8A" base_Class="_XxqOwEQYEei8PPfmmH1h8A"/>
+  <Dataflow:FilterOperation xmi:id="_X87_wEQaEei8PPfmmH1h8A" base_Class="_Koji0OspEeeFgI61BIgfhg"/>
+  <Dataflow:WindowOperation xmi:id="_nUpwoEQaEei8PPfmmH1h8A" base_Class="_lOomsEQXEei8PPfmmH1h8A"/>
+  <Dataflow:KeyedStream xmi:id="_DQdUMEQbEei8PPfmmH1h8A" base_InformationFlow="_PiVu0EQWEei8PPfmmH1h8A"/>
+  <Dataflow:KeyedStream xmi:id="_KPyd0EQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
+  <Dataflow:WindowedStream xmi:id="_KRGFYEQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
+  <Dataflow:DataStream xmi:id="_MZ2hoEQbEei8PPfmmH1h8A" base_InformationFlow="__l5Y4EQYEei8PPfmmH1h8A"/>
+  <Dataflow:KafkaSink xmi:id="_lnP-MEQbEei8PPfmmH1h8A" base_Class="_M3HsIOspEeeFgI61BIgfhg"/>
+  <Dataflow:WindowedStream xmi:id="_jx05QE0REeiV5tji1c_ulg" base_InformationFlow="_PgiGEEQYEei8PPfmmH1h8A">
+    <window xmi:type="Dataflow:Window" xmi:id="_hF2HyFDNEeiynfuxK6H26Q" isSliding="true">
+      <size xmi:type="Dataflow:WindowSize" xmi:id="_hF2HyVDNEeiynfuxK6H26Q" timeUnit="Minutes" size="10"/>
+      <slideSize xmi:type="Dataflow:WindowSize" xmi:id="_hF2HylDNEeiynfuxK6H26Q"/>
+    </window>
+  </Dataflow:WindowedStream>
+  <Dataflow:NonParallelStream xmi:id="_U1q1AE2rEeiV5tji1c_ulg" base_InformationFlow="_QM7j8EQWEei8PPfmmH1h8A"/>
+  <Dataflow:RandomlyPartitionedStream xmi:id="_huQRAE2rEeiV5tji1c_ulg" base_InformationFlow="_dAEFoOspEeeFgI61BIgfhg"/>
+  <Dataflow:KeyedStream xmi:id="_kUVicE2rEeiV5tji1c_ulg" base_InformationFlow="_O5QDoEQYEei8PPfmmH1h8A" key="_pl5XUEQWEei8PPfmmH1h8A"/>
+  <Dataflow:NonParallelStream xmi:id="_t0SOsE2rEeiV5tji1c_ulg" base_InformationFlow="_el5bAOspEeeFgI61BIgfhg"/>
+  <Dataflow:KeyedStream xmi:id="_0jLIkE2rEeiV5tji1c_ulg" base_InformationFlow="_PgiGEEQYEei8PPfmmH1h8A"/>
+  <Dataflow:NonParallelStream xmi:id="_BAbTcE2sEeiV5tji1c_ulg" base_InformationFlow="_Z3kyYEQYEei8PPfmmH1h8A"/>
+  <Dataflow:RandomlyPartitionedStream xmi:id="_HOf_QE2sEeiV5tji1c_ulg" base_InformationFlow="_FdFxQOsuEeeFgI61BIgfhg"/>
+  <Dataflow:KeyedStream xmi:id="_JrhbUE2sEeiV5tji1c_ulg" base_InformationFlow="_d-EmAOspEeeFgI61BIgfhg" key="_pl5XUEQWEei8PPfmmH1h8A"/>
+</xmi:XMI>

@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module generateSparkSources('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import streamgen::main::queryUtils/]
+
+[template public generateSparkSocketSource(aClass : Class)]
+	   JavaReceiverInputDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = jssc.socketTextStream("[getStereotypeProperty(aClass, 'SocketSource', 'host')/]", [getStereotypeProperty(aClass, 'SocketSource', 'port')/],
+				StorageLevels.MEMORY_AND_DISK_SER);
+[/template]
+
+[template public generateSparkTextFileSource(aClass : Class)]
+	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> lines = jssc
+				.textFileStream("[getStereotypeProperty(aClass, 'TextFileSource', 'pathToFile')/]");
+
+[/template]
+
+[template public generateSparkKafkaSource(aClass : Class)]
+
+[/template]
