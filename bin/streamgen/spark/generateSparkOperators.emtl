@@ -7,7 +7,7 @@
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
     </input>
-    <imports href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0"/>
+    <imports href="../main/queryUtils.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateSparkMapFunction" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
@@ -76,7 +76,7 @@
             </body>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateSparkMapFunction/%/%.3/c">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -116,7 +116,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -127,7 +127,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -138,7 +138,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -149,7 +149,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -159,7 +159,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" tuple) throws Exception {&#xA;&#x9;&#x9;return "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkMapFunction/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -284,7 +284,7 @@
             </body>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateSparkFlatmapFunction/%/%.3/c">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -324,7 +324,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -335,7 +335,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -346,7 +346,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -357,7 +357,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -368,7 +368,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -379,7 +379,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -393,7 +393,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+              <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkFlatmapFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -465,7 +465,7 @@
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(DirectedRelationship)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -541,7 +541,7 @@
             </body>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateSparkWindowFunction/%/%.3/c">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -579,22 +579,22 @@
               <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
             </source>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" implements FlatMapFunction&lt;Tuple2&lt;String, List&lt;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" implements FlatMapFunction&lt;Tuple2&lt;String, List&lt;Tuple2&lt;"/>
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">>,"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", Long>>>,"/>
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+              <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -608,7 +608,7 @@
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateSparkWindowFunction/@init/@variable.0">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                 </argument>
@@ -627,36 +627,58 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </argument>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", List&lt;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", List&lt;Tuple2&lt;"/>
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">> t) throws Exception {&#xA;&#xA;&#x9;List&lt;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", Long>>> t) throws Exception {&#xA;&#xA;&#xA;&#x9;List&lt;"/>
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> windowContent = t._2;&#xA;&#x9;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> windowContent = new  ArrayList&lt;"/>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
+              <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              </argument>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">();&#xA;&#x9;&#xA;&#x9;for(Tuple2&lt;"/>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
+              <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              </argument>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", Long> x: t._2) {&#xA;&#x9;&#x9;windowContent.add(x._1);&#xA;&#x9;}&#xA;&#xA;&#x9;"/>
           <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/ecore_EObject_Class/eGet">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
             <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/ecore_EObject_Class/eGet">
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateSparkWindowFunction/@init/@variable.0">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                 </argument>
@@ -679,7 +701,7 @@
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+              <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -690,21 +712,21 @@
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+              <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">();&#xA;&#x9;&#xA;&#x9;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">();&#xA;&#xA;&#x9;Window window = new Window();&#xA;&#x9;&#xA;&#x9;window.setStart(t._2.get(0)._2);&#xA;&#x9;window.setEnd(t._2.get(t._2.size())._2);&#xA;&#xA;&#x9;&#xA;&#x9;"/>
           <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/substituteAll">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -723,10 +745,10 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </argument>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        &#xA;&#x9;&#xA;&#x9;return out.iterator();&#xA;}&#xA;&#xA;}&#xA;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        &#xA;&#x9;&#xA;&#x9;return out.iterator();&#xA;}&#xA;&#xA;private class Window {&#xA;&#x9;private long startTime;&#xA;&#x9;private long endTime;&#xA;&#x9;&#xA;&#x9;public long getEnd() {&#xA;&#x9;&#x9;return this.endTime;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public long getStart() {&#xA;&#x9;&#x9;return this.startTime;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public void setStart(long startTime) {&#xA;&#x9;&#x9;this.startTime = startTime;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public void setEnd(long endTime) {&#xA;&#x9;&#x9;this.endTime = endTime;&#xA;&#x9;}&#x9;&#xA;&#x9;&#xA;}&#xA;&#xA;}&#xA;"/>
           <ifExpr xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+            <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateSparkWindowFunction/@init/@variable.0">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             </argument>
@@ -750,7 +772,7 @@
             <body xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+                <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -761,7 +783,7 @@
             <body xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+                <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -772,18 +794,18 @@
             <body xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+                <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
             </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> t) throws Exception {&#xA;&#x9;int count = 0;&#xA;&#xA;&#x9;List&lt;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> t) throws Exception {&#xA;&#xA;&#x9;List&lt;"/>
             <body xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+                <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -794,7 +816,7 @@
             <body xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+                <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -805,7 +827,7 @@
             <body xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+                <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -815,7 +837,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">();&#xA;&#x9;&#xA;&#x9;"/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+              <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -826,7 +848,7 @@
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               </argument>
             </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        &#xA;&#x9;&#xA;&#x9;return out.iterator();&#xA;}&#xA;&#xA;}&#xA;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        &#xA;&#x9;&#xA;&#x9;return out.iterator();&#xA;}&#xA;&#xA;private class Window {&#xA;&#x9;private long startTime;&#xA;&#x9;private long endTime;&#xA;&#x9;&#xA;&#x9;public long getEnd() {&#xA;&#x9;&#x9;return this.endTime;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public long getStart() {&#xA;&#x9;&#x9;return this.startTime;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public void setStart(long startTime) {&#xA;&#x9;&#x9;this.startTime = startTime;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public void setEnd(long endTime) {&#xA;&#x9;&#x9;this.endTime = endTime;&#xA;&#x9;}&#x9;&#xA;&#x9;&#xA;}&#xA;&#xA;}&#xA;"/>
           </else>
         </body>
         <fileUrl xsi:type="ocl.ecore:OperationCallExp">
@@ -968,7 +990,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <references href="../main/queryUtils.emtl#/0/hasStereotype"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
         <eParameters name="aElement">
@@ -983,9 +1005,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+          <references href="../main/queryUtils.emtl#/0/getInputs"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(DirectedRelationship)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(DirectedRelationship)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -995,9 +1017,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+          <references href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -1007,9 +1029,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <references href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -1019,7 +1041,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+          <references href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <eParameters name="aElement">
@@ -1284,6 +1306,12 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
@@ -2128,7 +2156,7 @@
     </eAnnotations>
     <eAnnotations source="positions.156" references="/0/generateSparkWindowFunction">
       <details key="start" value="2403"/>
-      <details key="end" value="4642"/>
+      <details key="end" value="5572"/>
       <details key="line" value="68"/>
     </eAnnotations>
     <eAnnotations source="positions.157" references="/0/generateSparkWindowFunction/@init">
@@ -2158,7 +2186,7 @@
     </eAnnotations>
     <eAnnotations source="positions.162" references="/0/generateSparkWindowFunction/%">
       <details key="start" value="2527"/>
-      <details key="end" value="4630"/>
+      <details key="end" value="5560"/>
       <details key="line" value="70"/>
     </eAnnotations>
     <eAnnotations source="positions.163" references="/0/generateSparkWindowFunction/%/%">
@@ -2328,7 +2356,7 @@
     </eAnnotations>
     <eAnnotations source="positions.196" references="/0/generateSparkWindowFunction/%/%.5">
       <details key="start" value="3086"/>
-      <details key="end" value="4622"/>
+      <details key="end" value="5552"/>
       <details key="line" value="86"/>
     </eAnnotations>
     <eAnnotations source="positions.197" references="/0/generateSparkWindowFunction/%/%.5/%">
@@ -2353,510 +2381,550 @@
     </eAnnotations>
     <eAnnotations source="positions.201" references="/0/generateSparkWindowFunction/%/%.5/%.2">
       <details key="start" value="3191"/>
-      <details key="end" value="3239"/>
+      <details key="end" value="3246"/>
       <details key="line" value="89"/>
     </eAnnotations>
     <eAnnotations source="positions.202" references="/0/generateSparkWindowFunction/%/%.5/%.3">
-      <details key="start" value="3240"/>
-      <details key="end" value="3274"/>
+      <details key="start" value="3247"/>
+      <details key="end" value="3281"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.203" references="/0/generateSparkWindowFunction/%/%.5/%.3/%">
-      <details key="start" value="3240"/>
-      <details key="end" value="3265"/>
+      <details key="start" value="3247"/>
+      <details key="end" value="3272"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.204" references="/0/generateSparkWindowFunction/%/%.5/%.3/%/aClass">
-      <details key="start" value="3258"/>
-      <details key="end" value="3264"/>
+      <details key="start" value="3265"/>
+      <details key="end" value="3271"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.205" references="/0/generateSparkWindowFunction/%/%.5/%.4">
-      <details key="start" value="3276"/>
-      <details key="end" value="3279"/>
+      <details key="start" value="3283"/>
+      <details key="end" value="3293"/>
       <details key="line" value="89"/>
     </eAnnotations>
     <eAnnotations source="positions.206" references="/0/generateSparkWindowFunction/%/%.5/%.5">
-      <details key="start" value="3280"/>
-      <details key="end" value="3315"/>
+      <details key="start" value="3294"/>
+      <details key="end" value="3329"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.207" references="/0/generateSparkWindowFunction/%/%.5/%.5/%">
-      <details key="start" value="3280"/>
-      <details key="end" value="3306"/>
+      <details key="start" value="3294"/>
+      <details key="end" value="3320"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.208" references="/0/generateSparkWindowFunction/%/%.5/%.5/%/aClass">
-      <details key="start" value="3299"/>
-      <details key="end" value="3305"/>
+      <details key="start" value="3313"/>
+      <details key="end" value="3319"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.209" references="/0/generateSparkWindowFunction/%/%.5/%.6">
-      <details key="start" value="3317"/>
-      <details key="end" value="3420"/>
+      <details key="start" value="3331"/>
+      <details key="end" value="3434"/>
       <details key="line" value="89"/>
     </eAnnotations>
     <eAnnotations source="positions.210" references="/0/generateSparkWindowFunction/%/%.5/%.7">
-      <details key="start" value="3421"/>
-      <details key="end" value="3497"/>
+      <details key="start" value="3435"/>
+      <details key="end" value="3511"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.211" references="/0/generateSparkWindowFunction/%/%.5/%.7/%">
-      <details key="start" value="3421"/>
-      <details key="end" value="3484"/>
+      <details key="start" value="3435"/>
+      <details key="end" value="3498"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.212" references="/0/generateSparkWindowFunction/%/%.5/%.7/%/%">
-      <details key="start" value="3421"/>
-      <details key="end" value="3471"/>
+      <details key="start" value="3435"/>
+      <details key="end" value="3485"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.213" references="/0/generateSparkWindowFunction/%/%.5/%.7/%/%/input">
-      <details key="start" value="3443"/>
-      <details key="end" value="3448"/>
+      <details key="start" value="3457"/>
+      <details key="end" value="3462"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.214" references="/0/generateSparkWindowFunction/%/%.5/%.7/%/%/%">
-      <details key="start" value="3450"/>
-      <details key="end" value="3463"/>
+      <details key="start" value="3464"/>
+      <details key="end" value="3477"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.215" references="/0/generateSparkWindowFunction/%/%.5/%.7/%/%/%.1">
-      <details key="start" value="3465"/>
-      <details key="end" value="3470"/>
+      <details key="start" value="3479"/>
+      <details key="end" value="3484"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.216" references="/0/generateSparkWindowFunction/%/%.5/%.7/%/%.1">
-      <details key="start" value="3477"/>
-      <details key="end" value="3483"/>
+      <details key="start" value="3491"/>
+      <details key="end" value="3497"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.217" references="/0/generateSparkWindowFunction/%/%.5/%.7/%.1">
-      <details key="start" value="3490"/>
-      <details key="end" value="3496"/>
+      <details key="start" value="3504"/>
+      <details key="end" value="3510"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.218" references="/0/generateSparkWindowFunction/%/%.5/%.8">
-      <details key="start" value="3499"/>
-      <details key="end" value="3506"/>
+      <details key="start" value="3513"/>
+      <details key="end" value="3527"/>
       <details key="line" value="94"/>
     </eAnnotations>
     <eAnnotations source="positions.219" references="/0/generateSparkWindowFunction/%/%.5/%.9">
-      <details key="start" value="3507"/>
-      <details key="end" value="3541"/>
+      <details key="start" value="3528"/>
+      <details key="end" value="3562"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.220" references="/0/generateSparkWindowFunction/%/%.5/%.9/%">
-      <details key="start" value="3507"/>
-      <details key="end" value="3532"/>
+      <details key="start" value="3528"/>
+      <details key="end" value="3553"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.221" references="/0/generateSparkWindowFunction/%/%.5/%.9/%/aClass">
-      <details key="start" value="3525"/>
-      <details key="end" value="3531"/>
+      <details key="start" value="3546"/>
+      <details key="end" value="3552"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.222" references="/0/generateSparkWindowFunction/%/%.5/%.10">
-      <details key="start" value="3543"/>
-      <details key="end" value="3575"/>
+      <details key="start" value="3564"/>
+      <details key="end" value="3604"/>
       <details key="line" value="94"/>
     </eAnnotations>
     <eAnnotations source="positions.223" references="/0/generateSparkWindowFunction/%/%.5/%.11">
-      <details key="start" value="3576"/>
-      <details key="end" value="3610"/>
+      <details key="start" value="3605"/>
+      <details key="end" value="3639"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.224" references="/0/generateSparkWindowFunction/%/%.5/%.11/%">
-      <details key="start" value="3576"/>
-      <details key="end" value="3601"/>
+      <details key="start" value="3605"/>
+      <details key="end" value="3630"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.225" references="/0/generateSparkWindowFunction/%/%.5/%.11/%/aClass">
-      <details key="start" value="3594"/>
-      <details key="end" value="3600"/>
+      <details key="start" value="3623"/>
+      <details key="end" value="3629"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.226" references="/0/generateSparkWindowFunction/%/%.5/%.12">
-      <details key="start" value="3612"/>
-      <details key="end" value="3637"/>
-      <details key="line" value="96"/>
+      <details key="start" value="3641"/>
+      <details key="end" value="3674"/>
+      <details key="line" value="97"/>
     </eAnnotations>
     <eAnnotations source="positions.227" references="/0/generateSparkWindowFunction/%/%.5/%.13">
-      <details key="start" value="3638"/>
-      <details key="end" value="3714"/>
+      <details key="start" value="3675"/>
+      <details key="end" value="3709"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.228" references="/0/generateSparkWindowFunction/%/%.5/%.13/%">
-      <details key="start" value="3638"/>
-      <details key="end" value="3701"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.229" references="/0/generateSparkWindowFunction/%/%.5/%.13/%/%">
-      <details key="start" value="3638"/>
-      <details key="end" value="3688"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.230" references="/0/generateSparkWindowFunction/%/%.5/%.13/%/%/input">
-      <details key="start" value="3660"/>
-      <details key="end" value="3665"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.231" references="/0/generateSparkWindowFunction/%/%.5/%.13/%/%/%">
-      <details key="start" value="3667"/>
-      <details key="end" value="3680"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.232" references="/0/generateSparkWindowFunction/%/%.5/%.13/%/%/%.1">
-      <details key="start" value="3682"/>
-      <details key="end" value="3687"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.233" references="/0/generateSparkWindowFunction/%/%.5/%.13/%/%.1">
-      <details key="start" value="3694"/>
+      <details key="start" value="3675"/>
       <details key="end" value="3700"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.234" references="/0/generateSparkWindowFunction/%/%.5/%.13/%.1">
-      <details key="start" value="3707"/>
-      <details key="end" value="3713"/>
+    <eAnnotations source="positions.229" references="/0/generateSparkWindowFunction/%/%.5/%.13/%/aClass">
+      <details key="start" value="3693"/>
+      <details key="end" value="3699"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.235" references="/0/generateSparkWindowFunction/%/%.5/%.14">
-      <details key="start" value="3716"/>
-      <details key="end" value="3735"/>
+    <eAnnotations source="positions.230" references="/0/generateSparkWindowFunction/%/%.5/%.14">
+      <details key="start" value="3711"/>
+      <details key="end" value="3730"/>
       <details key="line" value="97"/>
     </eAnnotations>
-    <eAnnotations source="positions.236" references="/0/generateSparkWindowFunction/%/%.5/%.15">
-      <details key="start" value="3736"/>
-      <details key="end" value="3771"/>
+    <eAnnotations source="positions.231" references="/0/generateSparkWindowFunction/%/%.5/%.15">
+      <details key="start" value="3731"/>
+      <details key="end" value="3765"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.237" references="/0/generateSparkWindowFunction/%/%.5/%.15/%">
-      <details key="start" value="3736"/>
-      <details key="end" value="3762"/>
+    <eAnnotations source="positions.232" references="/0/generateSparkWindowFunction/%/%.5/%.15/%">
+      <details key="start" value="3731"/>
+      <details key="end" value="3756"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.238" references="/0/generateSparkWindowFunction/%/%.5/%.15/%/aClass">
-      <details key="start" value="3755"/>
-      <details key="end" value="3761"/>
+    <eAnnotations source="positions.233" references="/0/generateSparkWindowFunction/%/%.5/%.15/%/aClass">
+      <details key="start" value="3749"/>
+      <details key="end" value="3755"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.239" references="/0/generateSparkWindowFunction/%/%.5/%.16">
-      <details key="start" value="3773"/>
-      <details key="end" value="3794"/>
-      <details key="line" value="98"/>
+    <eAnnotations source="positions.234" references="/0/generateSparkWindowFunction/%/%.5/%.16">
+      <details key="start" value="3767"/>
+      <details key="end" value="3818"/>
+      <details key="line" value="99"/>
     </eAnnotations>
-    <eAnnotations source="positions.240" references="/0/generateSparkWindowFunction/%/%.5/%.17">
-      <details key="start" value="3795"/>
-      <details key="end" value="3830"/>
+    <eAnnotations source="positions.235" references="/0/generateSparkWindowFunction/%/%.5/%.17">
+      <details key="start" value="3819"/>
+      <details key="end" value="3895"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.241" references="/0/generateSparkWindowFunction/%/%.5/%.17/%">
-      <details key="start" value="3795"/>
-      <details key="end" value="3821"/>
+    <eAnnotations source="positions.236" references="/0/generateSparkWindowFunction/%/%.5/%.17/%">
+      <details key="start" value="3819"/>
+      <details key="end" value="3882"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.242" references="/0/generateSparkWindowFunction/%/%.5/%.17/%/aClass">
-      <details key="start" value="3814"/>
-      <details key="end" value="3820"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.243" references="/0/generateSparkWindowFunction/%/%.5/%.18">
-      <details key="start" value="3832"/>
-      <details key="end" value="3840"/>
-      <details key="line" value="98"/>
-    </eAnnotations>
-    <eAnnotations source="positions.244" references="/0/generateSparkWindowFunction/%/%.5/%.19">
-      <details key="start" value="3841"/>
-      <details key="end" value="3950"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.245" references="/0/generateSparkWindowFunction/%/%.5/%.19/%">
-      <details key="start" value="3841"/>
-      <details key="end" value="3918"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.246" references="/0/generateSparkWindowFunction/%/%.5/%.19/%/%">
-      <details key="start" value="3841"/>
-      <details key="end" value="3907"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.247" references="/0/generateSparkWindowFunction/%/%.5/%.19/%/%/aClass">
-      <details key="start" value="3863"/>
+    <eAnnotations source="positions.237" references="/0/generateSparkWindowFunction/%/%.5/%.17/%/%">
+      <details key="start" value="3819"/>
       <details key="end" value="3869"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.248" references="/0/generateSparkWindowFunction/%/%.5/%.19/%/%/%">
-      <details key="start" value="3871"/>
-      <details key="end" value="3888"/>
+    <eAnnotations source="positions.238" references="/0/generateSparkWindowFunction/%/%.5/%.17/%/%/input">
+      <details key="start" value="3841"/>
+      <details key="end" value="3846"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.249" references="/0/generateSparkWindowFunction/%/%.5/%.19/%/%/%.1">
-      <details key="start" value="3890"/>
-      <details key="end" value="3906"/>
+    <eAnnotations source="positions.239" references="/0/generateSparkWindowFunction/%/%.5/%.17/%/%/%">
+      <details key="start" value="3848"/>
+      <details key="end" value="3861"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.250" references="/0/generateSparkWindowFunction/%/%.5/%.19/%.1">
-      <details key="start" value="3933"/>
+    <eAnnotations source="positions.240" references="/0/generateSparkWindowFunction/%/%.5/%.17/%/%/%.1">
+      <details key="start" value="3863"/>
+      <details key="end" value="3868"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.241" references="/0/generateSparkWindowFunction/%/%.5/%.17/%/%.1">
+      <details key="start" value="3875"/>
+      <details key="end" value="3881"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.242" references="/0/generateSparkWindowFunction/%/%.5/%.17/%.1">
+      <details key="start" value="3888"/>
+      <details key="end" value="3894"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.243" references="/0/generateSparkWindowFunction/%/%.5/%.18">
+      <details key="start" value="3897"/>
+      <details key="end" value="3916"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.244" references="/0/generateSparkWindowFunction/%/%.5/%.19">
+      <details key="start" value="3917"/>
+      <details key="end" value="3952"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.245" references="/0/generateSparkWindowFunction/%/%.5/%.19/%">
+      <details key="start" value="3917"/>
+      <details key="end" value="3943"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/generateSparkWindowFunction/%/%.5/%.19/%/aClass">
+      <details key="start" value="3936"/>
       <details key="end" value="3942"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.251" references="/0/generateSparkWindowFunction/%/%.5/%.19/%.2">
-      <details key="start" value="3944"/>
-      <details key="end" value="3949"/>
+    <eAnnotations source="positions.247" references="/0/generateSparkWindowFunction/%/%.5/%.20">
+      <details key="start" value="3954"/>
+      <details key="end" value="3975"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/generateSparkWindowFunction/%/%.5/%.21">
+      <details key="start" value="3976"/>
+      <details key="end" value="4011"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.252" references="/0/generateSparkWindowFunction/%/%.5/%.20">
-      <details key="start" value="3952"/>
-      <details key="end" value="3992"/>
-      <details key="line" value="100"/>
+    <eAnnotations source="positions.249" references="/0/generateSparkWindowFunction/%/%.5/%.21/%">
+      <details key="start" value="3976"/>
+      <details key="end" value="4002"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.253" references="/0/generateSparkWindowFunction/%/%.5/%.21">
+    <eAnnotations source="positions.250" references="/0/generateSparkWindowFunction/%/%.5/%.21/%/aClass">
+      <details key="start" value="3995"/>
+      <details key="end" value="4001"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.251" references="/0/generateSparkWindowFunction/%/%.5/%.22">
+      <details key="start" value="4013"/>
+      <details key="end" value="4132"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.252" references="/0/generateSparkWindowFunction/%/%.5/%.23">
+      <details key="start" value="4133"/>
+      <details key="end" value="4242"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.253" references="/0/generateSparkWindowFunction/%/%.5/%.23/%">
+      <details key="start" value="4133"/>
+      <details key="end" value="4210"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.254" references="/0/generateSparkWindowFunction/%/%.5/%.23/%/%">
+      <details key="start" value="4133"/>
+      <details key="end" value="4199"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.255" references="/0/generateSparkWindowFunction/%/%.5/%.23/%/%/aClass">
+      <details key="start" value="4155"/>
+      <details key="end" value="4161"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.256" references="/0/generateSparkWindowFunction/%/%.5/%.23/%/%/%">
+      <details key="start" value="4163"/>
+      <details key="end" value="4180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.257" references="/0/generateSparkWindowFunction/%/%.5/%.23/%/%/%.1">
+      <details key="start" value="4182"/>
+      <details key="end" value="4198"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/generateSparkWindowFunction/%/%.5/%.23/%.1">
+      <details key="start" value="4225"/>
+      <details key="end" value="4234"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.259" references="/0/generateSparkWindowFunction/%/%.5/%.23/%.2">
+      <details key="start" value="4236"/>
+      <details key="end" value="4241"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.260" references="/0/generateSparkWindowFunction/%/%.5/%.24">
+      <details key="start" value="4244"/>
+      <details key="end" value="4611"/>
+      <details key="line" value="112"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/generateSparkWindowFunction/%/%.5/%.25">
       <details key="start" value="3090"/>
       <details key="end" value="3125"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.254" references="/0/generateSparkWindowFunction/%/%.5/%.21/input">
+    <eAnnotations source="positions.262" references="/0/generateSparkWindowFunction/%/%.5/%.25/input">
       <details key="start" value="3104"/>
       <details key="end" value="3109"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.255" references="/0/generateSparkWindowFunction/%/%.5/%.21/%">
+    <eAnnotations source="positions.263" references="/0/generateSparkWindowFunction/%/%.5/%.25/%">
       <details key="start" value="3111"/>
       <details key="end" value="3124"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.256" references="/0/generateSparkWindowFunction/%/%.5/%.22">
-      <details key="start" value="3992"/>
-      <details key="end" value="4617"/>
-      <details key="line" value="106"/>
+    <eAnnotations source="positions.264" references="/0/generateSparkWindowFunction/%/%.5/%.26">
+      <details key="start" value="4611"/>
+      <details key="end" value="5547"/>
+      <details key="line" value="140"/>
     </eAnnotations>
-    <eAnnotations source="positions.257" references="/0/generateSparkWindowFunction/%/%.5/%.22/%">
-      <details key="start" value="3999"/>
-      <details key="end" value="4012"/>
-      <details key="line" value="107"/>
+    <eAnnotations source="positions.265" references="/0/generateSparkWindowFunction/%/%.5/%.26/%">
+      <details key="start" value="4618"/>
+      <details key="end" value="4631"/>
+      <details key="line" value="141"/>
     </eAnnotations>
-    <eAnnotations source="positions.258" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.1">
-      <details key="start" value="4013"/>
-      <details key="end" value="4039"/>
+    <eAnnotations source="positions.266" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.1">
+      <details key="start" value="4632"/>
+      <details key="end" value="4658"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.259" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.1/%">
-      <details key="start" value="4013"/>
-      <details key="end" value="4024"/>
+    <eAnnotations source="positions.267" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.1/%">
+      <details key="start" value="4632"/>
+      <details key="end" value="4643"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.260" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.1/%/aClass">
-      <details key="start" value="4013"/>
-      <details key="end" value="4019"/>
+    <eAnnotations source="positions.268" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.1/%/aClass">
+      <details key="start" value="4632"/>
+      <details key="end" value="4638"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.261" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.2">
-      <details key="start" value="4041"/>
-      <details key="end" value="4074"/>
-      <details key="line" value="107"/>
+    <eAnnotations source="positions.269" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.2">
+      <details key="start" value="4660"/>
+      <details key="end" value="4693"/>
+      <details key="line" value="141"/>
     </eAnnotations>
-    <eAnnotations source="positions.262" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.3">
-      <details key="start" value="4075"/>
-      <details key="end" value="4109"/>
+    <eAnnotations source="positions.270" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.3">
+      <details key="start" value="4694"/>
+      <details key="end" value="4728"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.263" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.3/%">
-      <details key="start" value="4075"/>
-      <details key="end" value="4100"/>
+    <eAnnotations source="positions.271" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.3/%">
+      <details key="start" value="4694"/>
+      <details key="end" value="4719"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.264" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.3/%/aClass">
-      <details key="start" value="4093"/>
-      <details key="end" value="4099"/>
+    <eAnnotations source="positions.272" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.3/%/aClass">
+      <details key="start" value="4712"/>
+      <details key="end" value="4718"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.265" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.4">
-      <details key="start" value="4111"/>
-      <details key="end" value="4113"/>
-      <details key="line" value="107"/>
+    <eAnnotations source="positions.273" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.4">
+      <details key="start" value="4730"/>
+      <details key="end" value="4732"/>
+      <details key="line" value="141"/>
     </eAnnotations>
-    <eAnnotations source="positions.266" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.5">
-      <details key="start" value="4114"/>
-      <details key="end" value="4149"/>
+    <eAnnotations source="positions.274" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.5">
+      <details key="start" value="4733"/>
+      <details key="end" value="4768"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.267" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.5/%">
-      <details key="start" value="4114"/>
-      <details key="end" value="4140"/>
+    <eAnnotations source="positions.275" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.5/%">
+      <details key="start" value="4733"/>
+      <details key="end" value="4759"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.268" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.5/%/aClass">
-      <details key="start" value="4133"/>
-      <details key="end" value="4139"/>
+    <eAnnotations source="positions.276" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.5/%/aClass">
+      <details key="start" value="4752"/>
+      <details key="end" value="4758"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.269" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.6">
-      <details key="start" value="4151"/>
-      <details key="end" value="4252"/>
-      <details key="line" value="107"/>
+    <eAnnotations source="positions.277" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.6">
+      <details key="start" value="4770"/>
+      <details key="end" value="4871"/>
+      <details key="line" value="141"/>
     </eAnnotations>
-    <eAnnotations source="positions.270" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.7">
-      <details key="start" value="4253"/>
-      <details key="end" value="4287"/>
+    <eAnnotations source="positions.278" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.7">
+      <details key="start" value="4872"/>
+      <details key="end" value="4906"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.271" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.7/%">
-      <details key="start" value="4253"/>
-      <details key="end" value="4278"/>
+    <eAnnotations source="positions.279" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.7/%">
+      <details key="start" value="4872"/>
+      <details key="end" value="4897"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.272" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.7/%/aClass">
-      <details key="start" value="4271"/>
-      <details key="end" value="4277"/>
+    <eAnnotations source="positions.280" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.7/%/aClass">
+      <details key="start" value="4890"/>
+      <details key="end" value="4896"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.273" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.8">
-      <details key="start" value="4289"/>
-      <details key="end" value="4336"/>
-      <details key="line" value="112"/>
+    <eAnnotations source="positions.281" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.8">
+      <details key="start" value="4908"/>
+      <details key="end" value="4939"/>
+      <details key="line" value="146"/>
     </eAnnotations>
-    <eAnnotations source="positions.274" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.9">
-      <details key="start" value="4337"/>
-      <details key="end" value="4371"/>
+    <eAnnotations source="positions.282" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.9">
+      <details key="start" value="4940"/>
+      <details key="end" value="4974"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.275" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.9/%">
-      <details key="start" value="4337"/>
-      <details key="end" value="4362"/>
+    <eAnnotations source="positions.283" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.9/%">
+      <details key="start" value="4940"/>
+      <details key="end" value="4965"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.276" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.9/%/aClass">
-      <details key="start" value="4355"/>
-      <details key="end" value="4361"/>
+    <eAnnotations source="positions.284" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.9/%/aClass">
+      <details key="start" value="4958"/>
+      <details key="end" value="4964"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.277" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.10">
-      <details key="start" value="4373"/>
-      <details key="end" value="4400"/>
-      <details key="line" value="115"/>
+    <eAnnotations source="positions.285" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.10">
+      <details key="start" value="4976"/>
+      <details key="end" value="5003"/>
+      <details key="line" value="148"/>
     </eAnnotations>
-    <eAnnotations source="positions.278" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.11">
-      <details key="start" value="4401"/>
-      <details key="end" value="4436"/>
+    <eAnnotations source="positions.286" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.11">
+      <details key="start" value="5004"/>
+      <details key="end" value="5039"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.279" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.11/%">
-      <details key="start" value="4401"/>
-      <details key="end" value="4427"/>
+    <eAnnotations source="positions.287" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.11/%">
+      <details key="start" value="5004"/>
+      <details key="end" value="5030"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.280" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.11/%/aClass">
-      <details key="start" value="4420"/>
-      <details key="end" value="4426"/>
+    <eAnnotations source="positions.288" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.11/%/aClass">
+      <details key="start" value="5023"/>
+      <details key="end" value="5029"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.281" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.12">
-      <details key="start" value="4438"/>
-      <details key="end" value="4459"/>
-      <details key="line" value="116"/>
+    <eAnnotations source="positions.289" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.12">
+      <details key="start" value="5041"/>
+      <details key="end" value="5062"/>
+      <details key="line" value="149"/>
     </eAnnotations>
-    <eAnnotations source="positions.282" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.13">
-      <details key="start" value="4460"/>
-      <details key="end" value="4495"/>
+    <eAnnotations source="positions.290" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.13">
+      <details key="start" value="5063"/>
+      <details key="end" value="5098"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.283" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.13/%">
-      <details key="start" value="4460"/>
-      <details key="end" value="4486"/>
+    <eAnnotations source="positions.291" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.13/%">
+      <details key="start" value="5063"/>
+      <details key="end" value="5089"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.284" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.13/%/aClass">
-      <details key="start" value="4479"/>
-      <details key="end" value="4485"/>
+    <eAnnotations source="positions.292" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.13/%/aClass">
+      <details key="start" value="5082"/>
+      <details key="end" value="5088"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.285" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.14">
-      <details key="start" value="4497"/>
-      <details key="end" value="4505"/>
-      <details key="line" value="116"/>
+    <eAnnotations source="positions.293" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.14">
+      <details key="start" value="5100"/>
+      <details key="end" value="5108"/>
+      <details key="line" value="149"/>
     </eAnnotations>
-    <eAnnotations source="positions.286" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.15">
-      <details key="start" value="4506"/>
-      <details key="end" value="4574"/>
+    <eAnnotations source="positions.294" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.15">
+      <details key="start" value="5109"/>
+      <details key="end" value="5177"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.287" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.15/aClass">
-      <details key="start" value="4528"/>
-      <details key="end" value="4534"/>
+    <eAnnotations source="positions.295" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.15/aClass">
+      <details key="start" value="5131"/>
+      <details key="end" value="5137"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.288" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.15/%">
-      <details key="start" value="4536"/>
-      <details key="end" value="4554"/>
+    <eAnnotations source="positions.296" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.15/%">
+      <details key="start" value="5139"/>
+      <details key="end" value="5157"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.289" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.15/%.1">
-      <details key="start" value="4556"/>
-      <details key="end" value="4573"/>
+    <eAnnotations source="positions.297" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.15/%.1">
+      <details key="start" value="5159"/>
+      <details key="end" value="5176"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.290" references="/0/generateSparkWindowFunction/%/%.5/%.22/%.16">
-      <details key="start" value="4576"/>
-      <details key="end" value="4616"/>
-      <details key="line" value="118"/>
+    <eAnnotations source="positions.298" references="/0/generateSparkWindowFunction/%/%.5/%.26/%.16">
+      <details key="start" value="5179"/>
+      <details key="end" value="5546"/>
+      <details key="line" value="151"/>
     </eAnnotations>
-    <eAnnotations source="positions.291" references="/0/generateSparkWindowFunction/%/%.6">
+    <eAnnotations source="positions.299" references="/0/generateSparkWindowFunction/%/%.6">
       <details key="start" value="2534"/>
       <details key="end" value="2624"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.292" references="/0/generateSparkWindowFunction/%/%.6/%">
+    <eAnnotations source="positions.300" references="/0/generateSparkWindowFunction/%/%.6/%">
       <details key="start" value="2534"/>
       <details key="end" value="2608"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.293" references="/0/generateSparkWindowFunction/%/%.6/%/%">
+    <eAnnotations source="positions.301" references="/0/generateSparkWindowFunction/%/%.6/%/%">
       <details key="start" value="2534"/>
       <details key="end" value="2588"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.294" references="/0/generateSparkWindowFunction/%/%.6/%/%/%">
+    <eAnnotations source="positions.302" references="/0/generateSparkWindowFunction/%/%.6/%/%/%">
       <details key="start" value="2534"/>
       <details key="end" value="2566"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.295" references="/0/generateSparkWindowFunction/%/%.6/%/%/%/%">
+    <eAnnotations source="positions.303" references="/0/generateSparkWindowFunction/%/%.6/%/%/%/%">
       <details key="start" value="2534"/>
       <details key="end" value="2556"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.296" references="/0/generateSparkWindowFunction/%/%.6/%/%/%/%/%">
+    <eAnnotations source="positions.304" references="/0/generateSparkWindowFunction/%/%.6/%/%/%/%/%">
       <details key="start" value="2534"/>
       <details key="end" value="2551"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.297" references="/0/generateSparkWindowFunction/%/%.6/%/%/%/%/%/aClass">
+    <eAnnotations source="positions.305" references="/0/generateSparkWindowFunction/%/%.6/%/%/%/%/%/aClass">
       <details key="start" value="2534"/>
       <details key="end" value="2540"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.298" references="/0/generateSparkWindowFunction/%/%.6/%/%/%.1">
+    <eAnnotations source="positions.306" references="/0/generateSparkWindowFunction/%/%.6/%/%/%.1">
       <details key="start" value="2574"/>
       <details key="end" value="2587"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.299" references="/0/generateSparkWindowFunction/%/%.6/%/%.1">
+    <eAnnotations source="positions.307" references="/0/generateSparkWindowFunction/%/%.6/%/%.1">
       <details key="start" value="2596"/>
       <details key="end" value="2607"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.300" references="/0/generateSparkWindowFunction/%/%.6/%/%.1/aClass">
+    <eAnnotations source="positions.308" references="/0/generateSparkWindowFunction/%/%.6/%/%.1/aClass">
       <details key="start" value="2596"/>
       <details key="end" value="2602"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.301" references="/0/generateSparkWindowFunction/%/%.6/%.1">
+    <eAnnotations source="positions.309" references="/0/generateSparkWindowFunction/%/%.6/%.1">
       <details key="start" value="2616"/>
       <details key="end" value="2623"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.302" references="/0/generateSparkWindowFunction/aClass">
+    <eAnnotations source="positions.310" references="/0/generateSparkWindowFunction/aClass">
       <details key="start" value="2448"/>
       <details key="end" value="2462"/>
       <details key="line" value="68"/>

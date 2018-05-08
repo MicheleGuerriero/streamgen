@@ -113,16 +113,17 @@
 	[comment: the following if should be guaranteed by the constraints/]
 	[if hasStereotype(input, 'WindowedStream')] 
 		[if (hasStereotype(input, 'KeyedStream'))]
-		JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] = [getInputNames(aClass)->first()/].mapToPair((x -> new Tuple2<>(x.get[getStereotypeProperty(input,'KeyedStream', 'key').eGet('name').toString().toUpperFirst()/](), Arrays.asList(x))))
-			.reduceByKeyAndWindow(new Function2<List<[getInputsConveyed(aClass)->first()/]>, List<[getInputsConveyed(aClass)->first()/]>, List<[getInputsConveyed(aClass)->first()/]>>() {
+		JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] = [getInputNames(aClass)->first()/].map(x-> new Tuple2<>(x, System.currentTimeMillis()))
+			.mapToPair((x -> new Tuple2<>(x._1.get[getStereotypeProperty(input,'KeyedStream', 'key').eGet('name').toString().toUpperFirst()/](), Arrays.asList(x))))
+			.reduceByKeyAndWindow(new Function2<List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>>() {
 				@Override 
-				public List<[getInputsConveyed(aClass)->first()/]> call(List<[getInputsConveyed(aClass)->first()/]> v1, List<[getInputsConveyed(aClass)->first()/]> v2) throws Exception {
-					Set<[getInputsConveyed(aClass)->first()/]> set = new HashSet<[getInputsConveyed(aClass)->first()/]>();
+				public List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> call(List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> v1, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> v2) throws Exception {
+					Set<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> set = new HashSet<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>();
 
 					set.addAll(v1);
 					set.addAll(v2);
 
-					return new ArrayList<[getInputsConveyed(aClass)->first()/]>(set);
+					return new ArrayList<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>(set);
 				}
 			}
 			[if getStereotypeProperty(input, 'WindowedStream', 'window').eGet('isSliding') = false]
@@ -132,16 +133,17 @@
 			Durations.[getStereotypeProperty(input, 'WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(input, 'WindowedStream', 'window').eGet('slideSize').eGet('size')/])[/if])
 			.flatMap(new [aClass.name/]());
 		[else]
-		JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] = [getInputNames(aClass)->first()/].map((x -> Arrays.asList(x)))
-			.reduceByWindow(new Function2<List<[getInputsConveyed(aClass)->first()/]>, List<[getInputsConveyed(aClass)->first()/]>, List<[getInputsConveyed(aClass)->first()/]>>() {
+		JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] = [getInputNames(aClass)->first()/].map(x-> new Tuple2<>(x, System.currentTimeMillis()))
+			.map((x -> Arrays.asList(x)))
+			.reduceByWindow(new Function2<List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>>() {
 				@Override
-				public List<[getInputsConveyed(aClass)->first()/]> call(List<[getInputsConveyed(aClass)->first()/]> v1, List<[getInputsConveyed(aClass)->first()/]> v2) throws Exception {
-					Set<[getInputsConveyed(aClass)->first()/]> set = new HashSet<[getInputsConveyed(aClass)->first()/]>();
+				public List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> call(List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> v1, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> v2) throws Exception {
+					Set<Tuple2<[getInputsConveyed(aClass)->first()/], Long>> set = new HashSet<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>();
 					
 					set.addAll(v1);
 					set.addAll(v2);
 
-					return new ArrayList<[getInputsConveyed(aClass)->first()/]>(set);
+					return new ArrayList<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>(set);
 				}
 
 			},

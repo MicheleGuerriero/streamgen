@@ -4,9 +4,19 @@
 [import streamgen::main::queryUtils/]
  
 [template public generateFlinkCassandraSink(aClass : Class)]
+	CassandraSink.addSink([getInputNames(aClass)-> first()/])
+    	.setHost("[getStereotypeProperty(aClass, 'CassandraSink', 'cassandraHost')/]")
+    	.setMapperOptions(() -> new Mapper.Option['['/]]{Mapper.Option.saveNullFields(true)})
+    	.build();
 [/template]
 
 [template public generateFlinkKafkaSink(aClass : Class)]
+	FlinkKafkaProducer010<String> [aClass.name.toString().concat('_producer')/] = new FlinkKafkaProducer010<String>(
+	        "[getStereotypeProperty(aClass, 'KafkaSink', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSink', 'kafkaBrokerPort')/]",            
+	        "[aClass.name.toString()/]",                 
+	        new SimpleStringSchema()); 
+
+	 [getInputNames()->first()/].map(([getInputsConveyed(aClass)->first()/] x) -> x.toString()).addSink([aClass.name.toString().concat('_producer')/]);
 [/template]
 
 [template public generateFlinkTextFileSink(aClass : Class)

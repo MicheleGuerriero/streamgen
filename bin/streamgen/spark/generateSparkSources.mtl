@@ -9,11 +9,29 @@
 [/template]
 
 [template public generateSparkTextFileSource(aClass : Class)]
-	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> lines = jssc
+	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = jssc
 				.textFileStream("[getStereotypeProperty(aClass, 'TextFileSource', 'pathToFile')/]");
 
 [/template]
 
 [template public generateSparkKafkaSource(aClass : Class)]
+	   Map<String, Object> [aClass.name.toString().concat('_kafkaParams')/] = new HashMap<>();
+	   kafkaParams.put("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerPort')/]");
+	   kafkaParams.put("key.deserializer", StringDeserializer.class);
+	   kafkaParams.put("value.deserializer", StringDeserializer.class);
+	   kafkaParams.put("group.id", "[aClass.name.toString().concat('_groupId')/]");
+	   kafkaParams.put("auto.offset.reset", "latest");
+	   kafkaParams.put("enable.auto.commit", false);
+
+	   Collection<String> topic = Arrays.asList([aClass.name.toString()/]);
+
+	   JavaInputDStream<ConsumerRecord<String, String>> tmpStream =
+	     KafkaUtils.createDirectStream(
+	    		 jssc,
+	    		 LocationStrategies.PreferConsistent(),
+	    		 ConsumerStrategies.<String, String>Subscribe(topic, [aClass.name.toString().concat('_kafkaParams')/])
+	     );
+
+	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = tmpStream.map(record -> record.value());
 
 [/template]

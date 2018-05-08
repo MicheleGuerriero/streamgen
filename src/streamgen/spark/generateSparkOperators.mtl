@@ -86,20 +86,54 @@ import java.util.List;
 [if hasStereotype(input, 'KeyedStream')]
 import scala.Tuple2;
 
-public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<Tuple2<String, List<[getInputsConveyed(aClass)->first()/]>>,[getOutputsConveyed(aClass)->first()/]>{
+public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<Tuple2<String, List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>>,[getOutputsConveyed(aClass)->first()/]>{
 
 private static final long serialVersionUID = 1L;
 
 @Override
-public Iterator<WordCount> call(Tuple2<[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/], List<[getInputsConveyed(aClass)->first()/]>> t) throws Exception {
+public Iterator<WordCount> call(Tuple2<[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/], List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>> t) throws Exception {
 
-	List<[getInputsConveyed(aClass)->first()/]> windowContent = t._2;
+
+	List<[getInputsConveyed(aClass)->first()/]> windowContent = new  ArrayList<[getInputsConveyed(aClass)->first()/]>();
+	
+	for(Tuple2<[getInputsConveyed(aClass)->first()/], Long> x: t._2) {
+		windowContent.add(x._1);
+	}
+
 	[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/] key = t._1;
 	List<[getOutputsConveyed(aClass)->first()/]> out= new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
+
+	Window window = new Window();
+	
+	window.setStart(t._2.get(0)._2);
+	window.setEnd(t._2.get(t._2.size())._2);
+
 	
 	[getStereotypeProperty(aClass, 'WindowOperation', 'windowFunction').toString().substituteAll('collect', 'add')/]        
 	
 	return out.iterator();
+}
+
+private class Window {
+	private long startTime;
+	private long endTime;
+	
+	public long getEnd() {
+		return this.endTime;
+	}
+	
+	public long getStart() {
+		return this.startTime;
+	}
+	
+	public void setStart(long startTime) {
+		this.startTime = startTime;
+	}
+	
+	public void setEnd(long endTime) {
+		this.endTime = endTime;
+	}	
+	
 }
 
 }
@@ -110,7 +144,6 @@ private static final long serialVersionUID = 1L;
 
 @Override
 public Iterator<WordCount> call(List<[getInputsConveyed(aClass)->first()/]> t) throws Exception {
-	int count = 0;
 
 	List<[getInputsConveyed(aClass)->first()/]> windowContent = t;
 	List<[getOutputsConveyed(aClass)->first()/]> out= new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
@@ -118,6 +151,28 @@ public Iterator<WordCount> call(List<[getInputsConveyed(aClass)->first()/]> t) t
 	[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction')/]        
 	
 	return out.iterator();
+}
+
+private class Window {
+	private long startTime;
+	private long endTime;
+	
+	public long getEnd() {
+		return this.endTime;
+	}
+	
+	public long getStart() {
+		return this.startTime;
+	}
+	
+	public void setStart(long startTime) {
+		this.startTime = startTime;
+	}
+	
+	public void setEnd(long endTime) {
+		this.endTime = endTime;
+	}	
+	
 }
 
 }

@@ -76,7 +76,18 @@
         </source>
         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> lines = jssc&#xA;&#x9;&#x9;&#x9;&#x9;.textFileStream(&quot;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> "/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </argument>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = jssc&#xA;&#x9;&#x9;&#x9;&#x9;.textFileStream(&quot;"/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
@@ -96,7 +107,126 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateSparkKafkaSource" visibility="Public">
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;   Map&lt;String, Object> "/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_kafkaParams">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new HashMap&lt;>();&#xA;&#x9;   kafkaParams.put(&quot;bootstrap.servers&quot;, &quot;"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="KafkaSource">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="kafkaBrokerIp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=":"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="KafkaSource">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="kafkaBrokerPort">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;);&#xA;&#x9;   kafkaParams.put(&quot;key.deserializer&quot;, StringDeserializer.class);&#xA;&#x9;   kafkaParams.put(&quot;value.deserializer&quot;, StringDeserializer.class);&#xA;&#x9;   kafkaParams.put(&quot;group.id&quot;, &quot;"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_groupId">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;);&#xA;&#x9;   kafkaParams.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;);&#xA;&#x9;   kafkaParams.put(&quot;enable.auto.commit&quot;, false);&#xA;&#xA;&#x9;   Collection&lt;String> topic = Arrays.asList("/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;&#xA;&#x9;   JavaInputDStream&lt;ConsumerRecord&lt;String, String>> tmpStream =&#xA;&#x9;     KafkaUtils.createDirectStream(&#xA;&#x9;    &#x9;&#x9; jssc,&#xA;&#x9;    &#x9;&#x9; LocationStrategies.PreferConsistent(),&#xA;&#x9;    &#x9;&#x9; ConsumerStrategies.&lt;String, String>Subscribe(topic, "/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_kafkaParams">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;&#x9;     );&#xA;&#xA;&#x9;   JavaDStream&lt;"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateSparkKafkaSource/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </argument>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> "/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </argument>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = tmpStream.map(record -> record.value());&#xA;"/>
       <parameter name="aClass">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       </parameter>
@@ -274,6 +404,9 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
@@ -281,6 +414,30 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
@@ -396,7 +553,7 @@
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/generateSparkTextFileSource">
       <details key="start" value="534"/>
-      <details key="end" value="766"/>
+      <details key="end" value="789"/>
       <details key="line" value="11"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/generateSparkTextFileSource/%">
@@ -421,52 +578,272 @@
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/generateSparkTextFileSource/%.2">
       <details key="start" value="650"/>
-      <details key="end" value="686"/>
+      <details key="end" value="652"/>
       <details key="line" value="12"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/generateSparkTextFileSource/%.3">
-      <details key="start" value="687"/>
-      <details key="end" value="748"/>
+      <details key="start" value="653"/>
+      <details key="end" value="678"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/generateSparkTextFileSource/%.3/aClass">
-      <details key="start" value="709"/>
-      <details key="end" value="715"/>
+    <eAnnotations source="positions.28" references="/0/generateSparkTextFileSource/%.3/%">
+      <details key="start" value="653"/>
+      <details key="end" value="669"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/generateSparkTextFileSource/%.3/%">
-      <details key="start" value="717"/>
-      <details key="end" value="733"/>
+    <eAnnotations source="positions.29" references="/0/generateSparkTextFileSource/%.3/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/generateSparkTextFileSource/%.3/%.1">
-      <details key="start" value="735"/>
-      <details key="end" value="747"/>
+    <eAnnotations source="positions.30" references="/0/generateSparkTextFileSource/%.4">
+      <details key="start" value="680"/>
+      <details key="end" value="709"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateSparkTextFileSource/%.5">
+      <details key="start" value="710"/>
+      <details key="end" value="771"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/generateSparkTextFileSource/%.4">
-      <details key="start" value="750"/>
-      <details key="end" value="754"/>
+    <eAnnotations source="positions.32" references="/0/generateSparkTextFileSource/%.5/aClass">
+      <details key="start" value="732"/>
+      <details key="end" value="738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateSparkTextFileSource/%.5/%">
+      <details key="start" value="740"/>
+      <details key="end" value="756"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateSparkTextFileSource/%.5/%.1">
+      <details key="start" value="758"/>
+      <details key="end" value="770"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateSparkTextFileSource/%.6">
+      <details key="start" value="773"/>
+      <details key="end" value="777"/>
       <details key="line" value="13"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/generateSparkTextFileSource/aClass">
+    <eAnnotations source="positions.36" references="/0/generateSparkTextFileSource/aClass">
       <details key="start" value="579"/>
       <details key="end" value="593"/>
       <details key="line" value="11"/>
     </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/generateSparkKafkaSource">
-      <details key="start" value="768"/>
-      <details key="end" value="839"/>
+    <eAnnotations source="positions.37" references="/0/generateSparkKafkaSource">
+      <details key="start" value="791"/>
+      <details key="end" value="1936"/>
       <details key="line" value="17"/>
     </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/generateSparkKafkaSource/%">
-      <details key="start" value="827"/>
-      <details key="end" value="828"/>
+    <eAnnotations source="positions.38" references="/0/generateSparkKafkaSource/%">
+      <details key="start" value="850"/>
+      <details key="end" value="874"/>
       <details key="line" value="18"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/generateSparkKafkaSource/aClass">
-      <details key="start" value="810"/>
-      <details key="end" value="824"/>
+    <eAnnotations source="positions.39" references="/0/generateSparkKafkaSource/%.1">
+      <details key="start" value="875"/>
+      <details key="end" value="920"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateSparkKafkaSource/%.1/%">
+      <details key="start" value="875"/>
+      <details key="end" value="897"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateSparkKafkaSource/%.1/%/%">
+      <details key="start" value="875"/>
+      <details key="end" value="886"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateSparkKafkaSource/%.1/%/%/aClass">
+      <details key="start" value="875"/>
+      <details key="end" value="881"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateSparkKafkaSource/%.1/%.1">
+      <details key="start" value="905"/>
+      <details key="end" value="919"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateSparkKafkaSource/%.2">
+      <details key="start" value="922"/>
+      <details key="end" value="984"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateSparkKafkaSource/%.3">
+      <details key="start" value="985"/>
+      <details key="end" value="1046"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateSparkKafkaSource/%.3/aClass">
+      <details key="start" value="1007"/>
+      <details key="end" value="1013"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateSparkKafkaSource/%.3/%">
+      <details key="start" value="1015"/>
+      <details key="end" value="1028"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateSparkKafkaSource/%.3/%.1">
+      <details key="start" value="1030"/>
+      <details key="end" value="1045"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateSparkKafkaSource/%.4">
+      <details key="start" value="1048"/>
+      <details key="end" value="1049"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateSparkKafkaSource/%.5">
+      <details key="start" value="1050"/>
+      <details key="end" value="1113"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateSparkKafkaSource/%.5/aClass">
+      <details key="start" value="1072"/>
+      <details key="end" value="1078"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateSparkKafkaSource/%.5/%">
+      <details key="start" value="1080"/>
+      <details key="end" value="1093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateSparkKafkaSource/%.5/%.1">
+      <details key="start" value="1095"/>
+      <details key="end" value="1112"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateSparkKafkaSource/%.6">
+      <details key="start" value="1115"/>
+      <details key="end" value="1288"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateSparkKafkaSource/%.7">
+      <details key="start" value="1289"/>
+      <details key="end" value="1330"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateSparkKafkaSource/%.7/%">
+      <details key="start" value="1289"/>
+      <details key="end" value="1311"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateSparkKafkaSource/%.7/%/%">
+      <details key="start" value="1289"/>
+      <details key="end" value="1300"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateSparkKafkaSource/%.7/%/%/aClass">
+      <details key="start" value="1289"/>
+      <details key="end" value="1295"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateSparkKafkaSource/%.7/%.1">
+      <details key="start" value="1319"/>
+      <details key="end" value="1329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateSparkKafkaSource/%.8">
+      <details key="start" value="1332"/>
+      <details key="end" value="1484"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateSparkKafkaSource/%.9">
+      <details key="start" value="1485"/>
+      <details key="end" value="1507"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateSparkKafkaSource/%.9/%">
+      <details key="start" value="1485"/>
+      <details key="end" value="1496"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateSparkKafkaSource/%.9/%/aClass">
+      <details key="start" value="1485"/>
+      <details key="end" value="1491"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateSparkKafkaSource/%.10">
+      <details key="start" value="1509"/>
+      <details key="end" value="1736"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateSparkKafkaSource/%.11">
+      <details key="start" value="1737"/>
+      <details key="end" value="1782"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateSparkKafkaSource/%.11/%">
+      <details key="start" value="1737"/>
+      <details key="end" value="1759"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateSparkKafkaSource/%.11/%/%">
+      <details key="start" value="1737"/>
+      <details key="end" value="1748"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateSparkKafkaSource/%.11/%/%/aClass">
+      <details key="start" value="1737"/>
+      <details key="end" value="1743"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateSparkKafkaSource/%.11/%.1">
+      <details key="start" value="1767"/>
+      <details key="end" value="1781"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateSparkKafkaSource/%.12">
+      <details key="start" value="1784"/>
+      <details key="end" value="1812"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateSparkKafkaSource/%.13">
+      <details key="start" value="1813"/>
+      <details key="end" value="1848"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateSparkKafkaSource/%.13/%">
+      <details key="start" value="1813"/>
+      <details key="end" value="1839"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateSparkKafkaSource/%.13/%/aClass">
+      <details key="start" value="1832"/>
+      <details key="end" value="1838"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateSparkKafkaSource/%.14">
+      <details key="start" value="1850"/>
+      <details key="end" value="1852"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateSparkKafkaSource/%.15">
+      <details key="start" value="1853"/>
+      <details key="end" value="1878"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateSparkKafkaSource/%.15/%">
+      <details key="start" value="1853"/>
+      <details key="end" value="1869"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateSparkKafkaSource/%.15/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateSparkKafkaSource/%.16">
+      <details key="start" value="1880"/>
+      <details key="end" value="1924"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateSparkKafkaSource/aClass">
+      <details key="start" value="833"/>
+      <details key="end" value="847"/>
       <details key="line" value="17"/>
     </eAnnotations>
   </ecore:EAnnotation>

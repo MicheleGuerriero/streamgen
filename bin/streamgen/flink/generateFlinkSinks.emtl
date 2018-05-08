@@ -9,11 +9,142 @@
     </input>
     <imports href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateFlinkCassandraSink" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;CassandraSink.addSink("/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputNames"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkCassandraSink/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </argument>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;    &#x9;.setHost(&quot;"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkCassandraSink/aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="CassandraSink">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="cassandraHost">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;)&#xA;    &#x9;.setMapperOptions(() -> new Mapper.Option"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]{Mapper.Option.saveNullFields(true)})&#xA;    &#x9;.build();"/>
       <parameter name="aClass">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateFlinkKafkaSink" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;FlinkKafkaProducer010&lt;String> "/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkKafkaSink/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_producer">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new FlinkKafkaProducer010&lt;String>(&#xA;&#x9;        &quot;"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkKafkaSink/aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="KafkaSink">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="kafkaBrokerIp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=":"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkKafkaSink/aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="KafkaSink">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="kafkaBrokerPort">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,            &#xA;&#x9;        &quot;"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkKafkaSink/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,                 &#xA;&#x9;        new SimpleStringSchema()); &#xA;&#xA;&#x9; "/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputNames"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/18">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </argument>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".map(("/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkKafkaSink/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </argument>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" x) -> x.toString()).addSink("/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkKafkaSink/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_producer">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");"/>
       <parameter name="aClass">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       </parameter>
@@ -24,7 +155,7 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
-            <source xsi:type="mtl:QueryInvocation" eType="/14/Sequence(DirectedRelationship)">
+            <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DirectedRelationship)">
               <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkTextFileSink/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
@@ -182,6 +313,18 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </eParameters>
       </eOperations>
+      <eOperations name="getInputNames">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputNames"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eParameters name="aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eParameters>
+      </eOperations>
       <eOperations name="getInputs">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
@@ -190,6 +333,18 @@
           <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(DirectedRelationship)"/>
+        <eParameters name="aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getInputsConveyed">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -271,35 +426,68 @@
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(DirectedRelationship)" instanceClassName="java.util.List">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
     </eClassifiers>
   </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
@@ -324,198 +512,433 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generateFlinkCassandraSink">
       <details key="start" value="180"/>
-      <details key="end" value="252"/>
+      <details key="end" value="501"/>
       <details key="line" value="6"/>
     </eAnnotations>
-    <eAnnotations source="positions.1" references="/0/generateFlinkCassandraSink/aClass">
+    <eAnnotations source="positions.1" references="/0/generateFlinkCassandraSink/%">
+      <details key="start" value="241"/>
+      <details key="end" value="264"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateFlinkCassandraSink/%.1">
+      <details key="start" value="265"/>
+      <details key="end" value="296"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateFlinkCassandraSink/%.1/%">
+      <details key="start" value="265"/>
+      <details key="end" value="286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateFlinkCassandraSink/%.1/%/aClass">
+      <details key="start" value="279"/>
+      <details key="end" value="285"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateFlinkCassandraSink/%.2">
+      <details key="start" value="298"/>
+      <details key="end" value="315"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateFlinkCassandraSink/%.3">
+      <details key="start" value="316"/>
+      <details key="end" value="379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateFlinkCassandraSink/%.3/aClass">
+      <details key="start" value="338"/>
+      <details key="end" value="344"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateFlinkCassandraSink/%.3/%">
+      <details key="start" value="346"/>
+      <details key="end" value="361"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateFlinkCassandraSink/%.3/%.1">
+      <details key="start" value="363"/>
+      <details key="end" value="378"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateFlinkCassandraSink/%.4">
+      <details key="start" value="381"/>
+      <details key="end" value="430"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateFlinkCassandraSink/%.5">
+      <details key="start" value="431"/>
+      <details key="end" value="434"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateFlinkCassandraSink/%.6">
+      <details key="start" value="436"/>
+      <details key="end" value="489"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateFlinkCassandraSink/aClass">
       <details key="start" value="224"/>
       <details key="end" value="238"/>
       <details key="line" value="6"/>
     </eAnnotations>
-    <eAnnotations source="positions.2" references="/0/generateFlinkKafkaSink">
-      <details key="start" value="254"/>
-      <details key="end" value="322"/>
-      <details key="line" value="9"/>
-    </eAnnotations>
-    <eAnnotations source="positions.3" references="/0/generateFlinkKafkaSink/aClass">
-      <details key="start" value="294"/>
-      <details key="end" value="308"/>
-      <details key="line" value="9"/>
-    </eAnnotations>
-    <eAnnotations source="positions.4" references="/0/generateFlinkTextFileSink">
-      <details key="start" value="324"/>
-      <details key="end" value="885"/>
-      <details key="line" value="12"/>
-    </eAnnotations>
-    <eAnnotations source="positions.5" references="/0/generateFlinkTextFileSink/@init">
-      <details key="start" value="384"/>
-      <details key="end" value="444"/>
+    <eAnnotations source="positions.14" references="/0/generateFlinkKafkaSink">
+      <details key="start" value="503"/>
+      <details key="end" value="1079"/>
       <details key="line" value="13"/>
     </eAnnotations>
-    <eAnnotations source="positions.6" references="/0/generateFlinkTextFileSink/@init/@variable.0">
-      <details key="start" value="385"/>
-      <details key="end" value="442"/>
-      <details key="line" value="13"/>
-    </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/generateFlinkTextFileSink/@init/@variable.0/%">
-      <details key="start" value="416"/>
-      <details key="end" value="442"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/generateFlinkTextFileSink/@init/@variable.0/%/%">
-      <details key="start" value="416"/>
-      <details key="end" value="433"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/generateFlinkTextFileSink/@init/@variable.0/%/%/aClass">
-      <details key="start" value="426"/>
-      <details key="end" value="432"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/generateFlinkTextFileSink/%">
-      <details key="start" value="446"/>
-      <details key="end" value="447"/>
+    <eAnnotations source="positions.15" references="/0/generateFlinkKafkaSink/%">
+      <details key="start" value="560"/>
+      <details key="end" value="591"/>
       <details key="line" value="14"/>
     </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/generateFlinkTextFileSink/%.1">
-      <details key="start" value="448"/>
-      <details key="end" value="466"/>
+    <eAnnotations source="positions.16" references="/0/generateFlinkKafkaSink/%.1">
+      <details key="start" value="592"/>
+      <details key="end" value="634"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/generateFlinkTextFileSink/%.1/input">
-      <details key="start" value="448"/>
-      <details key="end" value="453"/>
+    <eAnnotations source="positions.17" references="/0/generateFlinkKafkaSink/%.1/%">
+      <details key="start" value="592"/>
+      <details key="end" value="614"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/generateFlinkTextFileSink/%.1/%">
-      <details key="start" value="459"/>
-      <details key="end" value="465"/>
+    <eAnnotations source="positions.18" references="/0/generateFlinkKafkaSink/%.1/%/%">
+      <details key="start" value="592"/>
+      <details key="end" value="603"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/generateFlinkTextFileSink/%.2">
-      <details key="start" value="468"/>
-      <details key="end" value="469"/>
-      <details key="line" value="15"/>
-    </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/generateFlinkTextFileSink/%.3">
-      <details key="start" value="471"/>
+    <eAnnotations source="positions.19" references="/0/generateFlinkKafkaSink/%.1/%/%/aClass">
+      <details key="start" value="592"/>
       <details key="end" value="598"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateFlinkKafkaSink/%.1/%.1">
+      <details key="start" value="622"/>
+      <details key="end" value="633"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateFlinkKafkaSink/%.2">
+      <details key="start" value="636"/>
+      <details key="end" value="684"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateFlinkKafkaSink/%.3">
+      <details key="start" value="685"/>
+      <details key="end" value="744"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateFlinkKafkaSink/%.3/aClass">
+      <details key="start" value="707"/>
+      <details key="end" value="713"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateFlinkKafkaSink/%.3/%">
+      <details key="start" value="715"/>
+      <details key="end" value="726"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateFlinkKafkaSink/%.3/%.1">
+      <details key="start" value="728"/>
+      <details key="end" value="743"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateFlinkKafkaSink/%.4">
+      <details key="start" value="746"/>
+      <details key="end" value="747"/>
       <details key="line" value="15"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/generateFlinkTextFileSink/%.3/%">
-      <details key="start" value="512"/>
-      <details key="end" value="522"/>
+    <eAnnotations source="positions.27" references="/0/generateFlinkKafkaSink/%.5">
+      <details key="start" value="748"/>
+      <details key="end" value="809"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateFlinkKafkaSink/%.5/aClass">
+      <details key="start" value="770"/>
+      <details key="end" value="776"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateFlinkKafkaSink/%.5/%">
+      <details key="start" value="778"/>
+      <details key="end" value="789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateFlinkKafkaSink/%.5/%.1">
+      <details key="start" value="791"/>
+      <details key="end" value="808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateFlinkKafkaSink/%.6">
+      <details key="start" value="811"/>
+      <details key="end" value="836"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateFlinkKafkaSink/%.7">
+      <details key="start" value="837"/>
+      <details key="end" value="859"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateFlinkKafkaSink/%.7/%">
+      <details key="start" value="837"/>
+      <details key="end" value="848"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateFlinkKafkaSink/%.7/%/aClass">
+      <details key="start" value="837"/>
+      <details key="end" value="843"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateFlinkKafkaSink/%.8">
+      <details key="start" value="861"/>
+      <details key="end" value="921"/>
       <details key="line" value="16"/>
     </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/generateFlinkTextFileSink/%.3/%.1">
-      <details key="start" value="523"/>
-      <details key="end" value="586"/>
+    <eAnnotations source="positions.36" references="/0/generateFlinkKafkaSink/%.9">
+      <details key="start" value="922"/>
+      <details key="end" value="946"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/generateFlinkTextFileSink/%.3/%.1/%">
-      <details key="start" value="523"/>
-      <details key="end" value="573"/>
+    <eAnnotations source="positions.37" references="/0/generateFlinkKafkaSink/%.9/%">
+      <details key="start" value="922"/>
+      <details key="end" value="937"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/generateFlinkTextFileSink/%.3/%.1/%/input">
-      <details key="start" value="545"/>
-      <details key="end" value="550"/>
+    <eAnnotations source="positions.38" references="/0/generateFlinkKafkaSink/%.9/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/generateFlinkTextFileSink/%.3/%.1/%/%">
-      <details key="start" value="552"/>
-      <details key="end" value="565"/>
+    <eAnnotations source="positions.39" references="/0/generateFlinkKafkaSink/%.10">
+      <details key="start" value="948"/>
+      <details key="end" value="954"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateFlinkKafkaSink/%.11">
+      <details key="start" value="955"/>
+      <details key="end" value="989"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/generateFlinkTextFileSink/%.3/%.1/%/%.1">
-      <details key="start" value="567"/>
-      <details key="end" value="572"/>
+    <eAnnotations source="positions.41" references="/0/generateFlinkKafkaSink/%.11/%">
+      <details key="start" value="955"/>
+      <details key="end" value="980"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/generateFlinkTextFileSink/%.3/%.1/%.1">
-      <details key="start" value="579"/>
-      <details key="end" value="585"/>
+    <eAnnotations source="positions.42" references="/0/generateFlinkKafkaSink/%.11/%/aClass">
+      <details key="start" value="973"/>
+      <details key="end" value="979"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/generateFlinkTextFileSink/%.3/%.2">
-      <details key="start" value="588"/>
-      <details key="end" value="591"/>
-      <details key="line" value="16"/>
+    <eAnnotations source="positions.43" references="/0/generateFlinkKafkaSink/%.12">
+      <details key="start" value="991"/>
+      <details key="end" value="1020"/>
+      <details key="line" value="19"/>
     </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/generateFlinkTextFileSink/%.3/%.3">
-      <details key="start" value="475"/>
-      <details key="end" value="509"/>
+    <eAnnotations source="positions.44" references="/0/generateFlinkKafkaSink/%.13">
+      <details key="start" value="1021"/>
+      <details key="end" value="1063"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/generateFlinkTextFileSink/%.3/%.3/input">
-      <details key="start" value="475"/>
-      <details key="end" value="480"/>
+    <eAnnotations source="positions.45" references="/0/generateFlinkKafkaSink/%.13/%">
+      <details key="start" value="1021"/>
+      <details key="end" value="1043"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/generateFlinkTextFileSink/%.3/%.3/%">
-      <details key="start" value="495"/>
-      <details key="end" value="508"/>
+    <eAnnotations source="positions.46" references="/0/generateFlinkKafkaSink/%.13/%/%">
+      <details key="start" value="1021"/>
+      <details key="end" value="1032"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/generateFlinkTextFileSink/%.4">
-      <details key="start" value="599"/>
-      <details key="end" value="615"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/generateFlinkTextFileSink/%.5">
-      <details key="start" value="616"/>
-      <details key="end" value="673"/>
+    <eAnnotations source="positions.47" references="/0/generateFlinkKafkaSink/%.13/%/%/aClass">
+      <details key="start" value="1021"/>
+      <details key="end" value="1027"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/generateFlinkTextFileSink/%.5/aClass">
-      <details key="start" value="638"/>
-      <details key="end" value="644"/>
+    <eAnnotations source="positions.48" references="/0/generateFlinkKafkaSink/%.13/%.1">
+      <details key="start" value="1051"/>
+      <details key="end" value="1062"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/generateFlinkTextFileSink/%.5/%">
-      <details key="start" value="646"/>
-      <details key="end" value="660"/>
+    <eAnnotations source="positions.49" references="/0/generateFlinkKafkaSink/%.14">
+      <details key="start" value="1065"/>
+      <details key="end" value="1067"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateFlinkKafkaSink/aClass">
+      <details key="start" value="543"/>
+      <details key="end" value="557"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateFlinkTextFileSink">
+      <details key="start" value="1081"/>
+      <details key="end" value="1642"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateFlinkTextFileSink/@init">
+      <details key="start" value="1141"/>
+      <details key="end" value="1201"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateFlinkTextFileSink/@init/@variable.0">
+      <details key="start" value="1142"/>
+      <details key="end" value="1199"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateFlinkTextFileSink/@init/@variable.0/%">
+      <details key="start" value="1173"/>
+      <details key="end" value="1199"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/generateFlinkTextFileSink/%.5/%.1">
-      <details key="start" value="662"/>
-      <details key="end" value="672"/>
+    <eAnnotations source="positions.55" references="/0/generateFlinkTextFileSink/@init/@variable.0/%/%">
+      <details key="start" value="1173"/>
+      <details key="end" value="1190"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/generateFlinkTextFileSink/%.6">
-      <details key="start" value="675"/>
-      <details key="end" value="678"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/generateFlinkTextFileSink/%.7">
-      <details key="start" value="812"/>
-      <details key="end" value="830"/>
-      <details key="line" value="20"/>
-    </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/generateFlinkTextFileSink/%.8">
-      <details key="start" value="831"/>
-      <details key="end" value="869"/>
+    <eAnnotations source="positions.56" references="/0/generateFlinkTextFileSink/@init/@variable.0/%/%/aClass">
+      <details key="start" value="1183"/>
+      <details key="end" value="1189"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/generateFlinkTextFileSink/%.8/aClass">
-      <details key="start" value="846"/>
-      <details key="end" value="852"/>
+    <eAnnotations source="positions.57" references="/0/generateFlinkTextFileSink/%">
+      <details key="start" value="1203"/>
+      <details key="end" value="1204"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateFlinkTextFileSink/%.1">
+      <details key="start" value="1205"/>
+      <details key="end" value="1223"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/generateFlinkTextFileSink/%.8/%">
-      <details key="start" value="854"/>
-      <details key="end" value="868"/>
+    <eAnnotations source="positions.59" references="/0/generateFlinkTextFileSink/%.1/input">
+      <details key="start" value="1205"/>
+      <details key="end" value="1210"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/generateFlinkTextFileSink/%.9">
-      <details key="start" value="871"/>
-      <details key="end" value="873"/>
-      <details key="line" value="20"/>
+    <eAnnotations source="positions.60" references="/0/generateFlinkTextFileSink/%.1/%">
+      <details key="start" value="1216"/>
+      <details key="end" value="1222"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/generateFlinkTextFileSink/aClass">
-      <details key="start" value="367"/>
-      <details key="end" value="381"/>
-      <details key="line" value="12"/>
+    <eAnnotations source="positions.61" references="/0/generateFlinkTextFileSink/%.2">
+      <details key="start" value="1225"/>
+      <details key="end" value="1226"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateFlinkTextFileSink/%.3">
+      <details key="start" value="1228"/>
+      <details key="end" value="1355"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateFlinkTextFileSink/%.3/%">
+      <details key="start" value="1269"/>
+      <details key="end" value="1279"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateFlinkTextFileSink/%.3/%.1">
+      <details key="start" value="1280"/>
+      <details key="end" value="1343"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateFlinkTextFileSink/%.3/%.1/%">
+      <details key="start" value="1280"/>
+      <details key="end" value="1330"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateFlinkTextFileSink/%.3/%.1/%/input">
+      <details key="start" value="1302"/>
+      <details key="end" value="1307"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateFlinkTextFileSink/%.3/%.1/%/%">
+      <details key="start" value="1309"/>
+      <details key="end" value="1322"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateFlinkTextFileSink/%.3/%.1/%/%.1">
+      <details key="start" value="1324"/>
+      <details key="end" value="1329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateFlinkTextFileSink/%.3/%.1/%.1">
+      <details key="start" value="1336"/>
+      <details key="end" value="1342"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateFlinkTextFileSink/%.3/%.2">
+      <details key="start" value="1345"/>
+      <details key="end" value="1348"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateFlinkTextFileSink/%.3/%.3">
+      <details key="start" value="1232"/>
+      <details key="end" value="1266"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateFlinkTextFileSink/%.3/%.3/input">
+      <details key="start" value="1232"/>
+      <details key="end" value="1237"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateFlinkTextFileSink/%.3/%.3/%">
+      <details key="start" value="1252"/>
+      <details key="end" value="1265"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateFlinkTextFileSink/%.4">
+      <details key="start" value="1356"/>
+      <details key="end" value="1372"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateFlinkTextFileSink/%.5">
+      <details key="start" value="1373"/>
+      <details key="end" value="1430"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateFlinkTextFileSink/%.5/aClass">
+      <details key="start" value="1395"/>
+      <details key="end" value="1401"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateFlinkTextFileSink/%.5/%">
+      <details key="start" value="1403"/>
+      <details key="end" value="1417"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateFlinkTextFileSink/%.5/%.1">
+      <details key="start" value="1419"/>
+      <details key="end" value="1429"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateFlinkTextFileSink/%.6">
+      <details key="start" value="1432"/>
+      <details key="end" value="1435"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generateFlinkTextFileSink/%.7">
+      <details key="start" value="1569"/>
+      <details key="end" value="1587"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generateFlinkTextFileSink/%.8">
+      <details key="start" value="1588"/>
+      <details key="end" value="1626"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generateFlinkTextFileSink/%.8/aClass">
+      <details key="start" value="1603"/>
+      <details key="end" value="1609"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generateFlinkTextFileSink/%.8/%">
+      <details key="start" value="1611"/>
+      <details key="end" value="1625"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generateFlinkTextFileSink/%.9">
+      <details key="start" value="1628"/>
+      <details key="end" value="1630"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generateFlinkTextFileSink/aClass">
+      <details key="start" value="1124"/>
+      <details key="end" value="1138"/>
+      <details key="line" value="22"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

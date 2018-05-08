@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module generateFlinkPom('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
-
+[import streamgen::main::queryUtils /]
 
 [template public generateFlinkPomFile(aModel : Model)]
 [file (aModel.name.toLower().concat('/pom.xml'), false, 'UTF-8')]
@@ -57,7 +57,11 @@
 			<artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>org.apache.flink</groupId>
+		    <artifactId>flink-streaming-scala_2.11</artifactId>
+		    <version>1.4.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -68,6 +72,21 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+		[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
+		<dependency>
+		  <groupId>org.apache.flink</groupId>
+		  <artifactId>flink-connector-kafka-0.10_2.11</artifactId>
+		  <version>1.4.2</version>
+		</dependency>
+		[/if]
+
+		[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'CassandraSink')))]
+		<dependency>
+		  <groupId>org.apache.flink</groupId>
+		  <artifactId>flink-connector-cassandra_2.11</artifactId>
+		  <version>1.4.2</version>
+		</dependency>
+		[/if]
 	</dependencies>
 
 	<profiles>

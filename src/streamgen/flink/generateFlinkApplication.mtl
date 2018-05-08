@@ -27,6 +27,16 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
 
+[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
+import org.apache.flink.streaming.connectors.kafka.*;
+[/if]
+
+[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'CassandraSink')))]
+import org.apache.flink.streaming.connectors.cassandra.CassandraSink;
+import com.datastax.driver.mapping.Mapper;
+[/if]
+
+
 public class [aModel.name/] {
 
     public static void main(String['['/][']'/] args) throws Exception {
@@ -42,6 +52,8 @@ public class [aModel.name/] {
 		[generateFlinkSocketSource(c)/]
 	[elseif (hasStereotype(c, 'TextFileSource'))]
 		[generateFlinkTextFileSource(c)/]
+	[elseif (hasStereotype(c, 'KafkaSource'))]
+		[generateFlinkKafkaSource(c)/]
 	[elseif (hasStereotype(c, 'KafkaSource'))]
 		[comment TODO: handle case of kafka soure/]
 	[elseif (hasStereotype(c, 'MapOperation'))]

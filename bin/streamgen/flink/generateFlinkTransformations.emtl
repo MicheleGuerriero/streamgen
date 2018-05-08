@@ -7,7 +7,7 @@
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
     </input>
-    <imports href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0"/>
+    <imports href="../main/queryUtils.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateFlinkMapOperation" visibility="Public">
       <init>
         <variable name="input">
@@ -15,7 +15,7 @@
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DirectedRelationship)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapOperation/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -28,7 +28,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -39,7 +39,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputNames"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -63,7 +63,7 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+            <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkMapOperation/@init/@variable.0">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             </argument>
@@ -81,7 +81,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;)&#xA;"/>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkMapOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -103,7 +103,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;.setParallelism("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+          <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -116,7 +116,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+            <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapOperation/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -144,7 +144,7 @@
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DirectedRelationship)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapOperation/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -157,7 +157,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -168,7 +168,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputNames"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -192,7 +192,7 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+            <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkFlatmapOperation/@init/@variable.0">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             </argument>
@@ -210,7 +210,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;)&#xA;"/>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkFlatmapOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -232,7 +232,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;.setParallelism("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+          <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -249,7 +249,7 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+                <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapOperation/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -286,7 +286,7 @@
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DirectedRelationship)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -299,7 +299,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -310,7 +310,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputNames"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -334,7 +334,7 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+            <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkFilterOperation/@init/@variable.0">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             </argument>
@@ -352,7 +352,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;)&#xA;"/>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkFilterOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -365,7 +365,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+          <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -375,7 +375,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" tuple) -> "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
@@ -391,7 +391,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;.setParallelism("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+          <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -408,7 +408,7 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+                <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFilterOperation/aClass">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
                 </argument>
@@ -445,7 +445,7 @@
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DirectedRelationship)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowOperation/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -458,7 +458,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -469,7 +469,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputNames"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -493,7 +493,7 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+            <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             </argument>
@@ -511,7 +511,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;)&#xA;"/>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -527,7 +527,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
               </argument>
@@ -547,7 +547,7 @@
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                   <source xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                    <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -576,7 +576,7 @@
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                 </argument>
@@ -606,7 +606,7 @@
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                   <source xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                    <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -636,7 +636,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
                 <ifExpr xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                  <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+                  <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                   </argument>
@@ -656,7 +656,7 @@
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                       <source xsi:type="mtl:QueryInvocation">
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                        <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                         <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                         </argument>
@@ -685,7 +685,7 @@
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                   <source xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                    <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -715,7 +715,7 @@
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                       <source xsi:type="mtl:QueryInvocation">
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                        <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                         <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                         </argument>
@@ -744,7 +744,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
                   <ifExpr xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+                    <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -764,7 +764,7 @@
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                         <source xsi:type="mtl:QueryInvocation">
                           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                           </argument>
@@ -793,7 +793,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -823,7 +823,7 @@
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                         <source xsi:type="mtl:QueryInvocation">
                           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                           </argument>
@@ -852,7 +852,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -881,7 +881,7 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
               <ifExpr xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+                <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                 </argument>
@@ -901,7 +901,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -930,7 +930,7 @@
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                 <source xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                  <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                  <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                   </argument>
@@ -960,7 +960,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -987,7 +987,7 @@
         </body>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkWindowOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -1009,7 +1009,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;.setParallelism("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+          <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -1022,7 +1022,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+            <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowOperation/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -1050,7 +1050,7 @@
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DirectedRelationship)">
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+              <definition href="../main/queryUtils.emtl#/0/getInputs"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkSumOperation/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -1063,7 +1063,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkSumOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -1074,7 +1074,7 @@
       <body xsi:type="ocl.ecore:OperationCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation" eType="/6/Sequence(String)">
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <definition href="../main/queryUtils.emtl#/0/getOutputNames"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkSumOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -1098,7 +1098,7 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+            <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
             </argument>
@@ -1116,7 +1116,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;)&#xA;"/>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -1132,7 +1132,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
               </argument>
@@ -1152,7 +1152,7 @@
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                   <source xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                    <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -1181,7 +1181,7 @@
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
               <source xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                 </argument>
@@ -1209,7 +1209,7 @@
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                  <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                  <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                   </argument>
@@ -1235,7 +1235,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
                 <ifExpr xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                  <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+                  <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                   </argument>
@@ -1255,7 +1255,7 @@
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                       <source xsi:type="mtl:QueryInvocation">
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                        <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                         <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                         </argument>
@@ -1284,7 +1284,7 @@
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                   <source xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                    <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -1312,7 +1312,7 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -1337,7 +1337,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
                   <ifExpr xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+                    <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -1357,7 +1357,7 @@
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                         <source xsi:type="mtl:QueryInvocation">
                           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                           </argument>
@@ -1386,7 +1386,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -1416,7 +1416,7 @@
                         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                         <source xsi:type="mtl:QueryInvocation">
                           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                           </argument>
@@ -1445,7 +1445,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -1474,7 +1474,7 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="All"/>
               <ifExpr xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+                <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                 </argument>
@@ -1494,7 +1494,7 @@
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                      <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                      <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                       <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                       </argument>
@@ -1523,7 +1523,7 @@
                 <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
                 <source xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                  <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                  <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                   </argument>
@@ -1551,7 +1551,7 @@
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                   <source xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-                    <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+                    <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
                       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
                     </argument>
@@ -1574,7 +1574,7 @@
         </body>
         <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/generateFlinkSumOperation/@init/@variable.0">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
           </argument>
@@ -1586,7 +1586,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;.sum(&quot;"/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+        <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkSumOperation/aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
@@ -1602,7 +1602,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;.setParallelism("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+          <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkSumOperation/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -1615,7 +1615,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+            <definition href="../main/queryUtils.emtl#/0/getParallelism"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkSumOperation/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -1739,7 +1739,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
+          <references href="../main/queryUtils.emtl#/0/hasStereotype"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
         <eParameters name="aElement">
@@ -1754,9 +1754,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputs"/>
+          <references href="../main/queryUtils.emtl#/0/getInputs"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(DirectedRelationship)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(DirectedRelationship)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -1766,9 +1766,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputNames"/>
+          <references href="../main/queryUtils.emtl#/0/getOutputNames"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -1778,9 +1778,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+          <references href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -1790,9 +1790,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <references href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -1802,7 +1802,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
+          <references href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <eParameters name="aElement">
@@ -1820,7 +1820,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getParallelism"/>
+          <references href="../main/queryUtils.emtl#/0/getParallelism"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
         <eParameters name="aClass">

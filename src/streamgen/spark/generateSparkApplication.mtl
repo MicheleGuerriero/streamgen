@@ -32,6 +32,15 @@ import org.apache.spark.api.java.function.*;
 import java.util.*;
 import org.apache.spark.api.java.Optional;
 
+[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
+import org.apache.spark.streaming.kafka010.*;
+[/if]
+
+[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'CassandraSink')))]
+import static com.datastax.spark.connector.japi.CassandraJavaUtil.*;
+[/if]
+
+
 
 public class [aModel.name/] {
 
@@ -52,6 +61,9 @@ public class [aModel.name/] {
     [elseif hasStereotype(c, 'TextFileSource')]  
 		[generateSparkTextFileSource(c)/]
 
+    [elseif hasStereotype(c, 'KafkaSource')]  
+		[generateSparkKafkaSource(c)/]
+
     [elseif hasStereotype(c, 'MapOperation')]  
 		[generateSparkMapOperation(c)/]
 
@@ -60,6 +72,9 @@ public class [aModel.name/] {
 
     [elseif hasStereotype(c, 'TextFileSink')]
 		[generateSparkTextFileSink(c)/]
+
+    [elseif hasStereotype(c, 'CassandraSink')]
+		[generateSparkCassandraSink(c)/]
 
     [elseif hasStereotype(c, 'WindowOperation')]
 		[generateSparkWindowOperation(c)/]

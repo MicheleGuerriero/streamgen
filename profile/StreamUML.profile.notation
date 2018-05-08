@@ -290,6 +290,14 @@
   <children xmi:type="notation:Shape" xmi:id="_rnNfAGuiEeeNCPsCczzD3A" type="Stereotype_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_rnOGEGuiEeeNCPsCczzD3A" type="Stereotype_NameLabel"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_rnOGEWuiEeeNCPsCczzD3A" type="Stereotype_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_XOLiIFJZEei0LP_EkIm0dQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_XIeiwFJZEei0LP_EkIm0dQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XOLiIVJZEei0LP_EkIm0dQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_ZTclgFJZEei0LP_EkIm0dQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_ZSFTkFJZEei0LP_EkIm0dQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZTclgVJZEei0LP_EkIm0dQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_rnOGEmuiEeeNCPsCczzD3A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_rnOGE2uiEeeNCPsCczzD3A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_rnOGFGuiEeeNCPsCczzD3A"/>
@@ -307,6 +315,14 @@
   <children xmi:type="notation:Shape" xmi:id="_wgOcYGuiEeeNCPsCczzD3A" type="Stereotype_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_wgPDcGuiEeeNCPsCczzD3A" type="Stereotype_NameLabel"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_wgPDcWuiEeeNCPsCczzD3A" type="Stereotype_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_PEhiIFJTEei-4M06gcVJaA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_PDhckFJTEei-4M06gcVJaA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PEhiIVJTEei-4M06gcVJaA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SbKGwFJTEei-4M06gcVJaA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_SZiWIFJTEei-4M06gcVJaA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SbKGwVJTEei-4M06gcVJaA"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_wgPDcmuiEeeNCPsCczzD3A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_wgPDc2uiEeeNCPsCczzD3A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_wgPDdGuiEeeNCPsCczzD3A"/>

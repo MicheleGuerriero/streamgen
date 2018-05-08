@@ -1,5 +1,6 @@
 [comment encoding = UTF-8 /]
 [module generateSparkPom('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+[import streamgen::main::queryUtils /]
 
 
 [template public generateSparkPomFile(aModel : Model)]
@@ -32,6 +33,21 @@
 			<version>2.3.0</version>
 			<scope>provided</scope>
 		</dependency>
+		[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming-kafka-0-8_2.11 </artifactId>
+		    <version>2.3.0</version>
+		</dependency>
+		[/if]
+
+		[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'CassandraSink')))]
+		<dependency>
+		    <groupId>com.datastax.spark</groupId>
+		    <artifactId>spark-cassandra-connector_2.11</artifactId>
+		    <version>2.0.7</version>
+		</dependency>
+		[/if]
 	</dependencies>
 
 	<build>
