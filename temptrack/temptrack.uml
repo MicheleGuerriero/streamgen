@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Dataflow="http:///schemas/Dataflow/_7B854FDMEeiynfuxK6H26Q/77" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Dataflow/_7B854FDMEeiynfuxK6H26Q/77 ../profile/StreamUML.profile.uml#_7CDnkFDMEeiynfuxK6H26Q">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84 ../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w">
   <uml:Model xmi:id="_4lHykOsoEeeFgI61BIgfhg" name="TempTrack">
-    <ownedComment xmi:type="uml:Comment" xmi:id="_LFwIcE0OEeiV5tji1c_ulg" annotatedElement="_EFuvAOspEeeFgI61BIgfhg">
-      <body>host=&quot;131.175.21.165&quot;
-poer=9999
-parallelism=1</body>
-    </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_bDleIE0OEeiV5tji1c_ulg" annotatedElement="_ZEY6QOspEeeFgI61BIgfhg">
       <body>mapFunction= 
 &quot;            String[] fields = tuple.split(&quot;,&quot;);
@@ -20,11 +15,11 @@ parallelism=3</body>
 &quot;tuple.getTemperature() &lt;9999 &amp; 
 tuple.getTemperature() > -9999 &amp; 
 tuple.getTemperature() != null &amp;
-tuple.getRoom() != null&quot;
+tuple.getRoomId() != null&quot;
 parallelism=3</body>
     </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_S_W3EE0QEeiV5tji1c_ulg" annotatedElement="_Nc4eMEQWEei8PPfmmH1h8A">
-      <body>host=&quot;192.168.1.23&quot;
+      <body>host=&quot;localhost&quot;
 port=9042</body>
     </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_g429gE0QEeiV5tji1c_ulg" annotatedElement="_4lHykOsoEeeFgI61BIgfhg">
@@ -37,20 +32,20 @@ parallelism = 5</body>
 parallelism=3</body>
     </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_fUFtME0SEeiV5tji1c_ulg" annotatedElement="_djHIUOspEeeFgI61BIgfhg">
-      <body>windowSize=3 Seconds
+      <body>windowSize=2 Minutes
 key=roomId</body>
     </ownedComment>
-    <packagedElement xmi:type="uml:Class" xmi:id="_EFuvAOspEeeFgI61BIgfhg" name="TemperatureSource"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eM3aMFMXEeiOxu-cmkz02w" name="TemperatureSource"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZEY6QOspEeeFgI61BIgfhg" name="TemperatureParser"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_FducsOspEeeFgI61BIgfhg" name="ComputeRoomStatistics"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_Koji0OspEeeFgI61BIgfhg" name="CheckCriticalTemperature"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_M3HsIOspEeeFgI61BIgfhg" name="ReportCriticalTemperature"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_ZEY6QOspEeeFgI61BIgfhg" name="TemperatureParser"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_dAEFoOspEeeFgI61BIgfhg" name="rawTemperatures" informationSource="_EFuvAOspEeeFgI61BIgfhg" informationTarget="_ZEY6QOspEeeFgI61BIgfhg">
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_iy6_UFMXEeiOxu-cmkz02w" name="rawTemperatures" informationSource="_eM3aMFMXEeiOxu-cmkz02w" informationTarget="_ZEY6QOspEeeFgI61BIgfhg">
       <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_djHIUOspEeeFgI61BIgfhg" name="parsedTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_ZEY6QOspEeeFgI61BIgfhg" informationTarget="_FducsOspEeeFgI61BIgfhg"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_d-EmAOspEeeFgI61BIgfhg" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_Koji0OspEeeFgI61BIgfhg"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_el5bAOspEeeFgI61BIgfhg" name="criticalTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_Koji0OspEeeFgI61BIgfhg" informationTarget="_M3HsIOspEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_el5bAOspEeeFgI61BIgfhg" name="criticalTemperatures" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_Koji0OspEeeFgI61BIgfhg" informationTarget="_M3HsIOspEeeFgI61BIgfhg"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_jPAUIOspEeeFgI61BIgfhg" name="CriticalTemperatureDatatypes">
       <nestedClassifier xmi:type="uml:Class" xmi:id="_lf7N4OspEeeFgI61BIgfhg" name="RoomTemperature" visibility="public">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_w7OzkOspEeeFgI61BIgfhg" name="roomId">
@@ -60,33 +55,39 @@ key=roomId</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
         </ownedAttribute>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_kK3SAEQWEei8PPfmmH1h8A" name="RoomStatistics">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_kK3SAEQWEei8PPfmmH1h8A" name="RoomStatistics" visibility="public">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_pl5XUEQWEei8PPfmmH1h8A" name="roomId">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_r3jQ4EQWEei8PPfmmH1h8A" name="avgTemp">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_uWmtQEQWEei8PPfmmH1h8A" name="maxTemp">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_zRrgIEQWEei8PPfmmH1h8A" name="timestamp">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
         </ownedAttribute>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_R_xvsEQYEei8PPfmmH1h8A" name="Room10MinAheadPrediction"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_R_xvsEQYEei8PPfmmH1h8A" name="Room10MinAheadTempPrediction" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Tnm7QFLhEeiOxu-cmkz02w" name="roomId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cMSSEFLhEeiOxu-cmkz02w" name="avgPrediction">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+        </ownedAttribute>
+      </nestedClassifier>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_CwlHsOsuEeeFgI61BIgfhg" name="ReportStatistics"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_FdFxQOsuEeeFgI61BIgfhg" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_CwlHsOsuEeeFgI61BIgfhg"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_L9fIAEQWEei8PPfmmH1h8A" name="CleanRawData"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_Nc4eMEQWEei8PPfmmH1h8A" name="CassandraSink"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_PiVu0EQWEei8PPfmmH1h8A" name="parsedTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_EFuvAOspEeeFgI61BIgfhg _ZEY6QOspEeeFgI61BIgfhg _4lHykOsoEeeFgI61BIgfhg" informationTarget="_L9fIAEQWEei8PPfmmH1h8A _4lHykOsoEeeFgI61BIgfhg"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_PiVu0EQWEei8PPfmmH1h8A" name="parsedTemperatures" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_ZEY6QOspEeeFgI61BIgfhg _4lHykOsoEeeFgI61BIgfhg" informationTarget="_L9fIAEQWEei8PPfmmH1h8A _4lHykOsoEeeFgI61BIgfhg"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_QM7j8EQWEei8PPfmmH1h8A" name="cleanedData" conveyed="_lf7N4OspEeeFgI61BIgfhg" informationSource="_L9fIAEQWEei8PPfmmH1h8A" informationTarget="_Nc4eMEQWEei8PPfmmH1h8A"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_lOomsEQXEei8PPfmmH1h8A" name="MonitorCriticalPrediction"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_O5QDoEQYEei8PPfmmH1h8A" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_lOomsEQXEei8PPfmmH1h8A"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_PgiGEEQYEei8PPfmmH1h8A" name="averageTemperatures" informationTarget="_lOomsEQXEei8PPfmmH1h8A"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_XxqOwEQYEei8PPfmmH1h8A" name="ReportCriticalPrediction"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Z3kyYEQYEei8PPfmmH1h8A" name="10MinsPredictions" conveyed="_R_xvsEQYEei8PPfmmH1h8A" informationSource="_lOomsEQXEei8PPfmmH1h8A" informationTarget="_XxqOwEQYEei8PPfmmH1h8A"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Z3kyYEQYEei8PPfmmH1h8A" name="avgTempPredictions" conveyed="_R_xvsEQYEei8PPfmmH1h8A" informationSource="_lOomsEQXEei8PPfmmH1h8A" informationTarget="_XxqOwEQYEei8PPfmmH1h8A"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="__AHLQEQYEei8PPfmmH1h8A" name="parsedTemperatures" informationSource="_ZEY6QOspEeeFgI61BIgfhg"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="__l5Y4EQYEei8PPfmmH1h8A" name="avgTemp3Seconds"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_A3yW4OsqEeeFgI61BIgfhg">
@@ -115,45 +116,51 @@ key=roomId</body>
       <appliedProfile xmi:type="uml:Profile" href="../uml/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hF3V4FDNEeiynfuxK6H26Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nUm0EFMSEeiOxu-cmkz02w" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0EVMSEeiOxu-cmkz02w" key="Version" value="0.0.85"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0ElMSEeiOxu-cmkz02w" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0E1MSEeiOxu-cmkz02w" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0FFMSEeiOxu-cmkz02w" key="Date" value="2018-05-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0FVMSEeiOxu-cmkz02w" key="Author" value=""/>
+      </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hF5LEFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_7CDnkFDMEeiynfuxK6H26Q"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
   </uml:Model>
-  <Dataflow:SocketSource xmi:id="_CgCHEOsqEeeFgI61BIgfhg" base_Class="_EFuvAOspEeeFgI61BIgfhg" host="131.175.21.165" port="9999"/>
-  <Dataflow:MapOperation xmi:id="_EAS_8OsqEeeFgI61BIgfhg" base_Class="_ZEY6QOspEeeFgI61BIgfhg" parallelism="2" mapFunction="            String[] fields = tuple.split(&quot;,&quot;);&#xA;            return new RoomTemperature(&#xA;                    fields[0],&#xA;                    Long.parseLong(fields[1])&#xA;                    );"/>
-  <Dataflow:WindowOperation xmi:id="_PkmwoOsqEeeFgI61BIgfhg" base_Class="_FducsOspEeeFgI61BIgfhg"/>
-  <Dataflow:KeyedStream xmi:id="_Wzv34OsqEeeFgI61BIgfhg" base_InformationFlow="_djHIUOspEeeFgI61BIgfhg" key="_w7OzkOspEeeFgI61BIgfhg"/>
-  <Dataflow:WindowedStream xmi:id="_W0SqcOsqEeeFgI61BIgfhg" base_InformationFlow="_djHIUOspEeeFgI61BIgfhg">
-    <window xmi:type="Dataflow:Window" xmi:id="_hF05oVDNEeiynfuxK6H26Q">
-      <size xmi:type="Dataflow:WindowSize" xmi:id="_hF05olDNEeiynfuxK6H26Q" size="3"/>
+  <StreamUML:MapOperation xmi:id="_EAS_8OsqEeeFgI61BIgfhg" base_Class="_ZEY6QOspEeeFgI61BIgfhg" parallelism="2" mapFunction="            String[] fields = tuple.split(&quot;,&quot;);&#xA;            return new RoomTemperature(&#xA;                    fields[0],&#xA;                    Long.parseLong(fields[1])&#xA;                    );"/>
+  <StreamUML:WindowOperation xmi:id="_PkmwoOsqEeeFgI61BIgfhg" base_Class="_FducsOspEeeFgI61BIgfhg" windowFunction="Long avgTemp = new Long(0);&#xA;Long maxTemp =  new Long(-9999);&#xA;&#xA;for(RoomTemperature r: windowContent){&#xA;&#x9;avgTemp = avgTemp + r.getTemperature();&#xA;&#x9;if(maxTemp &lt; r.getTemperature()){&#xA;&#x9;&#x9;maxTemp = r.getTemperature();&#xA;&#x9;}&#xA;}&#xA;&#xA;avgTemp = avgTemp/windowContent.size();&#xA;&#xA;out.collect(new RoomStatistics(key, avgTemp, maxTemp, window.getEnd()));"/>
+  <StreamUML:KeyedStream xmi:id="_Wzv34OsqEeeFgI61BIgfhg" base_InformationFlow="_djHIUOspEeeFgI61BIgfhg" key="_w7OzkOspEeeFgI61BIgfhg"/>
+  <StreamUML:WindowedStream xmi:id="_W0SqcOsqEeeFgI61BIgfhg" base_InformationFlow="_djHIUOspEeeFgI61BIgfhg">
+    <window xmi:type="StreamUML:Window" xmi:id="_hF05oVDNEeiynfuxK6H26Q">
+      <size xmi:type="StreamUML:TimeAmount" xmi:id="_hF05olDNEeiynfuxK6H26Q" timeUnit="Minutes" size="2"/>
     </window>
-  </Dataflow:WindowedStream>
-  <Dataflow:StreamDatatype xmi:id="_r7VVoOsqEeeFgI61BIgfhg" base_Class="_jPAUIOspEeeFgI61BIgfhg"/>
-  <Dataflow:CsvFileSink xmi:id="_Jr0nYEQWEei8PPfmmH1h8A" base_Class="_CwlHsOsuEeeFgI61BIgfhg" filepath="/home/user/room-statistics.csv"/>
-  <Dataflow:FilterOperation xmi:id="_4zZ78EQZEei8PPfmmH1h8A" base_Class="_L9fIAEQWEei8PPfmmH1h8A" parallelism="3" filteringCondition="tuple.getTemperature() &lt; 9999 &amp; &#xA;tuple.getTemperature() > -9999 &amp; &#xA;tuple.getTemperature() != null  &amp;&#xA;tuple.getRoom() !=  null"/>
-  <Dataflow:CassandraSink xmi:id="_8ZuiYEQZEei8PPfmmH1h8A" base_Class="_Nc4eMEQWEei8PPfmmH1h8A" cassandraHost="192.168.1.23"/>
-  <Dataflow:KafkaSink xmi:id="_Bo7yMEQaEei8PPfmmH1h8A" base_Class="_XxqOwEQYEei8PPfmmH1h8A"/>
-  <Dataflow:FilterOperation xmi:id="_X87_wEQaEei8PPfmmH1h8A" base_Class="_Koji0OspEeeFgI61BIgfhg"/>
-  <Dataflow:WindowOperation xmi:id="_nUpwoEQaEei8PPfmmH1h8A" base_Class="_lOomsEQXEei8PPfmmH1h8A"/>
-  <Dataflow:KeyedStream xmi:id="_DQdUMEQbEei8PPfmmH1h8A" base_InformationFlow="_PiVu0EQWEei8PPfmmH1h8A"/>
-  <Dataflow:KeyedStream xmi:id="_KPyd0EQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
-  <Dataflow:WindowedStream xmi:id="_KRGFYEQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
-  <Dataflow:DataStream xmi:id="_MZ2hoEQbEei8PPfmmH1h8A" base_InformationFlow="__l5Y4EQYEei8PPfmmH1h8A"/>
-  <Dataflow:KafkaSink xmi:id="_lnP-MEQbEei8PPfmmH1h8A" base_Class="_M3HsIOspEeeFgI61BIgfhg"/>
-  <Dataflow:WindowedStream xmi:id="_jx05QE0REeiV5tji1c_ulg" base_InformationFlow="_PgiGEEQYEei8PPfmmH1h8A">
-    <window xmi:type="Dataflow:Window" xmi:id="_hF2HyFDNEeiynfuxK6H26Q" isSliding="true">
-      <size xmi:type="Dataflow:WindowSize" xmi:id="_hF2HyVDNEeiynfuxK6H26Q" timeUnit="Minutes" size="10"/>
-      <slideSize xmi:type="Dataflow:WindowSize" xmi:id="_hF2HylDNEeiynfuxK6H26Q"/>
+  </StreamUML:WindowedStream>
+  <StreamUML:StreamDatatype xmi:id="_r7VVoOsqEeeFgI61BIgfhg" base_Class="_jPAUIOspEeeFgI61BIgfhg"/>
+  <StreamUML:CsvFileSink xmi:id="_Jr0nYEQWEei8PPfmmH1h8A" base_Class="_CwlHsOsuEeeFgI61BIgfhg" parallelism="3" filepath="/home/user/room-statistics.csv"/>
+  <StreamUML:FilterOperation xmi:id="_4zZ78EQZEei8PPfmmH1h8A" base_Class="_L9fIAEQWEei8PPfmmH1h8A" parallelism="3" filteringCondition="tuple.getTemperature() &lt; 9999 &amp; &#xA;tuple.getTemperature() > -9999 &amp; &#xA;tuple.getTemperature() != null  &amp;&#xA;tuple.getRoomId() !=  null"/>
+  <StreamUML:CassandraSink xmi:id="_8ZuiYEQZEei8PPfmmH1h8A" base_Class="_Nc4eMEQWEei8PPfmmH1h8A" cassandraHost="localhost"/>
+  <StreamUML:KafkaSink xmi:id="_Bo7yMEQaEei8PPfmmH1h8A" base_Class="_XxqOwEQYEei8PPfmmH1h8A" kafkaBrokerIp="localhost"/>
+  <StreamUML:FilterOperation xmi:id="_X87_wEQaEei8PPfmmH1h8A" base_Class="_Koji0OspEeeFgI61BIgfhg"/>
+  <StreamUML:WindowOperation xmi:id="_nUpwoEQaEei8PPfmmH1h8A" base_Class="_lOomsEQXEei8PPfmmH1h8A" windowFunction="&#x9;&#x9;int[] x = new int[windowContent.size()];&#xA;&#x9;&#x9;long[] y = new long[windowContent.size()];&#xA;&#xA;&#x9;&#x9;int j = 0;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;for(RoomStatistics rs: windowContent) {&#xA;&#x9;&#x9;&#x9;y[j] = rs.getAvgTemp();&#xA;&#x9;&#x9;&#x9;x[j] = j + 1;&#xA;&#x9;&#x9;&#x9;j = j + 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;    int N;&#xA;&#x9;    double alpha, beta;&#xA;&#x9;    double R2;&#xA;&#x9;    double svar, svar0, svar1;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (x.length != y.length) {&#xA;            throw new IllegalArgumentException(&quot;array lengths are not equal&quot;);&#xA;        }&#xA;        N = x.length;&#xA;&#xA;        // first pass&#xA;        double sumx = 0.0, sumy = 0.0, sumx2 = 0.0;&#xA;        for (int i = 0; i &lt; N; i++) sumx  += x[i];&#xA;        for (int i = 0; i &lt; N; i++) sumx2 += x[i]*x[i];&#xA;        for (int i = 0; i &lt; N; i++) sumy  += y[i];&#xA;        double xbar = sumx / N;&#xA;        double ybar = sumy / N;&#xA;&#xA;        // second pass: compute summary statistics&#xA;        double xxbar = 0.0, yybar = 0.0, xybar = 0.0;&#xA;        for (int i = 0; i &lt; N; i++) {&#xA;            xxbar += (x[i] - xbar) * (x[i] - xbar);&#xA;            yybar += (y[i] - ybar) * (y[i] - ybar);&#xA;            xybar += (x[i] - xbar) * (y[i] - ybar);&#xA;        }&#xA;        beta  = xybar / xxbar;&#xA;        alpha = ybar - beta * xbar;&#xA;&#xA;        // more statistical analysis&#xA;        double rss = 0.0;      // residual sum of squares&#xA;        double ssr = 0.0;      // regression sum of squares&#xA;        for (int i = 0; i &lt; N; i++) {&#xA;            double fit = beta*x[i] + alpha;&#xA;            rss += (fit - y[i]) * (fit - y[i]);&#xA;            ssr += (fit - ybar) * (fit - ybar);&#xA;        }&#xA;&#xA;        int degreesOfFreedom = N-2;&#xA;        R2    = ssr / yybar;&#xA;        svar  = rss / degreesOfFreedom;&#xA;        svar1 = svar / xxbar;&#xA;        svar0 = svar/N + xbar*xbar*svar1;&#xA;        &#xA;        out.collect(new Room10MinAheadTempPrediction(key, new Double(beta*(windowContent.size()+5) + alpha).longValue()));&#xA;&#x9;&#x9;"/>
+  <StreamUML:KeyedStream xmi:id="_DQdUMEQbEei8PPfmmH1h8A" base_InformationFlow="_PiVu0EQWEei8PPfmmH1h8A" key="_w7OzkOspEeeFgI61BIgfhg"/>
+  <StreamUML:KeyedStream xmi:id="_KPyd0EQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
+  <StreamUML:WindowedStream xmi:id="_KRGFYEQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
+  <StreamUML:DataStream xmi:id="_MZ2hoEQbEei8PPfmmH1h8A" base_InformationFlow="__l5Y4EQYEei8PPfmmH1h8A"/>
+  <StreamUML:KafkaSink xmi:id="_lnP-MEQbEei8PPfmmH1h8A" base_Class="_M3HsIOspEeeFgI61BIgfhg" kafkaBrokerIp="localhost"/>
+  <StreamUML:NonParallelStream xmi:id="_U1q1AE2rEeiV5tji1c_ulg" base_InformationFlow="_QM7j8EQWEei8PPfmmH1h8A"/>
+  <StreamUML:KeyedStream xmi:id="_kUVicE2rEeiV5tji1c_ulg" base_InformationFlow="_O5QDoEQYEei8PPfmmH1h8A" key="_pl5XUEQWEei8PPfmmH1h8A"/>
+  <StreamUML:NonParallelStream xmi:id="_t0SOsE2rEeiV5tji1c_ulg" base_InformationFlow="_el5bAOspEeeFgI61BIgfhg"/>
+  <StreamUML:NonParallelStream xmi:id="_BAbTcE2sEeiV5tji1c_ulg" base_InformationFlow="_Z3kyYEQYEei8PPfmmH1h8A"/>
+  <StreamUML:RandomlyPartitionedStream xmi:id="_HOf_QE2sEeiV5tji1c_ulg" base_InformationFlow="_FdFxQOsuEeeFgI61BIgfhg"/>
+  <StreamUML:KeyedStream xmi:id="_JrhbUE2sEeiV5tji1c_ulg" base_InformationFlow="_d-EmAOspEeeFgI61BIgfhg" key="_pl5XUEQWEei8PPfmmH1h8A"/>
+  <StreamUML:WindowedStream xmi:id="_JewTwFMUEeiOxu-cmkz02w" base_InformationFlow="_O5QDoEQYEei8PPfmmH1h8A">
+    <window xmi:type="StreamUML:Window" xmi:id="_Lyyy8FMUEeiOxu-cmkz02w">
+      <size xmi:type="StreamUML:TimeAmount" xmi:id="_NaLAcFMUEeiOxu-cmkz02w" timeUnit="Minutes" size="10"/>
     </window>
-  </Dataflow:WindowedStream>
-  <Dataflow:NonParallelStream xmi:id="_U1q1AE2rEeiV5tji1c_ulg" base_InformationFlow="_QM7j8EQWEei8PPfmmH1h8A"/>
-  <Dataflow:RandomlyPartitionedStream xmi:id="_huQRAE2rEeiV5tji1c_ulg" base_InformationFlow="_dAEFoOspEeeFgI61BIgfhg"/>
-  <Dataflow:KeyedStream xmi:id="_kUVicE2rEeiV5tji1c_ulg" base_InformationFlow="_O5QDoEQYEei8PPfmmH1h8A" key="_pl5XUEQWEei8PPfmmH1h8A"/>
-  <Dataflow:NonParallelStream xmi:id="_t0SOsE2rEeiV5tji1c_ulg" base_InformationFlow="_el5bAOspEeeFgI61BIgfhg"/>
-  <Dataflow:KeyedStream xmi:id="_0jLIkE2rEeiV5tji1c_ulg" base_InformationFlow="_PgiGEEQYEei8PPfmmH1h8A"/>
-  <Dataflow:NonParallelStream xmi:id="_BAbTcE2sEeiV5tji1c_ulg" base_InformationFlow="_Z3kyYEQYEei8PPfmmH1h8A"/>
-  <Dataflow:RandomlyPartitionedStream xmi:id="_HOf_QE2sEeiV5tji1c_ulg" base_InformationFlow="_FdFxQOsuEeeFgI61BIgfhg"/>
-  <Dataflow:KeyedStream xmi:id="_JrhbUE2sEeiV5tji1c_ulg" base_InformationFlow="_d-EmAOspEeeFgI61BIgfhg" key="_pl5XUEQWEei8PPfmmH1h8A"/>
+  </StreamUML:WindowedStream>
+  <StreamUML:SocketSource xmi:id="_mMhYYFMXEeiOxu-cmkz02w" base_Class="_eM3aMFMXEeiOxu-cmkz02w" host="localhost" port="9999"/>
+  <StreamUML:NonParallelStream xmi:id="_q0g3MFMXEeiOxu-cmkz02w" base_InformationFlow="_iy6_UFMXEeiOxu-cmkz02w"/>
+  <StreamUML:FlinkApplication xmi:id="_2CEJMFMhEeiOxu-cmkz02w" base_Model="_4lHykOsoEeeFgI61BIgfhg"/>
 </xmi:XMI>

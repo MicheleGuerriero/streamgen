@@ -82,6 +82,8 @@ import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
     [/if]
   [/for]
 
+import java.util.*;
+
 import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
@@ -90,7 +92,13 @@ import org.apache.flink.util.Collector;
 public class [aClass.name/] implements WindowFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/], Tuple, TimeWindow> {
 	
 	@Override
-	public void apply(Tuple key, TimeWindow window, Iterable<[getInputsConveyed(aClass)->first()/]> windowContent, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+	public void apply(Tuple key, TimeWindow window, Iterable<[getInputsConveyed(aClass)->first()/]> windowContentIterator, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		
+		List<[getInputsConveyed(aClass)->first()/]> windowContent = new  ArrayList<[getInputsConveyed(aClass)->first()/]>();
+		for([getInputsConveyed(aClass)->first()/] x: windowContentIterator){
+			windowContent.add(x);
+		}
+		
 		[getStereotypeProperty(aClass, 'WindowOperation', 'windowFunction').toString().substitute('key', 'key.getField(0)')/]
 	}
 

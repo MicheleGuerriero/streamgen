@@ -680,6 +680,14 @@
   <children xmi:type="notation:Shape" xmi:id="_JUflIEQZEei8PPfmmH1h8A" type="Stereotype_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_JUflIkQZEei8PPfmmH1h8A" type="Stereotype_NameLabel"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_JUflI0QZEei8PPfmmH1h8A" type="Stereotype_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_XmhxoFMSEeiOxu-cmkz02w" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_XlQmUFMSEeiOxu-cmkz02w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XmhxoVMSEeiOxu-cmkz02w"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_ZMBIwFMSEeiOxu-cmkz02w" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_ZLHJ0FMSEeiOxu-cmkz02w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZMBIwVMSEeiOxu-cmkz02w"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_JUflJEQZEei8PPfmmH1h8A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_JUflJUQZEei8PPfmmH1h8A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_JUflJkQZEei8PPfmmH1h8A"/>

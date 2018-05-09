@@ -16,7 +16,7 @@ package [aModel.name.toLower().concat('.application')/];
      [for (subc:Class | c.eContents(Class)) ]
 import [aModel.name.toLower()/].datatypes.[subc.name/];
     [/for]
-  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Operation'))]
+  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Operation') and not (s.name = 'FilterOperation'))]
 import [aModel.name.toLower()/].functions.[c.name/];
   [/if]
 [/for]
@@ -29,9 +29,10 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 
 [if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
 import org.apache.flink.streaming.connectors.kafka.*;
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
 [/if]
 
-[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'CassandraSink')))]
+[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'CassandraSink')))]
 import org.apache.flink.streaming.connectors.cassandra.CassandraSink;
 import com.datastax.driver.mapping.Mapper;
 [/if]
@@ -54,16 +55,22 @@ public class [aModel.name/] {
 		[generateFlinkTextFileSource(c)/]
 	[elseif (hasStereotype(c, 'KafkaSource'))]
 		[generateFlinkKafkaSource(c)/]
-	[elseif (hasStereotype(c, 'KafkaSource'))]
-		[comment TODO: handle case of kafka soure/]
+	[elseif (hasStereotype(c, 'KafkaSink'))]
+		[generateFlinkKafkaSink(c)/]
+	[elseif (hasStereotype(c, 'CassandraSink'))]
+		[generateFlinkCassandraSink(c)/]
 	[elseif (hasStereotype(c, 'MapOperation'))]
 		[generateFlinkMapOperation(c)/]
 	[elseif (hasStereotype(c, 'FlatmapOperation'))]
 		[generateFlinkFlatmapOperation(c)/]
 	[elseif (hasStereotype(c, 'SumOperation'))]
 		[generateFlinkSumOperation(c)/]
+	[elseif (hasStereotype(c, 'FilterOperation'))]
+		[generateFlinkFilterOperation(c)/]
 	[elseif (hasStereotype(c, 'WindowOperation'))]
 		[generateFlinkWindowOperation(c)/]
+	[elseif (hasStereotype(c, 'CsvFileSink'))]
+		[generateFlinkCsvFileSink(c)/]
 	[elseif (hasStereotype(c, 'TextFileSink'))]
 		[generateFlinkTextFileSink(c)/]
 	[/if]

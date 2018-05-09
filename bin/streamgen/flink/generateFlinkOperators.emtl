@@ -7,7 +7,7 @@
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
     </input>
-    <imports href="../main/queryUtils.emtl#/0"/>
+    <imports href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateFlinkMapFunction" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
@@ -76,7 +76,7 @@
             </body>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateFlinkMapFunction/%/%.3/c">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -113,7 +113,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -124,7 +124,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -135,7 +135,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -146,7 +146,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -156,7 +156,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" tuple) throws Exception {&#xA;&#x9;&#x9;"/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkMapFunction/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -281,7 +281,7 @@
             </body>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateFlinkFlatmapFunction/%/%.3/c">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -318,7 +318,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -329,7 +329,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -340,7 +340,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -351,7 +351,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -361,7 +361,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> out) throws Exception {&#xA;&#x9;&#x9;"/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-          <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
+          <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkFlatmapFunction/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           </argument>
@@ -486,7 +486,7 @@
             </body>
             <ifExpr xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="../main/queryUtils.emtl#/0/hasStereotype"/>
+              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateFlinkWindowFunction/%/%.3/c">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -511,7 +511,7 @@
             </argument>
           </iterSet>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;import org.apache.flink.api.java.tuple.Tuple;&#xA;import org.apache.flink.streaming.api.functions.windowing.WindowFunction;&#xA;import org.apache.flink.streaming.api.windowing.windows.TimeWindow;&#xA;import org.apache.flink.util.Collector;&#xA;&#xA;public class "/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;import java.util.*;&#xA;&#xA;import org.apache.flink.api.java.tuple.Tuple;&#xA;import org.apache.flink.streaming.api.functions.windowing.WindowFunction;&#xA;import org.apache.flink.streaming.api.windowing.windows.TimeWindow;&#xA;import org.apache.flink.util.Collector;&#xA;&#xA;public class "/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
@@ -523,7 +523,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -534,7 +534,7 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
@@ -545,32 +545,65 @@
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> windowContent, Collector&lt;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> windowContentIterator, Collector&lt;"/>
         <body xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
-            <definition href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> out) throws Exception {&#xA;&#x9;&#x9;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> out) throws Exception {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;List&lt;"/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> windowContent = new  ArrayList&lt;"/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">();&#xA;&#x9;&#x9;for("/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:QueryInvocation" eType="/9/Sequence(String)">
+            <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" x: windowContentIterator){&#xA;&#x9;&#x9;&#x9;windowContent.add(x);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;"/>
         <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/substitute">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-              <definition href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
+              <definition href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/generateFlinkWindowFunction/aClass">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </argument>
@@ -708,7 +741,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../main/queryUtils.emtl#/0/hasStereotype"/>
+          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/hasStereotype"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
         <eParameters name="aElement">
@@ -723,9 +756,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../main/queryUtils.emtl#/0/getInputsConveyed"/>
+          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getInputsConveyed"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -735,9 +768,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../main/queryUtils.emtl#/0/getOutputsConveyed"/>
+          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getOutputsConveyed"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="../main/queryUtils.emtl#/3/Sequence(String)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/3/Sequence(String)"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </eParameters>
@@ -747,7 +780,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../main/queryUtils.emtl#/0/getStereotypeProperty"/>
+          <references href="platform:/resource/streamgen/bin/streamgen/main/queryUtils.emtl#/0/getStereotypeProperty"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <eParameters name="aElement">
@@ -1000,6 +1033,15 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
@@ -1735,12 +1777,12 @@
     </eAnnotations>
     <eAnnotations source="positions.142" references="/0/generateFlinkWindowFunction">
       <details key="start" value="2422"/>
-      <details key="end" value="3633"/>
+      <details key="end" value="3887"/>
       <details key="line" value="73"/>
     </eAnnotations>
     <eAnnotations source="positions.143" references="/0/generateFlinkWindowFunction/%">
       <details key="start" value="2484"/>
-      <details key="end" value="3621"/>
+      <details key="end" value="3875"/>
       <details key="line" value="74"/>
     </eAnnotations>
     <eAnnotations source="positions.144" references="/0/generateFlinkWindowFunction/%/%">
@@ -1905,205 +1947,265 @@
     </eAnnotations>
     <eAnnotations source="positions.176" references="/0/generateFlinkWindowFunction/%/%.4">
       <details key="start" value="2904"/>
-      <details key="end" value="3147"/>
+      <details key="end" value="3168"/>
       <details key="line" value="84"/>
     </eAnnotations>
     <eAnnotations source="positions.177" references="/0/generateFlinkWindowFunction/%/%.5">
-      <details key="start" value="3148"/>
-      <details key="end" value="3159"/>
+      <details key="start" value="3169"/>
+      <details key="end" value="3180"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.178" references="/0/generateFlinkWindowFunction/%/%.5/aClass">
-      <details key="start" value="3148"/>
-      <details key="end" value="3154"/>
+      <details key="start" value="3169"/>
+      <details key="end" value="3175"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.179" references="/0/generateFlinkWindowFunction/%/%.6">
-      <details key="start" value="3161"/>
-      <details key="end" value="3188"/>
-      <details key="line" value="90"/>
+      <details key="start" value="3182"/>
+      <details key="end" value="3209"/>
+      <details key="line" value="92"/>
     </eAnnotations>
     <eAnnotations source="positions.180" references="/0/generateFlinkWindowFunction/%/%.7">
-      <details key="start" value="3189"/>
-      <details key="end" value="3223"/>
+      <details key="start" value="3210"/>
+      <details key="end" value="3244"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.181" references="/0/generateFlinkWindowFunction/%/%.7/%">
-      <details key="start" value="3189"/>
-      <details key="end" value="3214"/>
+      <details key="start" value="3210"/>
+      <details key="end" value="3235"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.182" references="/0/generateFlinkWindowFunction/%/%.7/%/aClass">
-      <details key="start" value="3207"/>
-      <details key="end" value="3213"/>
+      <details key="start" value="3228"/>
+      <details key="end" value="3234"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.183" references="/0/generateFlinkWindowFunction/%/%.8">
-      <details key="start" value="3225"/>
-      <details key="end" value="3227"/>
-      <details key="line" value="90"/>
+      <details key="start" value="3246"/>
+      <details key="end" value="3248"/>
+      <details key="line" value="92"/>
     </eAnnotations>
     <eAnnotations source="positions.184" references="/0/generateFlinkWindowFunction/%/%.9">
-      <details key="start" value="3228"/>
-      <details key="end" value="3263"/>
+      <details key="start" value="3249"/>
+      <details key="end" value="3284"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.185" references="/0/generateFlinkWindowFunction/%/%.9/%">
-      <details key="start" value="3228"/>
-      <details key="end" value="3254"/>
+      <details key="start" value="3249"/>
+      <details key="end" value="3275"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.186" references="/0/generateFlinkWindowFunction/%/%.9/%/aClass">
-      <details key="start" value="3247"/>
-      <details key="end" value="3253"/>
+      <details key="start" value="3268"/>
+      <details key="end" value="3274"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.187" references="/0/generateFlinkWindowFunction/%/%.10">
-      <details key="start" value="3265"/>
-      <details key="end" value="3359"/>
-      <details key="line" value="90"/>
+      <details key="start" value="3286"/>
+      <details key="end" value="3380"/>
+      <details key="line" value="92"/>
     </eAnnotations>
     <eAnnotations source="positions.188" references="/0/generateFlinkWindowFunction/%/%.11">
-      <details key="start" value="3360"/>
-      <details key="end" value="3394"/>
+      <details key="start" value="3381"/>
+      <details key="end" value="3415"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.189" references="/0/generateFlinkWindowFunction/%/%.11/%">
-      <details key="start" value="3360"/>
-      <details key="end" value="3385"/>
+      <details key="start" value="3381"/>
+      <details key="end" value="3406"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.190" references="/0/generateFlinkWindowFunction/%/%.11/%/aClass">
-      <details key="start" value="3378"/>
-      <details key="end" value="3384"/>
+      <details key="start" value="3399"/>
+      <details key="end" value="3405"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.191" references="/0/generateFlinkWindowFunction/%/%.12">
-      <details key="start" value="3396"/>
-      <details key="end" value="3423"/>
-      <details key="line" value="93"/>
+      <details key="start" value="3417"/>
+      <details key="end" value="3452"/>
+      <details key="line" value="95"/>
     </eAnnotations>
     <eAnnotations source="positions.192" references="/0/generateFlinkWindowFunction/%/%.13">
-      <details key="start" value="3424"/>
-      <details key="end" value="3459"/>
+      <details key="start" value="3453"/>
+      <details key="end" value="3488"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.193" references="/0/generateFlinkWindowFunction/%/%.13/%">
-      <details key="start" value="3424"/>
-      <details key="end" value="3450"/>
+      <details key="start" value="3453"/>
+      <details key="end" value="3479"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.194" references="/0/generateFlinkWindowFunction/%/%.13/%/aClass">
-      <details key="start" value="3443"/>
-      <details key="end" value="3449"/>
+      <details key="start" value="3472"/>
+      <details key="end" value="3478"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.195" references="/0/generateFlinkWindowFunction/%/%.14">
-      <details key="start" value="3461"/>
-      <details key="end" value="3489"/>
-      <details key="line" value="93"/>
+      <details key="start" value="3490"/>
+      <details key="end" value="3526"/>
+      <details key="line" value="95"/>
     </eAnnotations>
     <eAnnotations source="positions.196" references="/0/generateFlinkWindowFunction/%/%.15">
-      <details key="start" value="3490"/>
-      <details key="end" value="3604"/>
+      <details key="start" value="3527"/>
+      <details key="end" value="3561"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.197" references="/0/generateFlinkWindowFunction/%/%.15/%">
-      <details key="start" value="3490"/>
-      <details key="end" value="3567"/>
+      <details key="start" value="3527"/>
+      <details key="end" value="3552"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.198" references="/0/generateFlinkWindowFunction/%/%.15/%/%">
-      <details key="start" value="3490"/>
-      <details key="end" value="3556"/>
+    <eAnnotations source="positions.198" references="/0/generateFlinkWindowFunction/%/%.15/%/aClass">
+      <details key="start" value="3545"/>
+      <details key="end" value="3551"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.199" references="/0/generateFlinkWindowFunction/%/%.15/%/%/aClass">
-      <details key="start" value="3512"/>
-      <details key="end" value="3518"/>
+    <eAnnotations source="positions.199" references="/0/generateFlinkWindowFunction/%/%.16">
+      <details key="start" value="3563"/>
+      <details key="end" value="3596"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/generateFlinkWindowFunction/%/%.17">
+      <details key="start" value="3597"/>
+      <details key="end" value="3631"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.200" references="/0/generateFlinkWindowFunction/%/%.15/%/%/%">
-      <details key="start" value="3520"/>
-      <details key="end" value="3537"/>
+    <eAnnotations source="positions.201" references="/0/generateFlinkWindowFunction/%/%.17/%">
+      <details key="start" value="3597"/>
+      <details key="end" value="3622"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.201" references="/0/generateFlinkWindowFunction/%/%.15/%/%/%.1">
-      <details key="start" value="3539"/>
-      <details key="end" value="3555"/>
+    <eAnnotations source="positions.202" references="/0/generateFlinkWindowFunction/%/%.17/%/aClass">
+      <details key="start" value="3615"/>
+      <details key="end" value="3621"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.202" references="/0/generateFlinkWindowFunction/%/%.15/%.1">
-      <details key="start" value="3579"/>
-      <details key="end" value="3584"/>
+    <eAnnotations source="positions.203" references="/0/generateFlinkWindowFunction/%/%.18">
+      <details key="start" value="3633"/>
+      <details key="end" value="3644"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/generateFlinkWindowFunction/%/%.19">
+      <details key="start" value="3645"/>
+      <details key="end" value="3679"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.203" references="/0/generateFlinkWindowFunction/%/%.15/%.2">
-      <details key="start" value="3586"/>
-      <details key="end" value="3603"/>
+    <eAnnotations source="positions.205" references="/0/generateFlinkWindowFunction/%/%.19/%">
+      <details key="start" value="3645"/>
+      <details key="end" value="3670"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.204" references="/0/generateFlinkWindowFunction/%/%.16">
-      <details key="start" value="3606"/>
-      <details key="end" value="3614"/>
-      <details key="line" value="95"/>
+    <eAnnotations source="positions.206" references="/0/generateFlinkWindowFunction/%/%.19/%/aClass">
+      <details key="start" value="3663"/>
+      <details key="end" value="3669"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.205" references="/0/generateFlinkWindowFunction/%/%.17">
+    <eAnnotations source="positions.207" references="/0/generateFlinkWindowFunction/%/%.20">
+      <details key="start" value="3681"/>
+      <details key="end" value="3743"/>
+      <details key="line" value="98"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/generateFlinkWindowFunction/%/%.21">
+      <details key="start" value="3744"/>
+      <details key="end" value="3858"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/generateFlinkWindowFunction/%/%.21/%">
+      <details key="start" value="3744"/>
+      <details key="end" value="3821"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/generateFlinkWindowFunction/%/%.21/%/%">
+      <details key="start" value="3744"/>
+      <details key="end" value="3810"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/generateFlinkWindowFunction/%/%.21/%/%/aClass">
+      <details key="start" value="3766"/>
+      <details key="end" value="3772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/generateFlinkWindowFunction/%/%.21/%/%/%">
+      <details key="start" value="3774"/>
+      <details key="end" value="3791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/generateFlinkWindowFunction/%/%.21/%/%/%.1">
+      <details key="start" value="3793"/>
+      <details key="end" value="3809"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/generateFlinkWindowFunction/%/%.21/%.1">
+      <details key="start" value="3833"/>
+      <details key="end" value="3838"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/generateFlinkWindowFunction/%/%.21/%.2">
+      <details key="start" value="3840"/>
+      <details key="end" value="3857"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/generateFlinkWindowFunction/%/%.22">
+      <details key="start" value="3860"/>
+      <details key="end" value="3868"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/generateFlinkWindowFunction/%/%.23">
       <details key="start" value="2491"/>
       <details key="end" value="2581"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.206" references="/0/generateFlinkWindowFunction/%/%.17/%">
+    <eAnnotations source="positions.218" references="/0/generateFlinkWindowFunction/%/%.23/%">
       <details key="start" value="2491"/>
       <details key="end" value="2565"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.207" references="/0/generateFlinkWindowFunction/%/%.17/%/%">
+    <eAnnotations source="positions.219" references="/0/generateFlinkWindowFunction/%/%.23/%/%">
       <details key="start" value="2491"/>
       <details key="end" value="2545"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.208" references="/0/generateFlinkWindowFunction/%/%.17/%/%/%">
+    <eAnnotations source="positions.220" references="/0/generateFlinkWindowFunction/%/%.23/%/%/%">
       <details key="start" value="2491"/>
       <details key="end" value="2523"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.209" references="/0/generateFlinkWindowFunction/%/%.17/%/%/%/%">
+    <eAnnotations source="positions.221" references="/0/generateFlinkWindowFunction/%/%.23/%/%/%/%">
       <details key="start" value="2491"/>
       <details key="end" value="2513"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.210" references="/0/generateFlinkWindowFunction/%/%.17/%/%/%/%/%">
+    <eAnnotations source="positions.222" references="/0/generateFlinkWindowFunction/%/%.23/%/%/%/%/%">
       <details key="start" value="2491"/>
       <details key="end" value="2508"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.211" references="/0/generateFlinkWindowFunction/%/%.17/%/%/%/%/%/aClass">
+    <eAnnotations source="positions.223" references="/0/generateFlinkWindowFunction/%/%.23/%/%/%/%/%/aClass">
       <details key="start" value="2491"/>
       <details key="end" value="2497"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.212" references="/0/generateFlinkWindowFunction/%/%.17/%/%/%.1">
+    <eAnnotations source="positions.224" references="/0/generateFlinkWindowFunction/%/%.23/%/%/%.1">
       <details key="start" value="2531"/>
       <details key="end" value="2544"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.213" references="/0/generateFlinkWindowFunction/%/%.17/%/%.1">
+    <eAnnotations source="positions.225" references="/0/generateFlinkWindowFunction/%/%.23/%/%.1">
       <details key="start" value="2553"/>
       <details key="end" value="2564"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.214" references="/0/generateFlinkWindowFunction/%/%.17/%/%.1/aClass">
+    <eAnnotations source="positions.226" references="/0/generateFlinkWindowFunction/%/%.23/%/%.1/aClass">
       <details key="start" value="2553"/>
       <details key="end" value="2559"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.215" references="/0/generateFlinkWindowFunction/%/%.17/%.1">
+    <eAnnotations source="positions.227" references="/0/generateFlinkWindowFunction/%/%.23/%.1">
       <details key="start" value="2573"/>
       <details key="end" value="2580"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.216" references="/0/generateFlinkWindowFunction/aClass">
+    <eAnnotations source="positions.228" references="/0/generateFlinkWindowFunction/aClass">
       <details key="start" value="2467"/>
       <details key="end" value="2481"/>
       <details key="line" value="73"/>

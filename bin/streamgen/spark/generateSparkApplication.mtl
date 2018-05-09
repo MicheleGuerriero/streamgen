@@ -16,7 +16,7 @@ package [aModel.name.toLower().concat('.application')/];
      [for (subc:Class | c.eContents(Class)) ]
 import [aModel.name.toLower()/].datatypes.[subc.name/];
     [/for]
-  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Operation'))]
+  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Operation') and not (s.name = 'FilterOperation'))]
 import [aModel.name.toLower()/].functions.[c.name/];
   [/if]
 [/for]
@@ -32,7 +32,13 @@ import org.apache.spark.api.java.function.*;
 import java.util.*;
 import org.apache.spark.api.java.Optional;
 
-[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
+[if (aModel.eAllContents(Class) -> exists(c |hasStereotype(c, 'KafkaSink')))]
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringDeserializer;
+[/if]
+
+[if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource')))]
 import org.apache.spark.streaming.kafka010.*;
 [/if]
 
@@ -57,28 +63,24 @@ public class [aModel.name/] {
 [for (c:Class | aModel.eContents(Class)) ]
     [if hasStereotype(c, 'SocketSource')]  
 		[generateSparkSocketSource(c)/]
-
     [elseif hasStereotype(c, 'TextFileSource')]  
 		[generateSparkTextFileSource(c)/]
-
     [elseif hasStereotype(c, 'KafkaSource')]  
 		[generateSparkKafkaSource(c)/]
-
+    [elseif hasStereotype(c, 'KafkaSink')]  
+		[generateSparkKafkaSink(c)/]
     [elseif hasStereotype(c, 'MapOperation')]  
 		[generateSparkMapOperation(c)/]
-
+    [elseif hasStereotype(c, 'FilterOperation')]  
+		[generateSparkFilterOperation(c)/]
 	[elseif hasStereotype(c, 'FlatmapOperation')]
 		[generateSparkFlatmapOperation(c)/]
-
     [elseif hasStereotype(c, 'TextFileSink')]
 		[generateSparkTextFileSink(c)/]
-
     [elseif hasStereotype(c, 'CassandraSink')]
 		[generateSparkCassandraSink(c)/]
-
     [elseif hasStereotype(c, 'WindowOperation')]
 		[generateSparkWindowOperation(c)/]
-
     [elseif hasStereotype(c, 'SumOperation')]
 		[generateSparkSumOperation(c)/]
 	[else]

@@ -12,12 +12,12 @@
 [template public generateSparkKafkaSink(aClass : Class)]
 
 	   Map<String, Object> [aClass.name.toString().concat('_kafkaParams')/] = new HashMap<>();
-	   kafkaParams.put("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSink', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSink', 'kafkaBrokerPort')/]");
-	   kafkaParams.put("key.deserializer", StringDeserializer.class);
-	   kafkaParams.put("value.deserializer", StringDeserializer.class);
-	   kafkaParams.put("group.id", "[aClass.name.toString().concat('_groupId')/]");
-	   kafkaParams.put("auto.offset.reset", "latest");
-	   kafkaParams.put("enable.auto.commit", false);
+	   [aClass.name.toString().concat('_kafkaParams')/].put("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSink', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSink', 'kafkaBrokerPort')/]");
+	   [aClass.name.toString().concat('_kafkaParams')/].put("key.deserializer", StringDeserializer.class);
+	   [aClass.name.toString().concat('_kafkaParams')/].put("value.deserializer", StringDeserializer.class);
+	   [aClass.name.toString().concat('_kafkaParams')/].put("group.id", "[aClass.name.toString().concat('_groupId')/]");
+	   [aClass.name.toString().concat('_kafkaParams')/].put("auto.offset.reset", "latest");
+	   [aClass.name.toString().concat('_kafkaParams')/].put("enable.auto.commit", false);
 
        [getInputNames()->first()/].foreachRDD(rdd ->
        rdd.foreachPartition(partition -> {

@@ -15,16 +15,16 @@ import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
     [/if]
   [/for]
 
-import org.apache.spark.api.java.function.MapFunction;
+import org.apache.spark.api.java.function.Function;
 
 
-public class [aClass.name.toUpperFirst()/] implements MapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]>{
+public class [aClass.name.toUpperFirst()/] implements Function<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]>{
 
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public [getOutputsConveyed(aClass)->first()/] call([getInputsConveyed(aClass)->first()/] tuple) throws Exception {
-		return [getStereotypeProperty(aClass, 'MapOperation', 'mapFunction')/];
+		[getStereotypeProperty(aClass, 'MapOperation', 'mapFunction')/]
 	}
 
 }
@@ -91,7 +91,7 @@ public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<Tuple2<Str
 private static final long serialVersionUID = 1L;
 
 @Override
-public Iterator<WordCount> call(Tuple2<[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/], List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>> t) throws Exception {
+public Iterator<[getOutputsConveyed(aClass)->first()/]> call(Tuple2<[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('type').eGet('name')/], List<Tuple2<[getInputsConveyed(aClass)->first()/], Long>>> t) throws Exception {
 
 
 	List<[getInputsConveyed(aClass)->first()/]> windowContent = new  ArrayList<[getInputsConveyed(aClass)->first()/]>();

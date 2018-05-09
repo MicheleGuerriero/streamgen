@@ -29,3 +29,14 @@
 		[comment: the parallelism should be set only if it differes from the topology level parallelism. This applies to every operation./]
 		.setParallelism([getParallelism(aClass, 'TextFileSink')/]);
 [/template]
+
+[template public generateFlinkCsvFileSink(aClass : Class)
+	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	[input.eGet('name')/]
+		[if input.hasStereotype('KeyedStream') ]
+		.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+		[/if]
+		.writeAsText("[getStereotypeProperty(aClass, 'CsvFileSink', 'filepath')/]")
+		[comment: the parallelism should be set only if it differes from the topology level parallelism. This applies to every operation./]
+		.setParallelism([getParallelism(aClass, 'CsvFileSink')/]);
+[/template]
