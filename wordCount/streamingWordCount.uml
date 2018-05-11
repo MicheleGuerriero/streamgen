@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_i6afwFJZEei0LP_EkIm0dQ/82" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_i6afwFJZEei0LP_EkIm0dQ/82 ../profile/StreamUML.profile.uml#_i6fYQFJZEei0LP_EkIm0dQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84 ../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w">
   <uml:Model xmi:id="_u4upYGu-EeeNCPsCczzD3A" name="StreamingWordCount">
     <ownedComment xmi:type="uml:Comment" xmi:id="_W2RCcEcWEeivGM4wdwugiQ" annotatedElement="_TMmdQPhrEeeKSONCJjVf9A">
       <body>windowFunction= 
@@ -91,15 +91,15 @@ isSliding = false</body>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_VzcmcFDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_otmdkFLhEeiOxu-cmkz02w" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_otmdkVLhEeiOxu-cmkz02w" key="Version" value="0.0.83"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_otmdklLhEeiOxu-cmkz02w" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_otmdk1LhEeiOxu-cmkz02w" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_otmdlFLhEeiOxu-cmkz02w" key="Date" value="2018-05-08"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_otmdlVLhEeiOxu-cmkz02w" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_al-VAFUlEeib3NYz6vFYWQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VAVUlEeib3NYz6vFYWQ" key="Version" value="0.0.85"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VAlUlEeib3NYz6vFYWQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VA1UlEeib3NYz6vFYWQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VBFUlEeib3NYz6vFYWQ" key="Date" value="2018-05-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VBVUlEeib3NYz6vFYWQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vzd0kFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_i6fYQFJZEei0LP_EkIm0dQ"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
@@ -117,7 +117,5 @@ isSliding = false</body>
   <StreamUML:WindowOperation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;&#xA;for(WordToken token: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;out.collect(new WordCount(key,count,window.getEnd()));"/>
   <StreamUML:SocketSource xmi:id="_rit6MDiuEeiSL7MXnlGM-g" base_Class="_4EBUQGu-EeeNCPsCczzD3A" host="localhost" port="9999"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_u_-QoE2pEeiV5tji1c_ulg" base_InformationFlow="_Bg8hsGu_EeeNCPsCczzD3A"/>
-  <StreamUML:SparkApplication xmi:id="_NyiU8FDWEeiynfuxK6H26Q" base_Model="_u4upYGu-EeeNCPsCczzD3A">
-    <microBatchSize xmi:type="StreamUML:TimeAmount" xmi:id="_YoqiQFDcEei-4M06gcVJaA" size="2"/>
-  </StreamUML:SparkApplication>
+  <StreamUML:SparkApplication xmi:id="_hsqq4FUlEeib3NYz6vFYWQ" base_Model="_u4upYGu-EeeNCPsCczzD3A"/>
 </xmi:XMI>
