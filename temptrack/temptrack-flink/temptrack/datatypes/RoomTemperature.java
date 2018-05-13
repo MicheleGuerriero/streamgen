@@ -2,6 +2,9 @@ package temptrack.datatypes;
 
 import java.io.Serializable;
 
+import com.datastax.driver.mapping.annotations.Table;
+
+@Table(name = "RoomTemperature", keyspace = "TempTrack_ks")
 public class RoomTemperature implements Serializable{
 
     private String roomId;

@@ -4,24 +4,37 @@ import temptrack.datatypes.RoomTemperature;
 import temptrack.datatypes.RoomStatistics;
 import temptrack.datatypes.Room10MinAheadTempPrediction;
 
-import java.util.*;
+import org.apache.spark.api.java.function.FlatMapFunction;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-import org.apache.flink.api.java.tuple.Tuple;
-import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
-import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
-import org.apache.flink.util.Collector;
+import scala.Tuple2;
 
-public class ComputeRoomStatistics implements WindowFunction<RoomTemperature, RoomStatistics, Tuple, TimeWindow> {
+public class ComputeRoomStatistics implements FlatMapFunction<Tuple2<String, List<Tuple2<RoomTemperature, Long>>>,RoomStatistics>{
+
+private static final long serialVersionUID = 1L;
+
+@Override
+public Iterator<RoomStatistics> call(Tuple2<String, List<Tuple2<RoomTemperature, Long>>> t) throws Exception {
+
+
+	List<RoomTemperature> windowContent = new  ArrayList<RoomTemperature>();
 	
-	@Override
-	public void apply(Tuple key, TimeWindow window, Iterable<RoomTemperature> windowContentIterator, Collector<RoomStatistics> out) throws Exception {
-		
-		List<RoomTemperature> windowContent = new  ArrayList<RoomTemperature>();
-		for(RoomTemperature x: windowContentIterator){
-			windowContent.add(x);
-		}
-		
-		Long avgTemp = new Long(0);
+	for(Tuple2<RoomTemperature, Long> x: t._2) {
+		windowContent.add(x._1);
+	}
+
+	String key = t._1;
+	List<RoomStatistics> out= new ArrayList<RoomStatistics>();
+
+	Window window = new Window();
+	
+	window.setStart(t._2.get(0)._2);
+	window.setEnd(t._2.get(t._2.size())._2);
+
+	
+	Long avgTemp = new Long(0);
 Long maxTemp =  new Long(-9999);
 
 for(RoomTemperature r: windowContent){
@@ -33,8 +46,31 @@ for(RoomTemperature r: windowContent){
 
 avgTemp = avgTemp/windowContent.size();
 
-out.collect(new RoomStatistics(key.getField(0), avgTemp, maxTemp, window.getEnd()));
-	}
+out.add(new RoomStatistics(key, avgTemp, maxTemp, window.getEnd()));        
+	
+	return out.iterator();
+}
 
+private class Window {
+	private long startTime;
+	private long endTime;
+	
+	public long getEnd() {
+		return this.endTime;
+	}
+	
+	public long getStart() {
+		return this.startTime;
+	}
+	
+	public void setStart(long startTime) {
+		this.startTime = startTime;
+	}
+	
+	public void setEnd(long endTime) {
+		this.endTime = endTime;
+	}	
+	
+}
 
 }

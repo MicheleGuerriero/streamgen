@@ -17,7 +17,7 @@
 	[for (c:Class | aModel.eContents(Class)) ]
 		[if hasStereotype(c, 'StreamDatatype')]
 	    	[for (subc:Class | c.eContents(Class)) ]
-				[generateDatatype(subc)/]
+				[generateDatatype(subc, aModel)/]
 	    	[/for]
 	  	[/if]
 	[/for]

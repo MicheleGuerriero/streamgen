@@ -138,11 +138,11 @@ key=roomId</body>
     </window>
   </StreamUML:WindowedStream>
   <StreamUML:StreamDatatype xmi:id="_r7VVoOsqEeeFgI61BIgfhg" base_Class="_jPAUIOspEeeFgI61BIgfhg"/>
-  <StreamUML:CsvFileSink xmi:id="_Jr0nYEQWEei8PPfmmH1h8A" base_Class="_CwlHsOsuEeeFgI61BIgfhg" parallelism="3" filepath="/home/user/room-statistics.csv"/>
+  <StreamUML:CsvFileSink xmi:id="_Jr0nYEQWEei8PPfmmH1h8A" base_Class="_CwlHsOsuEeeFgI61BIgfhg" filepath="/home/utente/room-statistics.csv"/>
   <StreamUML:FilterOperation xmi:id="_4zZ78EQZEei8PPfmmH1h8A" base_Class="_L9fIAEQWEei8PPfmmH1h8A" parallelism="3" filteringCondition="tuple.getTemperature() &lt; 9999 &amp; &#xA;tuple.getTemperature() > -9999 &amp; &#xA;tuple.getTemperature() != null  &amp;&#xA;tuple.getRoomId() !=  null"/>
   <StreamUML:CassandraSink xmi:id="_8ZuiYEQZEei8PPfmmH1h8A" base_Class="_Nc4eMEQWEei8PPfmmH1h8A" cassandraHost="localhost"/>
   <StreamUML:KafkaSink xmi:id="_Bo7yMEQaEei8PPfmmH1h8A" base_Class="_XxqOwEQYEei8PPfmmH1h8A" kafkaBrokerIp="localhost"/>
-  <StreamUML:FilterOperation xmi:id="_X87_wEQaEei8PPfmmH1h8A" base_Class="_Koji0OspEeeFgI61BIgfhg"/>
+  <StreamUML:FilterOperation xmi:id="_X87_wEQaEei8PPfmmH1h8A" base_Class="_Koji0OspEeeFgI61BIgfhg" filteringCondition="tuple.getMaxTemp() > 65"/>
   <StreamUML:WindowOperation xmi:id="_nUpwoEQaEei8PPfmmH1h8A" base_Class="_lOomsEQXEei8PPfmmH1h8A" windowFunction="&#x9;&#x9;int[] x = new int[windowContent.size()];&#xA;&#x9;&#x9;long[] y = new long[windowContent.size()];&#xA;&#xA;&#x9;&#x9;int j = 0;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;for(RoomStatistics rs: windowContent) {&#xA;&#x9;&#x9;&#x9;y[j] = rs.getAvgTemp();&#xA;&#x9;&#x9;&#x9;x[j] = j + 1;&#xA;&#x9;&#x9;&#x9;j = j + 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;    int N;&#xA;&#x9;    double alpha, beta;&#xA;&#x9;    double R2;&#xA;&#x9;    double svar, svar0, svar1;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (x.length != y.length) {&#xA;            throw new IllegalArgumentException(&quot;array lengths are not equal&quot;);&#xA;        }&#xA;        N = x.length;&#xA;&#xA;        // first pass&#xA;        double sumx = 0.0, sumy = 0.0, sumx2 = 0.0;&#xA;        for (int i = 0; i &lt; N; i++) sumx  += x[i];&#xA;        for (int i = 0; i &lt; N; i++) sumx2 += x[i]*x[i];&#xA;        for (int i = 0; i &lt; N; i++) sumy  += y[i];&#xA;        double xbar = sumx / N;&#xA;        double ybar = sumy / N;&#xA;&#xA;        // second pass: compute summary statistics&#xA;        double xxbar = 0.0, yybar = 0.0, xybar = 0.0;&#xA;        for (int i = 0; i &lt; N; i++) {&#xA;            xxbar += (x[i] - xbar) * (x[i] - xbar);&#xA;            yybar += (y[i] - ybar) * (y[i] - ybar);&#xA;            xybar += (x[i] - xbar) * (y[i] - ybar);&#xA;        }&#xA;        beta  = xybar / xxbar;&#xA;        alpha = ybar - beta * xbar;&#xA;&#xA;        // more statistical analysis&#xA;        double rss = 0.0;      // residual sum of squares&#xA;        double ssr = 0.0;      // regression sum of squares&#xA;        for (int i = 0; i &lt; N; i++) {&#xA;            double fit = beta*x[i] + alpha;&#xA;            rss += (fit - y[i]) * (fit - y[i]);&#xA;            ssr += (fit - ybar) * (fit - ybar);&#xA;        }&#xA;&#xA;        int degreesOfFreedom = N-2;&#xA;        R2    = ssr / yybar;&#xA;        svar  = rss / degreesOfFreedom;&#xA;        svar1 = svar / xxbar;&#xA;        svar0 = svar/N + xbar*xbar*svar1;&#xA;        &#xA;        out.collect(new Room10MinAheadTempPrediction(key, new Double(beta*(windowContent.size()+5) + alpha).longValue()));&#xA;&#x9;&#x9;"/>
   <StreamUML:KeyedStream xmi:id="_DQdUMEQbEei8PPfmmH1h8A" base_InformationFlow="_PiVu0EQWEei8PPfmmH1h8A" key="_w7OzkOspEeeFgI61BIgfhg"/>
   <StreamUML:KeyedStream xmi:id="_KPyd0EQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
@@ -162,5 +162,6 @@ key=roomId</body>
   </StreamUML:WindowedStream>
   <StreamUML:SocketSource xmi:id="_mMhYYFMXEeiOxu-cmkz02w" base_Class="_eM3aMFMXEeiOxu-cmkz02w" host="localhost" port="9999"/>
   <StreamUML:NonParallelStream xmi:id="_q0g3MFMXEeiOxu-cmkz02w" base_InformationFlow="_iy6_UFMXEeiOxu-cmkz02w"/>
-  <StreamUML:FlinkApplication xmi:id="_2CEJMFMhEeiOxu-cmkz02w" base_Model="_4lHykOsoEeeFgI61BIgfhg"/>
+  <StreamUML:FlinkApplication xmi:id="_4Cbt0FU3Eeib3NYz6vFYWQ"/>
+  <StreamUML:SparkApplication xmi:id="_ypJiYFafEeib3NYz6vFYWQ" base_Model="_4lHykOsoEeeFgI61BIgfhg"/>
 </xmi:XMI>

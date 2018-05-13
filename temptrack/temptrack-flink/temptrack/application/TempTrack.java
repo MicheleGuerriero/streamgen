@@ -43,7 +43,7 @@ public class TempTrack {
 		
 			DataStream<RoomStatistics> criticalTemperatures = roomStatistics
 		      	.keyBy("roomId")
-				.filter((RoomStatistics tuple) -> true)
+				.filter((RoomStatistics tuple) -> tuple.getMaxTemp() > 65)
 				;
 		
 			FlinkKafkaProducer010<String> ReportCriticalTemperature_producer = new FlinkKafkaProducer010<String>(
@@ -53,8 +53,8 @@ public class TempTrack {
 		
 			 criticalTemperatures.map((RoomStatistics x) -> x.toString()).addSink(ReportCriticalTemperature_producer);
 			roomStatistics
-				.writeAsText("/home/user/room-statistics.csv")
-				.setParallelism(3);
+				.writeAsText("/home/utente/room-statistics.csv")
+				.setParallelism(1);
 			DataStream<RoomTemperature> cleanedData = parsedTemperatures
 		      	.keyBy("roomId")
 				.filter((RoomTemperature tuple) -> tuple.getTemperature() < 9999 & 

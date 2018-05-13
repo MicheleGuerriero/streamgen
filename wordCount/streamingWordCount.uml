@@ -117,5 +117,5 @@ isSliding = false</body>
   <StreamUML:WindowOperation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;&#xA;for(WordToken token: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;out.collect(new WordCount(key,count,window.getEnd()));"/>
   <StreamUML:SocketSource xmi:id="_rit6MDiuEeiSL7MXnlGM-g" base_Class="_4EBUQGu-EeeNCPsCczzD3A" host="localhost" port="9999"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_u_-QoE2pEeiV5tji1c_ulg" base_InformationFlow="_Bg8hsGu_EeeNCPsCczzD3A"/>
-  <StreamUML:SparkApplication xmi:id="_hsqq4FUlEeib3NYz6vFYWQ" base_Model="_u4upYGu-EeeNCPsCczzD3A"/>
+  <StreamUML:FlinkApplication xmi:id="_xqBC8FUmEeib3NYz6vFYWQ" base_Model="_u4upYGu-EeeNCPsCczzD3A"/>
 </xmi:XMI>

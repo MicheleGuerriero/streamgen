@@ -1,13 +1,18 @@
 [comment encoding = UTF-8 /]
 [module generateDataTypes('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+[import streamgen::main::queryUtils /]
 
-
-[template public generateDatatype(aClass : Class)]
+[template public generateDatatype(aClass : Class, aModel: Model)]
 [file (aClass.getModel().name.toLower().concat('/datatypes/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.datatypes')/];
 
 import java.io.Serializable;
 
+[if hasStereotype(aModel, 'FlinkApplication') and aModel.eContents(Class)-> exists(c | hasStereotype(c, 'CassandraSink') and (getInputsConveyed(c)-> first() = aClass.name))]
+import com.datastax.driver.mapping.annotations.Table;
+
+@Table(name = "[aClass.name/]", keyspace = "[aModel.name.concat('_ks')/]")
+[/if]
 public class [aClass.name/] implements Serializable{
 
   [for (p: Property | aClass.attribute) separator('\n')]
