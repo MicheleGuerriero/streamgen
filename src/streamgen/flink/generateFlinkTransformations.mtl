@@ -85,21 +85,21 @@
       	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
       	[/if] 
 		[if input.hasStereotype('WindowedStream') ] [comment -- this should be actually guaranteed by the OCL constraint. /]
-            [if input.getStereotypeProperty('WindowedDataStream', 'isSessionInEventTime').toString().toBoolean() = true]
+            [if input.getStereotypeProperty('WindowedStream', 'window').eGet('isSessionInEventTime').toString().toBoolean() = true]
 		.timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](EventTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
-			[elseif input.getStereotypeProperty('WindowedStream', 'isSessionInProcessingTime').toString().toBoolean() = true]
+			[elseif input.getStereotypeProperty('WindowedStream', 'window').eGet('isSessionInProcessingTime').toString().toBoolean() = true]
         .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](ProcesingTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
             [else]
-              [if input.getStereotypeProperty('WindowedStream', 'isSliding').toString().toBoolean() = false]
+              [if input.getStereotypeProperty('WindowedStream', 'window').eGet('isSliding').toString().toBoolean() = false]
         .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]))
               [else]
         .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]),Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('size')/]))          
               [/if]
             [/if]
       	[/if] 
-		.sum("[getStereotypeProperty(aClass, 'SumOperation', 'field')/]")
-		[if getParallelism(aClass, 'WindowOperation') > 1 ]
-		.setParallelism([getParallelism(aClass, 'WindowOperation')/]);
+		.sum("[getStereotypeProperty(aClass, 'SumOperation', 'field').eGet('name')/]")
+		[if getParallelism(aClass, 'SumOperation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'SumOperation')/]);
 		[else]
 		;
 		[/if]  

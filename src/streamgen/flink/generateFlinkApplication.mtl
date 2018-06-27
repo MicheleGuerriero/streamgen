@@ -16,7 +16,7 @@ package [aModel.name.toLower().concat('.application')/];
      [for (subc:Class | c.eContents(Class)) ]
 import [aModel.name.toLower()/].datatypes.[subc.name/];
     [/for]
-  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Operation') and not (s.name = 'FilterOperation'))]
+  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Operation') and not (s.name = 'FilterOperation') and not (s.name = 'SumOperation'))]
 import [aModel.name.toLower()/].functions.[c.name/];
   [/if]
 [/for]

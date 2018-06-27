@@ -7,6 +7,7 @@
 package [aClass.getModel().name.toLower().concat('.datatypes')/];
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 
 [if hasStereotype(aModel, 'FlinkApplication') and aModel.eContents(Class)-> exists(c | hasStereotype(c, 'CassandraSink') and (getInputsConveyed(c)-> first() = aClass.name))]
 import com.datastax.driver.mapping.annotations.Table;
@@ -18,6 +19,16 @@ public class [aClass.name/] implements Serializable{
   [for (p: Property | aClass.attribute) separator('\n')]
     private [p.type.name.substitute('ELong', 'Long')/] [p.name/];
   [/for]
+
+	private String tupleId;
+
+	public String getTupleId() {
+		return this.tupleId;
+	}
+	
+	public void getTupleId(String tupleId) {
+		this.tupleId = tupleId;
+	}
  
     public [aClass.name/]() {
 
@@ -43,6 +54,30 @@ public class [aClass.name/] implements Serializable{
     public String toString() {
         return "(" + [for (p: Property | aClass.attribute) separator(' + "," + ')]this.[p.name/][/for] + ")";
     }
+
+	@Override
+	public int hashCode() {
+		return this.tupleId.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		Field t;
+		try {
+			t = other.getClass().getDeclaredField("tupleId");
+			t.setAccessible(true);
+			return this.tupleId.equals((String) t.get(other));
+		} catch (NoSuchFieldException | SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+
+	}
 
 }
 [/file]
