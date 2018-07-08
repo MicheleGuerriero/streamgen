@@ -36,6 +36,21 @@
 	</repositories>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.17</version>
+		</dependency>
+		<dependency>
+			<groupId>it.deib.polimi.diaprivacy</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>it.deib.polimi.diaprivacy</groupId>
+			<artifactId>dia-privacy-library</artifactId>
+			<version>0.1</version>
+		</dependency>
 		<!-- Apache Flink dependencies -->
 		<dependency>
 			<groupId>org.apache.flink</groupId>

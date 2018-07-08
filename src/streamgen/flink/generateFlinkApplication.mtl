@@ -24,8 +24,21 @@ import [aModel.name.toLower()/].functions.[c.name/];
 import java.util.concurrent.TimeUnit;
 import org.apache.flink.api.common.JobExecutionResult;
 import org.apache.flink.streaming.api.datastream.DataStream;
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
+
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import org.yaml.snakeyaml.Yaml;
+import it.deib.polimi.diaprivacy.model.*;
+import it.deib.polimi.diaprivacy.library.*;
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.Socket;
 
 [if (aModel.eAllContents(Class) -> exists(c | hasStereotype(c, 'KafkaSource') or hasStereotype(c, 'KafkaSink')))]
 import org.apache.flink.streaming.connectors.kafka.*;
@@ -44,9 +57,52 @@ public class [aModel.name/] {
 
        final StreamExecutionEnvironment env = StreamExecutionEnvironment
                .getExecutionEnvironment();
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(args['['/]0[']'/]));
+
+		String timestampServerIp = prop.getProperty("timestampServerIp");
+		String pathToResultFolder = prop.getProperty("pathToResultFolder");
+		Integer timestampServerPort = Integer.parseInt(prop.getProperty("timestampServerPort"));
+		Boolean privacyOn = Boolean.parseBoolean(prop.getProperty("privacyOn"));
+		Integer allowedLateness = Integer.parseInt(prop.getProperty("allowedLateness"));
+		Integer bufferTimeout = Integer.parseInt(prop.getProperty("bufferTimeout"));
+		Integer topologyParallelism = Integer.parseInt(prop.getProperty("topologyParallelism"));
+		Boolean simulateRealisticScenario = Boolean.parseBoolean(prop.getProperty("simulateRealisticScenario"));
+
        
+		//optional properties for random sources
+		Integer minIntervalBetweenTransactions = Integer.parseInt(prop.getProperty("minIntervalBetweenTransactions"));
+		Integer maxIntervalBetweenTransactions = Integer.parseInt(prop.getProperty("maxIntervalBetweenTransactions"));
+		Integer nTuples = Integer.parseInt(prop.getProperty("nTuples"));
+		Integer nDataSubject = Integer.parseInt(prop.getProperty("nDataSubject"));
+		Integer minIntervalBetweenContextSwitch = Integer.parseInt(prop.getProperty("minIntervalBetweenContextSwitch"));
+		Integer maxIntervalBetweenContextSwitch = Integer.parseInt(prop.getProperty("maxIntervalBetweenContextSwitch"));
+		Integer nContextSwitch = Integer.parseInt(prop.getProperty("nContextSwitch"));
+		Boolean isNanoSeconds = Boolean.parseBoolean(prop.getProperty("isNanoSeconds"));
+		Integer minDelay = Integer.parseInt(prop.getProperty("minDelay"));
+		Integer maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
+		Integer initialDelay = 0;
+		Boolean notNanoSeconds = false;
+		Integer minContent = 50;
+		Integer maxContent = 200;
+		Integer sleepBeforeFinish = 5000;
+		////////////////////////////////////////
+
        //uncomment the below if you want to set the default parallelism for the project.
-       //env.setParallelism(1);
+       //env.setParallelism(topologyParallelism);
+		env.setBufferTimeout(Integer.parseInt(prop.getProperty("bufferTimeout")));
+
+		/// privacy init
+		Yaml yaml = new Yaml();
+
+		String content = FileUtils.readFileToString(
+				new File("/home/utente/eclipse-workspace/policySyntesizer/src/example1.yml"), "UTF-8");
+
+		ApplicationPrivacy app = yaml.loadAs(content, ApplicationPrivacy.class);
+
+		DataStreamSource<PrivacyContext> contextStream = env.addSource(new PrivacyContextFixedSource(0, 2000));
+
 
 [for (c:Class | aModel.eContents(Class)) ]
 	[if hasStereotype(c, 'SocketSource')]
@@ -78,7 +134,11 @@ public class [aModel.name/] {
 
        JobExecutionResult result = env.execute();
        System.out.println("EXECUTION TIME: " + result.getNetRuntime(TimeUnit.SECONDS));
-
+	   Socket s = new Socket(InetAddress.getByName(timestampServerIp), timestampServerPort);
+	
+	   PrintStream socketWriter = new PrintStream(s.getOutputStream());
+	   socketWriter.println("jobEnd");
+	   s.close();
     }
 }
 [/file]

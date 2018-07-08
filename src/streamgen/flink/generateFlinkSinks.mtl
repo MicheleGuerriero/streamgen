@@ -21,6 +21,30 @@
 
 [template public generateFlinkTextFileSink(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	[if (aClass.getTargetDirectedRelationships()->asSequence() -> collect(r | r.eGet('conveyed'))->first().oclAsType(Class).attribute -> exists(a | a.name= 'dataSubject'))]
+	ProtectedStream<SubjectSpecific> [input.eGet('name')/]_p = new ProtectedStream<SubjectSpecific>(timestampServerIp,
+			timestampServerPort, topologyParallelism, simulateRealisticScenario, allowedLateness);
+	[input.eGet('name')/]_p.setStreamToProtect((DataStream<SubjectSpecific>) app.getStreamByID("[input.eGet('name')/]").getConcreteStream());
+
+	//////////////
+	[input.eGet('name')/]_p.addGeneralizationFunction("content", new Integer(1), new GeneralizationFunction());
+	//////////////
+
+	for (VCP vcp : app.getVCPs(app.getStreamByID("[input.eGet('name')/]").getId())) {
+		[input.eGet('name')/]_p.addVCP(app.getStreamByID("[input.eGet('name')/]"), (VCP) vcp, app);
+	}
+
+	for (DSEP dsep : app.getDSEPs(app.getStreamByID("[input.eGet('name')/]").getId())) {
+		[input.eGet('name')/]_p.addDSEP(app.getStreamByID("[input.eGet('name')/]"), (DSEP) dsep, app);
+	}
+	[input.eGet('name')/]_p.finalize(env, contextStream)
+		[if input.hasStereotype('KeyedStream') ]
+		.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+		[/if]
+		.writeAsText("[getStereotypeProperty(aClass, 'TextFileSink', 'filepath')/]")
+		[comment: the parallelism should be set only if it differes from the topology level parallelism. This applies to every operation./]
+		.setParallelism([getParallelism(aClass, 'TextFileSink')/]);
+	[else]
 	[input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
 		.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
@@ -28,6 +52,8 @@
 		.writeAsText("[getStereotypeProperty(aClass, 'TextFileSink', 'filepath')/]")
 		[comment: the parallelism should be set only if it differes from the topology level parallelism. This applies to every operation./]
 		.setParallelism([getParallelism(aClass, 'TextFileSink')/]);
+	[/if]
+
 [/template]
 
 [template public generateFlinkCsvFileSink(aClass : Class)

@@ -15,6 +15,8 @@
 		[else]
 		;
 		[/if]
+	app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
+
 [/template]
 
 [template public generateFlinkFlatmapOperation(aClass : Class)
@@ -29,6 +31,7 @@
 		[else]
 		;
 		[/if]
+	app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
 [/template]
 
 [template public generateFlinkReduceOperation(aClass : Class)]
@@ -46,6 +49,7 @@
 		[else]
 		;
 		[/if]
+	app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
 [/template]
 
 [template public generateFlinkJoinOperation(aClass : Class)]
@@ -76,10 +80,51 @@
 		[else]
 		;
 		[/if]
+	app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
 [/template]
 
 [template public generateFlinkSumOperation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
+	[if (aClass.getModel().eAllContents(Class) -> select(c | hasStereotype(c, 'TextFileSink')) 
+		-> exists(s | getInputNames(s) -> first() = getOutputNames(aClass) -> first()))]
+	ProtectedStream<[getInputsConveyed(aClass)->first()/]> [getInputNames(aClass)->first()/]_evicted = new ProtectedStream<[getInputsConveyed(aClass)->first()/]>(timestampServerIp,
+			timestampServerPort, topologyParallelism, simulateRealisticScenario, allowedLateness);
+	[getInputNames(aClass)->first()/]_evicted.setStreamToProtect([getInputNames(aClass)->first()/]);
+
+	for (PrivacyPolicy p : app.getDSEPs(app.getStreamByID("[getOutputNames(aClass)->first()/]").getId())) {
+		if (p instanceof DSEP) {
+			if (!app.getStreamByID("[getOutputNames(aClass)->first()/]").getIsSubjectSpecific()) {
+				[getInputNames(aClass)->first()/]_evicted.addDSEP(app.getStreamByID("[getInputNames(aClass)->first()/]"), (DSEP) p, app);
+			}
+		}
+	}
+
+	DataStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] = [getInputNames(aClass)->first()/]_evicted.finalize(env, contextStream)
+		[if input.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
+      	[/if] 
+		[if input.hasStereotype('WindowedStream') ] [comment -- this should be actually guaranteed by the OCL constraint. /]
+            [if input.getStereotypeProperty('WindowedStream', 'window').eGet('isSessionInEventTime').toString().toBoolean() = true]
+		.timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](EventTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
+			[elseif input.getStereotypeProperty('WindowedStream', 'window').eGet('isSessionInProcessingTime').toString().toBoolean() = true]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](ProcesingTimeSessionWindows.withGap(Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/])))
+            [else]
+              [if input.getStereotypeProperty('WindowedStream', 'window').eGet('isSliding').toString().toBoolean() = false]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]))
+              [else]
+        .timeWindow[if input.hasStereotype('NonParallelStream')]All[/if](Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('size').eGet('size')/]),Time.[input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([input.getStereotypeProperty('WindowedStream', 'window').eGet('slideSize').eGet('size')/]))          
+              [/if]
+            [/if]
+      	[/if] 
+		.sum("[getStereotypeProperty(aClass, 'SumOperation', 'field').eGet('name')/]")
+		[if getParallelism(aClass, 'SumOperation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'SumOperation')/]);
+		[else]
+		;
+		[/if]  
+
+	app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
+	[else]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
       	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
@@ -103,4 +148,6 @@
 		[else]
 		;
 		[/if]  
+	app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
+	[/if]
 [/template]

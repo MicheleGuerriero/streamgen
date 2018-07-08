@@ -797,6 +797,10 @@
         <element xmi:type="uml:Property" href="StreamUML.profile.uml#_QfMbMEbgEeieDcvpuGy5mg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Qf0GQUbgEeieDcvpuGy5mg"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_oXukUHoqEei9E7s9svCRxw" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="StreamUML.profile.uml#_oW9vUHoqEei9E7s9svCRxw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_oXukUXoqEei9E7s9svCRxw"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_PCXQ0UbgEeieDcvpuGy5mg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_PCXQ0kbgEeieDcvpuGy5mg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_PCXQ00bgEeieDcvpuGy5mg"/>

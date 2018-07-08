@@ -5,6 +5,7 @@
 
 [template public generateFlinkSocketSource(aClass : Class)]
 		DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass) ->first()/] = env.socketTextStream("[getStereotypeProperty(aClass, 'SocketSource', 'host')/]", [getStereotypeProperty(aClass, 'SocketSource', 'port')/]);
+		app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
 [/template]
 
 [template public generateFlinkTextFileSource(aClass : Class)]
@@ -14,6 +15,8 @@
 			[else]
 			;
 			[/if]
+		app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
+
 [/template]
 
 [template public generateFlinkKafkaSource(aClass : Class)]
@@ -22,4 +25,5 @@
 		properties.setProperty("group.id", "[aClass.name.toString().concat('_groupId')/]");
 		DataStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = env
 			.addSource(new FlinkKafkaConsumer010<>("[aClass.name.toString()/]", new SimpleStringSchema(), [aClass.name.toString().concat('_kafkaParams')/]));
+		app.getStreamByID("[getOutputNames(aClass)->first()/]").setConcreteStream([getOutputNames(aClass)->first()/]);
 [/template]
