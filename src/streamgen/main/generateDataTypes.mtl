@@ -22,12 +22,33 @@ public class [aClass.name/] implements Serializable{
 
 	private String tupleId;
 
+	private Long eventTime;
+
+	private String streamId;
+
+	public Long getEventTime() {
+		return this.eventTime;
+	}
+	
+	public void setEventTime(Long eventTime) {
+		this.eventTime = eventTime;
+	}
+ 
+
 	public String getTupleId() {
 		return this.tupleId;
 	}
 	
-	public void getTupleId(String tupleId) {
+	public void setTupleId(String tupleId) {
 		this.tupleId = tupleId;
+	}
+
+	public String getStreamId() {
+		return this.streamId;
+	}
+	
+	public void setStreamId(String streamId) {
+		this.streamId = streamId;
 	}
  
     public [aClass.name/]() {
@@ -49,10 +70,18 @@ public class [aClass.name/] implements Serializable{
         this.[p.name/] = [p.name/];
     }
     [/for]
- 
+
     @Override
     public String toString() {
-        return "(" + [for (p: Property | aClass.attribute) separator(' + "," + ')]this.[p.name/][/for] + ")";
+    	
+    	StringBuilder sb = new StringBuilder();
+    	
+        sb.append("@" + this.eventTime);
+        sb.append(" " + this.streamId+ " (");
+		sb.append([for (p: Property | aClass.attribute) separator(' + "," + ')]this.[p.name/][/for] );
+        sb.append(")");
+        
+        return sb.toString();
     }
 
 	@Override
