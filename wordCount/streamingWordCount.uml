@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84 ../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_N31u0ITjEei9Rsf_rXDXjw/92" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_N31u0ITjEei9Rsf_rXDXjw/92 ../profile/StreamUML.profile.uml#_N32V4ITjEei9Rsf_rXDXjw">
   <uml:Model xmi:id="_u4upYGu-EeeNCPsCczzD3A" name="StreamingWordCount">
-    <ownedComment xmi:type="uml:Comment" xmi:id="_W2RCcEcWEeivGM4wdwugiQ" annotatedElement="_TMmdQPhrEeeKSONCJjVf9A">
-      <body>windowFunction= 
+    <packagedElement xmi:type="uml:Model" xmi:id="_MYzxwITzEei9Rsf_rXDXjw" name="StreaminWordCount">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_XLLigEcWEeivGM4wdwugiQ" annotatedElement="_-GaUgGu-EeeNCPsCczzD3A">
+        <body>filepath=/home/user/wordCounts.csv
+parallelism=1</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_RgPmwE2qEeiV5tji1c_ulg" annotatedElement="_C8_B4Gu_EeeNCPsCczzD3A">
+        <body>key=word</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_W2RCcEcWEeivGM4wdwugiQ" annotatedElement="_TMmdQPhrEeeKSONCJjVf9A">
+        <body>windowFunction= 
 &quot;int count = 0;
 for(WordToken token: windowContent){
 count++;
@@ -10,18 +18,17 @@ count++;
 out.collect(new WordCount(key,count,window.getEnd()));&quot;
 parallelism=4
 </body>
-    </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_XLLigEcWEeivGM4wdwugiQ" annotatedElement="_-GaUgGu-EeeNCPsCczzD3A">
-      <body>filepath=/home/user/wordCounts.csv
-parallelism=1</body>
-    </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_XdezcEcWEeivGM4wdwugiQ" annotatedElement="_4EBUQGu-EeeNCPsCczzD3A">
-      <body>host=localhost
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_XdezcEcWEeivGM4wdwugiQ" annotatedElement="_4EBUQGu-EeeNCPsCczzD3A">
+        <body>host=localhost
 port=9999
 parallelism=1</body>
-    </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_jroLUEcWEeivGM4wdwugiQ" annotatedElement="_6TGa8Gu-EeeNCPsCczzD3A">
-      <body>flatmapFunction=String [] words = 
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KHPY4E2qEeiV5tji1c_ulg" annotatedElement="_Bg8hsGu_EeeNCPsCczzD3A">
+        <body>partitioningDistribution=Uniform</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_jroLUEcWEeivGM4wdwugiQ" annotatedElement="_6TGa8Gu-EeeNCPsCczzD3A">
+        <body>flatmapFunction=String [] words = 
 &quot;tuple.split(&quot; &quot;);
 for(String word: words){
 out.collect(new WordToken(word,1));
@@ -29,48 +36,47 @@ out.collect(new WordToken(word,1));
 parallelism = 4
 
 </body>
-    </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_KHPY4E2qEeiV5tji1c_ulg" annotatedElement="_Bg8hsGu_EeeNCPsCczzD3A">
-      <body>partitioningDistribution=Uniform</body>
-    </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_RgPmwE2qEeiV5tji1c_ulg" annotatedElement="_C8_B4Gu_EeeNCPsCczzD3A">
-      <body>key=word</body>
-    </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_XamsYE2qEeiV5tji1c_ulg" annotatedElement="_Ck21wGu_EeeNCPsCczzD3A">
-      <body>key=word
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_XamsYE2qEeiV5tji1c_ulg" annotatedElement="_Ck21wGu_EeeNCPsCczzD3A">
+        <body>key=word
 windowSize = 3 Minutes
 isSliding = false</body>
-    </ownedComment>
-    <packagedElement xmi:type="uml:Class" xmi:id="_1TyoUGu-EeeNCPsCczzD3A" name="SocketWordCountDataTypes">
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_3N1TIGu-EeeNCPsCczzD3A" name="WordCount" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_d_Y4QGu_EeeNCPsCczzD3A" name="word">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_foBqAGu_EeeNCPsCczzD3A" name="count">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="__ACA0PhrEeeKSONCJjVf9A" name="timestamp">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
-        </ownedAttribute>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_GgUicPhsEeeKSONCJjVf9A" name="WordToken">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_LBjR8PhsEeeKSONCJjVf9A" name="word">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_M8c4YPhsEeeKSONCJjVf9A" name="token">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </ownedAttribute>
-      </nestedClassifier>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_XGIlMIT1Eei9Rsf_rXDXjw" annotatedElement="_MYzxwITzEei9Rsf_rXDXjw">
+        <body>applicationParallelism=4
+latencyTrackingEnabled = false</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Class" xmi:id="_4EBUQGu-EeeNCPsCczzD3A" name="TextLineDataSource"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Bg8hsGu_EeeNCPsCczzD3A" name="text" informationSource="_4EBUQGu-EeeNCPsCczzD3A" informationTarget="_6TGa8Gu-EeeNCPsCczzD3A">
+        <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6TGa8Gu-EeeNCPsCczzD3A" name="LineSplitter"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Ck21wGu_EeeNCPsCczzD3A" name="tokens" conveyed="_GgUicPhsEeeKSONCJjVf9A" informationSource="_6TGa8Gu-EeeNCPsCczzD3A" informationTarget="_TMmdQPhrEeeKSONCJjVf9A"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_TMmdQPhrEeeKSONCJjVf9A" name="WordCounter"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_C8_B4Gu_EeeNCPsCczzD3A" name="counts" conveyed="_3N1TIGu-EeeNCPsCczzD3A" informationSource="_TMmdQPhrEeeKSONCJjVf9A" informationTarget="_-GaUgGu-EeeNCPsCczzD3A"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-GaUgGu-EeeNCPsCczzD3A" name="CountsFileWriter"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_1TyoUGu-EeeNCPsCczzD3A" name="SocketWordCountDataTypes">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_3N1TIGu-EeeNCPsCczzD3A" name="WordCount" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_d_Y4QGu_EeeNCPsCczzD3A" name="word">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_foBqAGu_EeeNCPsCczzD3A" name="count">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__ACA0PhrEeeKSONCJjVf9A" name="timestamp">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+          </ownedAttribute>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_GgUicPhsEeeKSONCJjVf9A" name="WordToken">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_LBjR8PhsEeeKSONCJjVf9A" name="word">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_M8c4YPhsEeeKSONCJjVf9A" name="token">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedAttribute>
+        </nestedClassifier>
+      </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_4EBUQGu-EeeNCPsCczzD3A" name="TextLineDataSource"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_6TGa8Gu-EeeNCPsCczzD3A" name="LineSplitter"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Bg8hsGu_EeeNCPsCczzD3A" name="text" informationSource="_4EBUQGu-EeeNCPsCczzD3A" informationTarget="_6TGa8Gu-EeeNCPsCczzD3A">
-      <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Ck21wGu_EeeNCPsCczzD3A" name="tokens" conveyed="_GgUicPhsEeeKSONCJjVf9A" informationSource="_6TGa8Gu-EeeNCPsCczzD3A" informationTarget="_TMmdQPhrEeeKSONCJjVf9A"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_C8_B4Gu_EeeNCPsCczzD3A" name="counts" conveyed="_3N1TIGu-EeeNCPsCczzD3A" informationSource="_TMmdQPhrEeeKSONCJjVf9A" informationTarget="_-GaUgGu-EeeNCPsCczzD3A"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_TMmdQPhrEeeKSONCJjVf9A" name="WordCounter"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_-GaUgGu-EeeNCPsCczzD3A" name="CountsFileWriter"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yfPdEGu-EeeNCPsCczzD3A">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2LTZcE2qEeiV5tji1c_ulg" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2LTZcU2qEeiV5tji1c_ulg" key="Version" value="0.0.77"/>
@@ -91,15 +97,15 @@ isSliding = false</body>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_VzcmcFDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_al-VAFUlEeib3NYz6vFYWQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VAVUlEeib3NYz6vFYWQ" key="Version" value="0.0.85"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VAlUlEeib3NYz6vFYWQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VA1UlEeib3NYz6vFYWQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VBFUlEeib3NYz6vFYWQ" key="Date" value="2018-05-09"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_al-VBVUlEeib3NYz6vFYWQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yLmeAITyEei9Rsf_rXDXjw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yLmeAYTyEei9Rsf_rXDXjw" key="Version" value="0.0.93"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yLmeAoTyEei9Rsf_rXDXjw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yLmeA4TyEei9Rsf_rXDXjw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yLmeBITyEei9Rsf_rXDXjw" key="Date" value="2018-07-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yLmeBYTyEei9Rsf_rXDXjw" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vzd0kFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_N32V4ITjEei9Rsf_rXDXjw"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
@@ -117,5 +123,5 @@ isSliding = false</body>
   <StreamUML:WindowOperation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;&#xA;for(WordToken token: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;out.collect(new WordCount(key,count,window.getEnd()));"/>
   <StreamUML:SocketSource xmi:id="_rit6MDiuEeiSL7MXnlGM-g" base_Class="_4EBUQGu-EeeNCPsCczzD3A" host="localhost" port="9999"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_u_-QoE2pEeiV5tji1c_ulg" base_InformationFlow="_Bg8hsGu_EeeNCPsCczzD3A"/>
-  <StreamUML:FlinkApplication xmi:id="_xqBC8FUmEeib3NYz6vFYWQ" base_Model="_u4upYGu-EeeNCPsCczzD3A"/>
+  <StreamUML:FlinkApplication xmi:id="_OyDEkIT0Eei9Rsf_rXDXjw" base_Model="_MYzxwITzEei9Rsf_rXDXjw"/>
 </xmi:XMI>
