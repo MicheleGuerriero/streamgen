@@ -488,6 +488,11 @@
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q4NrclMXEeiOxu-cmkz02w" x="340" y="300"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_RBzh0INhEeirb_Ff9JRTsw" type="Comment_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_RB1XAINhEeirb_Ff9JRTsw" type="Comment_BodyLabel"/>
+    <element xmi:type="uml:Comment" href="temptrack.uml#_RBjqMINhEeirb_Ff9JRTsw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RBzh0YNhEeirb_Ff9JRTsw" x="340" y="500" height="41"/>
+  </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_8Bo8wesoEeeFgI61BIgfhg" name="diagram_compatibility_version" stringValue="1.3.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_8Bo8wusoEeeFgI61BIgfhg"/>
   <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_8Bo8w-soEeeFgI61BIgfhg" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
@@ -906,5 +911,12 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q4NrdlMXEeiOxu-cmkz02w" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q4Nrd1MXEeiOxu-cmkz02w"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q4NreFMXEeiOxu-cmkz02w"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aRfkgINhEeirb_Ff9JRTsw" type="Comment_AnnotatedElementEdge" source="_RBzh0INhEeirb_Ff9JRTsw" target="_eM7EkFMXEeiOxu-cmkz02w">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aRfkgYNhEeirb_Ff9JRTsw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aRfkgoNhEeirb_Ff9JRTsw" points="[360, 500, -643984, -643984]$[240, 481, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aZfC4INhEeirb_Ff9JRTsw" id="(0.11560693641618497,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aZfC4YNhEeirb_Ff9JRTsw" id="(0.6211180124223602,1.0)"/>
   </edges>
 </notation:Diagram>

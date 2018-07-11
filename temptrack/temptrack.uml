@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_kWVsIFMSEeiOxu-cmkz02w/84 ../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_N31u0ITjEei9Rsf_rXDXjw/92" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_N31u0ITjEei9Rsf_rXDXjw/92 ../profile/StreamUML.profile.uml#_N32V4ITjEei9Rsf_rXDXjw">
   <uml:Model xmi:id="_4lHykOsoEeeFgI61BIgfhg" name="TempTrack">
     <ownedComment xmi:type="uml:Comment" xmi:id="_bDleIE0OEeiV5tji1c_ulg" annotatedElement="_ZEY6QOspEeeFgI61BIgfhg">
       <body>mapFunction= 
@@ -35,7 +35,12 @@ parallelism=3</body>
       <body>windowSize=2 Minutes
 key=roomId</body>
     </ownedComment>
-    <packagedElement xmi:type="uml:Class" xmi:id="_eM3aMFMXEeiOxu-cmkz02w" name="TemperatureSource"/>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_RBjqMINhEeirb_Ff9JRTsw" annotatedElement="_eM3aMFMXEeiOxu-cmkz02w">
+      <body>host= &quot;131.175.21.165&quot;
+port = 9999
+</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eM3aMFMXEeiOxu-cmkz02w" name="TemperatureSensor"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZEY6QOspEeeFgI61BIgfhg" name="TemperatureParser"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_FducsOspEeeFgI61BIgfhg" name="ComputeRoomStatistics"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_Koji0OspEeeFgI61BIgfhg" name="CheckCriticalTemperature"/>
@@ -88,8 +93,6 @@ key=roomId</body>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_O5QDoEQYEei8PPfmmH1h8A" name="roomStatistics" conveyed="_kK3SAEQWEei8PPfmmH1h8A" informationSource="_FducsOspEeeFgI61BIgfhg" informationTarget="_lOomsEQXEei8PPfmmH1h8A"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_XxqOwEQYEei8PPfmmH1h8A" name="ReportCriticalPrediction"/>
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Z3kyYEQYEei8PPfmmH1h8A" name="avgTempPredictions" conveyed="_R_xvsEQYEei8PPfmmH1h8A" informationSource="_lOomsEQXEei8PPfmmH1h8A" informationTarget="_XxqOwEQYEei8PPfmmH1h8A"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="__AHLQEQYEei8PPfmmH1h8A" name="parsedTemperatures" informationSource="_ZEY6QOspEeeFgI61BIgfhg"/>
-    <packagedElement xmi:type="uml:InformationFlow" xmi:id="__l5Y4EQYEei8PPfmmH1h8A" name="avgTemp3Seconds"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_A3yW4OsqEeeFgI61BIgfhg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fogsgE2rEeiV5tji1c_ulg" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fogsgU2rEeiV5tji1c_ulg" key="Version" value="0.0.77"/>
@@ -116,15 +119,15 @@ key=roomId</body>
       <appliedProfile xmi:type="uml:Profile" href="../uml/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hF3V4FDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nUm0EFMSEeiOxu-cmkz02w" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0EVMSEeiOxu-cmkz02w" key="Version" value="0.0.85"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0ElMSEeiOxu-cmkz02w" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0E1MSEeiOxu-cmkz02w" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0FFMSEeiOxu-cmkz02w" key="Date" value="2018-05-09"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nUm0FVMSEeiOxu-cmkz02w" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Wf-pUITjEei9Rsf_rXDXjw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wf-pUYTjEei9Rsf_rXDXjw" key="Version" value="0.0.93"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wf-pUoTjEei9Rsf_rXDXjw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wf-pU4TjEei9Rsf_rXDXjw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wf-pVITjEei9Rsf_rXDXjw" key="Date" value="2018-07-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wf-pVYTjEei9Rsf_rXDXjw" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hF5LEFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_kWW6QFMSEeiOxu-cmkz02w"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_N32V4ITjEei9Rsf_rXDXjw"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
@@ -145,9 +148,6 @@ key=roomId</body>
   <StreamUML:FilterOperation xmi:id="_X87_wEQaEei8PPfmmH1h8A" base_Class="_Koji0OspEeeFgI61BIgfhg" filteringCondition="tuple.getMaxTemp() > 65"/>
   <StreamUML:WindowOperation xmi:id="_nUpwoEQaEei8PPfmmH1h8A" base_Class="_lOomsEQXEei8PPfmmH1h8A" windowFunction="&#x9;&#x9;int[] x = new int[windowContent.size()];&#xA;&#x9;&#x9;long[] y = new long[windowContent.size()];&#xA;&#xA;&#x9;&#x9;int j = 0;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;for(RoomStatistics rs: windowContent) {&#xA;&#x9;&#x9;&#x9;y[j] = rs.getAvgTemp();&#xA;&#x9;&#x9;&#x9;x[j] = j + 1;&#xA;&#x9;&#x9;&#x9;j = j + 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;    int N;&#xA;&#x9;    double alpha, beta;&#xA;&#x9;    double R2;&#xA;&#x9;    double svar, svar0, svar1;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (x.length != y.length) {&#xA;            throw new IllegalArgumentException(&quot;array lengths are not equal&quot;);&#xA;        }&#xA;        N = x.length;&#xA;&#xA;        // first pass&#xA;        double sumx = 0.0, sumy = 0.0, sumx2 = 0.0;&#xA;        for (int i = 0; i &lt; N; i++) sumx  += x[i];&#xA;        for (int i = 0; i &lt; N; i++) sumx2 += x[i]*x[i];&#xA;        for (int i = 0; i &lt; N; i++) sumy  += y[i];&#xA;        double xbar = sumx / N;&#xA;        double ybar = sumy / N;&#xA;&#xA;        // second pass: compute summary statistics&#xA;        double xxbar = 0.0, yybar = 0.0, xybar = 0.0;&#xA;        for (int i = 0; i &lt; N; i++) {&#xA;            xxbar += (x[i] - xbar) * (x[i] - xbar);&#xA;            yybar += (y[i] - ybar) * (y[i] - ybar);&#xA;            xybar += (x[i] - xbar) * (y[i] - ybar);&#xA;        }&#xA;        beta  = xybar / xxbar;&#xA;        alpha = ybar - beta * xbar;&#xA;&#xA;        // more statistical analysis&#xA;        double rss = 0.0;      // residual sum of squares&#xA;        double ssr = 0.0;      // regression sum of squares&#xA;        for (int i = 0; i &lt; N; i++) {&#xA;            double fit = beta*x[i] + alpha;&#xA;            rss += (fit - y[i]) * (fit - y[i]);&#xA;            ssr += (fit - ybar) * (fit - ybar);&#xA;        }&#xA;&#xA;        int degreesOfFreedom = N-2;&#xA;        R2    = ssr / yybar;&#xA;        svar  = rss / degreesOfFreedom;&#xA;        svar1 = svar / xxbar;&#xA;        svar0 = svar/N + xbar*xbar*svar1;&#xA;        &#xA;        out.collect(new Room10MinAheadTempPrediction(key, new Double(beta*(windowContent.size()+5) + alpha).longValue()));&#xA;&#x9;&#x9;"/>
   <StreamUML:KeyedStream xmi:id="_DQdUMEQbEei8PPfmmH1h8A" base_InformationFlow="_PiVu0EQWEei8PPfmmH1h8A" key="_w7OzkOspEeeFgI61BIgfhg"/>
-  <StreamUML:KeyedStream xmi:id="_KPyd0EQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
-  <StreamUML:WindowedStream xmi:id="_KRGFYEQbEei8PPfmmH1h8A" base_InformationFlow="__AHLQEQYEei8PPfmmH1h8A"/>
-  <StreamUML:DataStream xmi:id="_MZ2hoEQbEei8PPfmmH1h8A" base_InformationFlow="__l5Y4EQYEei8PPfmmH1h8A"/>
   <StreamUML:KafkaSink xmi:id="_lnP-MEQbEei8PPfmmH1h8A" base_Class="_M3HsIOspEeeFgI61BIgfhg" kafkaBrokerIp="localhost"/>
   <StreamUML:NonParallelStream xmi:id="_U1q1AE2rEeiV5tji1c_ulg" base_InformationFlow="_QM7j8EQWEei8PPfmmH1h8A"/>
   <StreamUML:KeyedStream xmi:id="_kUVicE2rEeiV5tji1c_ulg" base_InformationFlow="_O5QDoEQYEei8PPfmmH1h8A" key="_pl5XUEQWEei8PPfmmH1h8A"/>
@@ -162,6 +162,5 @@ key=roomId</body>
   </StreamUML:WindowedStream>
   <StreamUML:SocketSource xmi:id="_mMhYYFMXEeiOxu-cmkz02w" base_Class="_eM3aMFMXEeiOxu-cmkz02w" host="localhost" port="9999"/>
   <StreamUML:NonParallelStream xmi:id="_q0g3MFMXEeiOxu-cmkz02w" base_InformationFlow="_iy6_UFMXEeiOxu-cmkz02w"/>
-  <StreamUML:FlinkApplication xmi:id="_4Cbt0FU3Eeib3NYz6vFYWQ"/>
   <StreamUML:SparkApplication xmi:id="_ypJiYFafEeib3NYz6vFYWQ" base_Model="_4lHykOsoEeeFgI61BIgfhg"/>
 </xmi:XMI>
