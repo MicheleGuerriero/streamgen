@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_PrmwsIUeEeihsYYunbczKQ/97" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_PrmwsIUeEeihsYYunbczKQ/97 ../profile/StreamUML.profile.uml#_Prn-0IUeEeihsYYunbczKQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_LO9uYIWvEeihsYYunbczKQ/98" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_LO9uYIWvEeihsYYunbczKQ/98 ../profile/StreamUML.profile.uml#_LO-8gIWvEeihsYYunbczKQ">
   <uml:Model xmi:id="_4lHykOsoEeeFgI61BIgfhg" name="TempTrack">
     <packagedElement xmi:type="uml:InformationFlow" xmi:id="_iy6_UFMXEeiOxu-cmkz02w" name="rawTemperatures" informationSource="_eM3aMFMXEeiOxu-cmkz02w" informationTarget="_ZEY6QOspEeeFgI61BIgfhg">
       <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -147,15 +147,15 @@ isSliding=false </body>
       <appliedProfile xmi:type="uml:Profile" href="../uml/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hF3V4FDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tnQ14IVPEeihsYYunbczKQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tnQ14YVPEeihsYYunbczKQ" key="Version" value="0.0.98"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tnQ14oVPEeihsYYunbczKQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tnQ144VPEeihsYYunbczKQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tnQ15IVPEeihsYYunbczKQ" key="Date" value="2018-07-11"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tnQ15YVPEeihsYYunbczKQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KiGx8IW7EeihsYYunbczKQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KiGx8YW7EeihsYYunbczKQ" key="Version" value="0.0.99"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KiGx8oW7EeihsYYunbczKQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KiGx84W7EeihsYYunbczKQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KiGx9IW7EeihsYYunbczKQ" key="Date" value="2018-07-12"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KiGx9YW7EeihsYYunbczKQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hF5LEFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_Prn-0IUeEeihsYYunbczKQ"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_LO-8gIWvEeihsYYunbczKQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
