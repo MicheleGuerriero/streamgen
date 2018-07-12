@@ -70,6 +70,46 @@ public class [aClass.name/] extends RichFlatMapFunction<[getInputsConveyed(aClas
 [/file]
 [/template]
 
+
+[template public generateFlinkCoFlatmapFunction(aClass : Class)]
+[file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
+package [aClass.getModel().name.toLower().concat('.functions')/];
+
+  [for (c:Class | aClass.getModel().eContents(Class)) ]
+    [if hasStereotype(c, 'StreamDatatype')]
+      [for (subc:Class | c.eContents(Class)) ]
+import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
+
+import org.apache.flink.api.java.tuple.Tuple;
+import org.apache.flink.api.common.functions.RichCoFlatMapFunction;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.util.Collector;
+
+public class [aClass.name/] extends RichCoFlatMapFunction<[getInputsConveyed(aClass)->at(0)/], [getInputsConveyed(aClass)->at(1)/], [getOutputsConveyed(aClass)->first()/]> {
+
+	@Override 
+	public void open(Configuration conf) {
+		
+	}
+	
+	@Override
+	public void flatMap1([getInputsConveyed(aClass)->at(0)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmapFunctions') ->asSequence() -> at(0)/]
+	}
+
+	@Override
+	public void flatMap2([getInputsConveyed(aClass)->at(1)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmapFunctions') ->asSequence() -> at(1)/]
+	}
+	
+}
+
+[/file]
+[/template]
+
 [template public generateFlinkWindowFunction(aClass : Class)]
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];

@@ -31,6 +31,31 @@
 		[/if]
 [/template]
 
+[template public generateFlinkCoFlatmapOperation(aClass : Class)
+	{first : DirectedRelationship = getInputs(aClass)->at(0);
+	 second : DirectedRelationship = getInputs(aClass)->at(1);}]
+	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [first.eGet('name')/]
+		[if first.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(first, 'KeyedStream', 'key').eGet('name')/]")
+		[elseif first.hasStereotype('BroadcastedStream')]
+		.broadcast()
+      	[/if]
+		.connect(
+		[second.eGet('name')/]
+		[if second.hasStereotype('KeyedStream') ]
+      	.keyBy("[getStereotypeProperty(second, 'KeyedStream', 'key').eGet('name')/]")
+		[elseif second.hasStereotype('BroadcastedStream')]
+		.broadcast()
+      	[/if]
+		)
+		.flatMap(new [aClass.name/]())
+		[if getParallelism(aClass, 'NFlatmapOperation').toString().toInteger() > 1 ]
+		.setParallelism([getParallelism(aClass, 'FlatmapOperation')/]);
+		[else]
+		;
+		[/if]
+[/template]
+
 [template public generateFlinkReduceOperation(aClass : Class)]
 [/template]
 

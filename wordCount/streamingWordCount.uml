@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_PrmwsIUeEeihsYYunbczKQ/97" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_PrmwsIUeEeihsYYunbczKQ/97 ../profile/StreamUML.profile.uml#_Prn-0IUeEeihsYYunbczKQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_LO9uYIWvEeihsYYunbczKQ/98" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_LO9uYIWvEeihsYYunbczKQ/98 ../profile/StreamUML.profile.uml#_LO-8gIWvEeihsYYunbczKQ">
   <uml:Model xmi:id="_u4upYGu-EeeNCPsCczzD3A" name="StreamingWordCount">
     <packagedElement xmi:type="uml:Model" xmi:id="_MYzxwITzEei9Rsf_rXDXjw" name="StreaminWordCount">
       <ownedComment xmi:type="uml:Comment" xmi:id="_XLLigEcWEeivGM4wdwugiQ" annotatedElement="_-GaUgGu-EeeNCPsCczzD3A">
@@ -97,15 +97,15 @@ latencyTrackingEnabled = false</body>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_VzcmcFDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZmpAMIVPEeihsYYunbczKQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZmpAMYVPEeihsYYunbczKQ" key="Version" value="0.0.98"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZmpAMoVPEeihsYYunbczKQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZmpAM4VPEeihsYYunbczKQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZmpANIVPEeihsYYunbczKQ" key="Date" value="2018-07-11"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZmpANYVPEeihsYYunbczKQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2WcfAIW8EeihsYYunbczKQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfAYW8EeihsYYunbczKQ" key="Version" value="0.0.99"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfAoW8EeihsYYunbczKQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfA4W8EeihsYYunbczKQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfBIW8EeihsYYunbczKQ" key="Date" value="2018-07-12"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfBYW8EeihsYYunbczKQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vzd0kFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_Prn-0IUeEeihsYYunbczKQ"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_LO-8gIWvEeihsYYunbczKQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
