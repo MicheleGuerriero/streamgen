@@ -18,6 +18,7 @@ import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.Collector;
+import java.util.*;
 
 public class [aClass.name/] extends RichMapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]> {
 
@@ -52,6 +53,7 @@ import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.common.functions.RichFlatMapFunction;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.Collector;
+import java.util.*;
 
 public class [aClass.name/] extends RichFlatMapFunction<[getInputsConveyed(aClass)->first()/], [getOutputsConveyed(aClass)->first()/]> {
 
@@ -84,25 +86,40 @@ import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
   [/for]
 
 import org.apache.flink.api.java.tuple.Tuple;
-import org.apache.flink.api.common.functions.RichCoFlatMapFunction;
+import org.apache.flink.streaming.api.functions.co.RichCoFlatMapFunction;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.Collector;
+import java.util.*;
 
-public class [aClass.name/] extends RichCoFlatMapFunction<[getInputsConveyed(aClass)->at(0)/], [getInputsConveyed(aClass)->at(1)/], [getOutputsConveyed(aClass)->first()/]> {
+public class [aClass.name/] extends RichCoFlatMapFunction<[getInputsConveyed(aClass)->at(1)/], [getInputsConveyed(aClass)->at(2)/], [getOutputsConveyed(aClass)->first()/]> {
 
+	[for (a : Property | aClass.getAllAttributes() -> asSequence())]
+		[if (a.oclAsType(MultiplicityElement).upperValue.toString().strstr('value: -1'))]
+			List<[a.type.name/]> [a.name/];
+		[elseif (a.oclAsType(MultiplicityElement).upperValue.toString().strstr('value: 1'))]
+			[a.type.name/] [a.name/];
+		[/if]
+	[/for]
+	
 	@Override 
 	public void open(Configuration conf) {
-		
+	[for (a : Property | aClass.getAllAttributes() -> asSequence())]
+		[if (a.oclAsType(MultiplicityElement).upperValue.toString().strstr('value: -1'))]
+			[a.name/] = new ArrayList<[a.type.name/]>();
+		[elseif (a.oclAsType(MultiplicityElement).upperValue.toString().strstr('value: 1'))]
+			[a.name/] = new [a.type.name/]();
+		[/if]
+	[/for]
 	}
 	
 	@Override
-	public void flatMap1([getInputsConveyed(aClass)->at(0)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
-		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmapFunctions') ->asSequence() -> at(0)/]
+	public void flatMap1([getInputsConveyed(aClass)->at(1)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmaps') -> collect(f| f) -> asSequence() -> at(2)/]
 	}
 
 	@Override
-	public void flatMap2([getInputsConveyed(aClass)->at(1)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
-		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmapFunctions') ->asSequence() -> at(1)/]
+	public void flatMap2([getInputsConveyed(aClass)->at(2)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
+		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmaps') -> collect(f| f) -> asSequence() -> at(1)/]
 	}
 	
 }

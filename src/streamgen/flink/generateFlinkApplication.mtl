@@ -21,6 +21,7 @@ import [aModel.name.toLower()/].functions.[c.name/];
   [/if]
 [/for]
 
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import org.apache.flink.api.common.JobExecutionResult;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -63,7 +64,7 @@ public class [aModel.name/] {
 		[generateFlinkMapOperation(c)/]
 	[elseif (hasStereotype(c, 'FlatmapOperation'))]
 		[generateFlinkFlatmapOperation(c)/]
-	[elseif (hasStereotype(c, 'FlatmapNOperation'))]
+	[elseif (hasStereotype(c, 'NFlatmapOperation'))]
 		[generateFlinkCoFlatmapOperation(c)/]
 	[elseif (hasStereotype(c, 'SumOperation'))]
 		[generateFlinkSumOperation(c)/]

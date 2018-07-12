@@ -32,8 +32,8 @@
 [/template]
 
 [template public generateFlinkCoFlatmapOperation(aClass : Class)
-	{first : DirectedRelationship = getInputs(aClass)->at(0);
-	 second : DirectedRelationship = getInputs(aClass)->at(1);}]
+	{first : DirectedRelationship = getInputs(aClass)->at(1);
+	 second : DirectedRelationship = getInputs(aClass)->at(2);}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [first.eGet('name')/]
 		[if first.hasStereotype('KeyedStream') ]
       	.keyBy("[getStereotypeProperty(first, 'KeyedStream', 'key').eGet('name')/]")

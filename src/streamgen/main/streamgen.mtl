@@ -46,7 +46,7 @@
 				[if hasStereotype(c, 'FlatmapOperation')]
 					[generateFlinkFlatmapFunction(c)/]
 				[/if]	
-				[if hasStereotype(c, 'FlatmapNOperation')]
+				[if hasStereotype(c, 'NFlatmapOperation')]
 					[generateFlinkCoFlatmapFunction(c)/]
 				[/if]	
 				[if hasStereotype(c, 'WindowOperation')]

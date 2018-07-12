@@ -22,18 +22,7 @@ public class [aClass.name/] implements Serializable{
 
 	private String tupleId;
 
-	private Long eventTime;
-
 	private String streamId;
-
-	public Long getEventTime() {
-		return this.eventTime;
-	}
-	
-	public void setEventTime(Long eventTime) {
-		this.eventTime = eventTime;
-	}
- 
 
 	public String getTupleId() {
 		return this.tupleId;

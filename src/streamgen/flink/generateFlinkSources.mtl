@@ -8,7 +8,7 @@
 [/template]
 
 [template public generateFlinkTextFileSource(aClass : Class)]
-		DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass) ->first()/] = env.readTextFile("[getStereotypeProperty(aClass, 'TextFileSource', 'pathToFile')/]"/]);
+		DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass) ->first()/] = env.readTextFile("[getStereotypeProperty(aClass, 'TextFileSource', 'pathToFile')/]");
 			[if getParallelism(aClass, 'TextFileSource').toString().toInteger() > 1 ]
 			.setParallelism([getParallelism(aClass, 'TextFileSource')/]);
 			[else]
@@ -18,8 +18,8 @@
 
 [template public generateFlinkKafkaSource(aClass : Class)]
 		Properties [aClass.name.toString().concat('_kafkaParams')/] = new Properties();
-		properties.setProperty("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerPort')/]");
-		properties.setProperty("group.id", "[aClass.name.toString().concat('_groupId')/]");
+		[aClass.name.toString().concat('_kafkaParams')/].setProperty("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerPort')/]");
+		[aClass.name.toString().concat('_kafkaParams')/].setProperty("group.id", "[aClass.name.toString().concat('_groupId')/]");
 		DataStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = env
 			.addSource(new FlinkKafkaConsumer010<>("[aClass.name.toString()/]", new SimpleStringSchema(), [aClass.name.toString().concat('_kafkaParams')/]));
 [/template]
