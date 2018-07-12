@@ -321,13 +321,13 @@
     <element xmi:type="uml:Model" href="streamingWordCount.uml#_MYzxwITzEei9Rsf_rXDXjw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MY21EYTzEei9Rsf_rXDXjw" x="-200" y="160" width="1400" height="500"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_O17fAIT0Eei9Rsf_rXDXjw" type="StereotypeComment">
-    <styles xmi:type="notation:TitleStyle" xmi:id="_O17fAYT0Eei9Rsf_rXDXjw"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_O17fA4T0Eei9Rsf_rXDXjw" name="BASE_ELEMENT">
+  <children xmi:type="notation:Shape" xmi:id="_cXxEBIVPEeihsYYunbczKQ" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_cXxEBYVPEeihsYYunbczKQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_cXxEB4VPEeihsYYunbczKQ" name="BASE_ELEMENT">
       <eObjectValue xmi:type="uml:Model" href="streamingWordCount.uml#_MYzxwITzEei9Rsf_rXDXjw"/>
     </styles>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O17fAoT0Eei9Rsf_rXDXjw" x="820" y="80"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cXxEBoVPEeihsYYunbczKQ" y="160"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_u5qdgWu-EeeNCPsCczzD3A" name="diagram_compatibility_version" stringValue="1.3.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_u5qdgmu-EeeNCPsCczzD3A"/>
@@ -571,16 +571,6 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h5no8E2qEeiV5tji1c_ulg" id="(0.6666666666666666,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h5no8U2qEeiV5tji1c_ulg" id="(0.8859315589353612,0.48214285714285715)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_O18GEIT0Eei9Rsf_rXDXjw" type="StereotypeCommentLink" source="_MY21EITzEei9Rsf_rXDXjw" target="_O17fAIT0Eei9Rsf_rXDXjw">
-    <styles xmi:type="notation:FontStyle" xmi:id="_O18GEYT0Eei9Rsf_rXDXjw"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_O18tIIT0Eei9Rsf_rXDXjw" name="BASE_ELEMENT">
-      <eObjectValue xmi:type="uml:Model" href="streamingWordCount.uml#_MYzxwITzEei9Rsf_rXDXjw"/>
-    </styles>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_O18GEoT0Eei9Rsf_rXDXjw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_O18GE4T0Eei9Rsf_rXDXjw"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_O18GFIT0Eei9Rsf_rXDXjw"/>
-  </edges>
   <edges xmi:type="notation:Connector" xmi:id="_c4j20IT1Eei9Rsf_rXDXjw" type="Comment_AnnotatedElementEdge" source="_XGKaYIT1Eei9Rsf_rXDXjw" target="_MY21EITzEei9Rsf_rXDXjw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DAsrgoT2Eei9Rsf_rXDXjw" source="PapyrusCSSForceValue">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DAsrg4T2Eei9Rsf_rXDXjw" key="bold" value="true"/>
@@ -592,5 +582,15 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_c4j20oT1Eei9Rsf_rXDXjw" points="[285, 115, -643984, -643984]$[265, 172, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dArRAIT1Eei9Rsf_rXDXjw" id="(0.0,0.3333333333333333)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dArRAYT1Eei9Rsf_rXDXjw" id="(0.21428571428571427,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_cXxECIVPEeihsYYunbczKQ" type="StereotypeCommentLink" source="_MY21EITzEei9Rsf_rXDXjw" target="_cXxEBIVPEeihsYYunbczKQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_cXxECYVPEeihsYYunbczKQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_cXxEDYVPEeihsYYunbczKQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Model" href="streamingWordCount.uml#_MYzxwITzEei9Rsf_rXDXjw"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cXxECoVPEeihsYYunbczKQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cXxEC4VPEeihsYYunbczKQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cXxEDIVPEeihsYYunbczKQ"/>
   </edges>
 </notation:Diagram>
