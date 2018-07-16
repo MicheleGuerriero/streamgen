@@ -14,7 +14,7 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_m9AJsIUVEei9Rsf_rXDXjw" name="CampaignProcessor"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_7nnXkIUVEei9Rsf_rXDXjw" name="ChampaignSink"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7nnXkIUVEei9Rsf_rXDXjw" name="CampaignSink"/>
       <packagedElement xmi:type="uml:InformationFlow" xmi:id="_DBd6AIUWEei9Rsf_rXDXjw" name="rawAdEvents" informationSource="_ktid8IUUEei9Rsf_rXDXjw" informationTarget="_SU42MIUVEei9Rsf_rXDXjw">
         <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </packagedElement>
