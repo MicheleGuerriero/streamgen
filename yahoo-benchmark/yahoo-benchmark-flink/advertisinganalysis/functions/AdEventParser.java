@@ -9,6 +9,8 @@ import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.Collector;
+import org.json.JSONObject;
+
 import java.util.*;
 
 public class AdEventParser extends RichMapFunction<String, AdEvent> {
@@ -20,16 +22,8 @@ public class AdEventParser extends RichMapFunction<String, AdEvent> {
 	
 	@Override
 	public AdEvent map(String tuple) throws Exception {
-		            String[] fields = tuple.split(",");
-            return new AdEvent(
-                    fields[0],
-                    fields[1],
-                    fields[2],
-                    fields[3],
-                    fields[4],
-                    Long.parseLong(fields[5]),
-                    fields[6]
-                    );
+		JSONObject obj = new JSONObject(tuple);
+		return new AdEvent(obj.getString("user_id"), obj.getString("page_id"), obj.getString("ad_id"), obj.getString("ad_type"), obj.getString("event_type"), Long.parseLong(obj.getString("event_time")), obj.getString("ip_address"));
 	}
 	
 }

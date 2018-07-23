@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_9Ze4kIXrEeihsYYunbczKQ/104" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_9Ze4kIXrEeihsYYunbczKQ/104 ../profile/StreamUML.profile.uml#_9ZgGsIXrEeihsYYunbczKQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_AQgZkIqNEeiqfbpBZNdoAA/108" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_AQgZkIqNEeiqfbpBZNdoAA/108 ../profile/StreamUML.profile.uml#_AQhnsIqNEeiqfbpBZNdoAA">
   <uml:Model xmi:id="_csnUcIUUEei9Rsf_rXDXjw" name="yahoo-benchmark">
     <packagedElement xmi:type="uml:Model" xmi:id="_oOpNMIUUEei9Rsf_rXDXjw" name="AdvertisingAnalysis">
       <packagedElement xmi:type="uml:Class" xmi:id="_ktid8IUUEei9Rsf_rXDXjw" name="MessageStream"/>
@@ -82,15 +82,15 @@
         </nestedClassifier>
       </packagedElement>
       <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_srcvsIUUEei9Rsf_rXDXjw">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yt1_0IXsEeihsYYunbczKQ" source="PapyrusVersion">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yt1_0YXsEeihsYYunbczKQ" key="Version" value="0.0.105"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yt1_0oXsEeihsYYunbczKQ" key="Comment" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yt1_04XsEeihsYYunbczKQ" key="Copyright" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yt1_1IXsEeihsYYunbczKQ" key="Date" value="2018-07-12"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yt1_1YXsEeihsYYunbczKQ" key="Author" value=""/>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_crVfsI6kEeivTICi18VY5A" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_crVfsY6kEeivTICi18VY5A" key="Version" value="0.0.109"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_crVfso6kEeivTICi18VY5A" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_crVfs46kEeivTICi18VY5A" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_crVftI6kEeivTICi18VY5A" key="Date" value="2018-07-18"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_crVftY6kEeivTICi18VY5A" key="Author" value=""/>
         </eAnnotations>
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_srdWwIUUEei9Rsf_rXDXjw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_9ZgGsIXrEeihsYYunbczKQ"/>
+          <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_AQhnsIqNEeiqfbpBZNdoAA"/>
         </eAnnotations>
         <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
       </profileApplication>
@@ -107,7 +107,7 @@
   <StreamUML:RandomlyPartitionedStream xmi:id="_3t0voIUiEeihsYYunbczKQ" base_InformationFlow="_FRTOoIUWEei9Rsf_rXDXjw"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_C8_WwIUjEeihsYYunbczKQ" base_InformationFlow="_F3Us0IUWEei9Rsf_rXDXjw"/>
   <StreamUML:KeyedStream xmi:id="_d5NFkIUjEeihsYYunbczKQ" base_InformationFlow="_G8IYwIUWEei9Rsf_rXDXjw"/>
-  <StreamUML:MapOperation xmi:id="_P3ce8IW7EeihsYYunbczKQ" base_Class="_SU42MIUVEei9Rsf_rXDXjw" mapFunction="            String[] fields = tuple.split(&quot;,&quot;);&#xA;            return new AdEvent(&#xA;                    fields[0],&#xA;                    fields[1],&#xA;                    fields[2],&#xA;                    fields[3],&#xA;                    fields[4],&#xA;                    Long.parseLong(fields[5]),&#xA;                    fields[6]&#xA;                    );"/>
+  <StreamUML:MapOperation xmi:id="_P3ce8IW7EeihsYYunbczKQ" base_Class="_SU42MIUVEei9Rsf_rXDXjw" mapFunction="&#x9;&#x9;JSONObject obj = new JSONObject(tuple);&#xA;&#x9;&#x9;return new AdEvent(obj.getString(&quot;user_id&quot;), obj.getString(&quot;page_id&quot;), obj.getString(&quot;ad_id&quot;), obj.getString(&quot;ad_type&quot;), obj.getString(&quot;event_type&quot;), Long.parseLong(obj.getString(&quot;event_time&quot;)), obj.getString(&quot;ip_address&quot;));&#xA;"/>
   <StreamUML:WindowOperation xmi:id="_S-M_EIW8EeihsYYunbczKQ" base_Class="_m9AJsIUVEei9Rsf_rXDXjw" windowFunction="int count = 0;&#xA;&#xA;for(AdCampaign ad: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;CampaignAnalysis output = new CampaignAnalysis();&#xA;output.setCampaignId(key);&#xA;output.setViewAdEventCount(count);&#xA;output.setEventTime(window.getEnd());&#xA;&#xA;out.collect(output);"/>
   <StreamUML:WindowedStream xmi:id="_ULppoIW8EeihsYYunbczKQ" base_InformationFlow="_GYrGYIUWEei9Rsf_rXDXjw">
     <window xmi:type="StreamUML:Window" xmi:id="_XHGHEIW8EeihsYYunbczKQ">
