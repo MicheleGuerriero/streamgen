@@ -36,6 +36,11 @@
 	</repositories>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+		</dependency>
 		<!-- Apache Flink dependencies -->
 		<dependency>
 			<groupId>org.apache.flink</groupId>
