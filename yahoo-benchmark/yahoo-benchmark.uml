@@ -98,7 +98,7 @@
   </uml:Model>
   <StreamUML:FlinkApplication xmi:id="_CDdPEIUVEei9Rsf_rXDXjw" base_Model="_oOpNMIUUEei9Rsf_rXDXjw"/>
   <StreamUML:KafkaSource xmi:id="_DTM_sIUVEei9Rsf_rXDXjw" base_Class="_ktid8IUUEei9Rsf_rXDXjw"/>
-  <StreamUML:FilterOperation xmi:id="_2GdbIIUgEeihsYYunbczKQ" base_Class="_UqCvsIUVEei9Rsf_rXDXjw" filteringCondition="tuple.getAdType().equals(&quot;view&quot;)"/>
+  <StreamUML:FilterOperation xmi:id="_2GdbIIUgEeihsYYunbczKQ" base_Class="_UqCvsIUVEei9Rsf_rXDXjw" filteringCondition="tuple.getEventType().equals(&quot;view&quot;)"/>
   <StreamUML:MapOperation xmi:id="_3WEo4IUgEeihsYYunbczKQ" base_Class="_ZIreMIUVEei9Rsf_rXDXjw" mapFunction="Ad toReturn = new Ad();&#xA;&#xA;toReturn.setAdId(tuple.getAdId());&#xA;toReturn.setEventTime(tuple.getEventTime());&#xA;&#xA;return toReturn;"/>
   <StreamUML:KafkaSink xmi:id="_RRDkMIUhEeihsYYunbczKQ" base_Class="_7nnXkIUVEei9Rsf_rXDXjw" kafkaBrokerIp="localhost"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_kcs5sIUhEeihsYYunbczKQ" base_InformationFlow="_DBd6AIUWEei9Rsf_rXDXjw"/>
