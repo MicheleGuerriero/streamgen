@@ -107,7 +107,7 @@
   <StreamUML:RandomlyPartitionedStream xmi:id="_3t0voIUiEeihsYYunbczKQ" base_InformationFlow="_FRTOoIUWEei9Rsf_rXDXjw"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_C8_WwIUjEeihsYYunbczKQ" base_InformationFlow="_F3Us0IUWEei9Rsf_rXDXjw"/>
   <StreamUML:KeyedStream xmi:id="_d5NFkIUjEeihsYYunbczKQ" base_InformationFlow="_G8IYwIUWEei9Rsf_rXDXjw"/>
-  <StreamUML:MapOperation xmi:id="_P3ce8IW7EeihsYYunbczKQ" base_Class="_SU42MIUVEei9Rsf_rXDXjw" mapFunction="&#x9;&#x9;JSONObject obj = new JSONObject(tuple);&#xA;&#x9;&#x9;return new AdEvent(obj.getString(&quot;user_id&quot;), obj.getString(&quot;page_id&quot;), obj.getString(&quot;ad_id&quot;), obj.getString(&quot;ad_type&quot;), obj.getString(&quot;event_type&quot;), Long.parseLong(obj.getString(&quot;event_time&quot;)), obj.getString(&quot;ip_address&quot;));&#xA;"/>
+  <StreamUML:MapOperation xmi:id="_P3ce8IW7EeihsYYunbczKQ" base_Class="_SU42MIUVEei9Rsf_rXDXjw" mapFunction="&#x9;&#x9;JSONObject obj = new JSONObject(tuple);&#xA;&#x9;&#x9;AdEvent toReturn = new AdEvent(obj.getString(&quot;user_id&quot;), obj.getString(&quot;ad_id&quot;), obj.getString(&quot;page_id&quot;), obj.getString(&quot;ad_type&quot;), obj.getString(&quot;event_type&quot;), Long.parseLong(obj.getString(&quot;event_time&quot;)), obj.getString(&quot;ip_address&quot;));&#xA;&#x9;&#x9;return toReturn;"/>
   <StreamUML:WindowOperation xmi:id="_S-M_EIW8EeihsYYunbczKQ" base_Class="_m9AJsIUVEei9Rsf_rXDXjw" windowFunction="int count = 0;&#xA;&#xA;for(AdCampaign ad: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;CampaignAnalysis output = new CampaignAnalysis();&#xA;output.setCampaignId(key);&#xA;output.setViewAdEventCount(count);&#xA;output.setEventTime(window.getEnd());&#xA;&#xA;out.collect(output);"/>
   <StreamUML:WindowedStream xmi:id="_ULppoIW8EeihsYYunbczKQ" base_InformationFlow="_GYrGYIUWEei9Rsf_rXDXjw">
     <window xmi:type="StreamUML:Window" xmi:id="_XHGHEIW8EeihsYYunbczKQ">
@@ -127,7 +127,6 @@ toAdd.setEventTime(-1L);
 
 this.adsToCampaigns.add(toAdd);</flatmaps>
     <flatmaps>		AdCampaign output = null;
-		logger.info(&quot;New ad event: &quot; + tuple);
 		
 		for (AdCampaign a : this.adsToCampaigns) {
 			if (a.getAdId().equals(tuple.getAdId())) {
