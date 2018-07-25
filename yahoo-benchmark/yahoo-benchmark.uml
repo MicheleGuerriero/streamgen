@@ -127,16 +127,20 @@ toAdd.setEventTime(-1L);
 
 this.adsToCampaigns.add(toAdd);</flatmaps>
     <flatmaps>		AdCampaign output = null;
-
+		logger.info(&quot;New ad event: &quot; + tuple);
+		
 		for (AdCampaign a : this.adsToCampaigns) {
 			if (a.getAdId().equals(tuple.getAdId())) {
+				output = new AdCampaign()
 				output.setAdId(a.getAdId());
 				output.setCampaignId(a.getCampaignId());
 				output.setEventTime(tuple.getEventTime());
+				output.setTupleId(tuple.getTupleId());
 			}
 		}
 
-		out.collect(output);</flatmaps>
+		if(output != null)
+			out.collect(output);</flatmaps>
   </StreamUML:NFlatmapOperation>
   <StreamUML:StreamDatatype xmi:id="_1p1BEIXyEeihsYYunbczKQ" base_Class="_UfsqcIUhEeihsYYunbczKQ"/>
 </xmi:XMI>
