@@ -102,7 +102,7 @@ public class [aModel.name/] {
 
 		ApplicationPrivacy app = yaml.loadAs(content, ApplicationPrivacy.class);
 
-		DataStreamSource<PrivacyContext> contextStream = env.addSource(new PrivacyContextFixedSource(0, 2000));
+		//DataStreamSource<PrivacyContext> contextStream = env.addSource(new PrivacyContextFixedSource(0, 2000, "u1", "employee", "marketing"));
 
 
 [for (c:Class | aModel.eContents(Class)) ]
