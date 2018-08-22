@@ -87,7 +87,7 @@
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	[if (aClass.getModel().eAllContents(Class) -> select(c | hasStereotype(c, 'TextFileSink')) 
 		-> exists(s | getInputNames(s) -> first() = getOutputNames(aClass) -> first()))]
-	ProtectedStream<[getInputsConveyed(aClass)->first()/]> [getInputNames(aClass)->first()/]_evicted = new ProtectedStream<[getInputsConveyed(aClass)->first()/]>(timestampServerIp,
+	ProtectedStream<[getInputsConveyed(aClass)->first()/]> [getInputNames(aClass)->first()/]_evicted = new ProtectedStream<[getInputsConveyed(aClass)->first()/]>(monitoringActive, timestampServerIp,
 			timestampServerPort, topologyParallelism, simulateRealisticScenario, allowedLateness);
 	[getInputNames(aClass)->first()/]_evicted.setStreamToProtect([getInputNames(aClass)->first()/]);
 

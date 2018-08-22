@@ -63,6 +63,7 @@ public class [aModel.name/] {
 
 		String timestampServerIp = prop.getProperty("timestampServerIp");
 		String pathToResultFolder = prop.getProperty("pathToResultFolder");
+		Boolean monitoringActive = Boolean.parseBoolean(prop.getProperty("monitoringActive"));
 		Integer timestampServerPort = Integer.parseInt(prop.getProperty("timestampServerPort"));
 		Boolean privacyOn = Boolean.parseBoolean(prop.getProperty("privacyOn"));
 		Integer allowedLateness = Integer.parseInt(prop.getProperty("allowedLateness"));

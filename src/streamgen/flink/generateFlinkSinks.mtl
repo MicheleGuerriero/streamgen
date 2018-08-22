@@ -22,7 +22,7 @@
 [template public generateFlinkTextFileSink(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	[if (aClass.getTargetDirectedRelationships()->asSequence() -> collect(r | r.eGet('conveyed'))->first().oclAsType(Class).attribute -> exists(a | a.name= 'dataSubject'))]
-	ProtectedStream<SubjectSpecific> [input.eGet('name')/]_p = new ProtectedStream<SubjectSpecific>(timestampServerIp,
+	ProtectedStream<SubjectSpecific> [input.eGet('name')/]_p = new ProtectedStream<SubjectSpecific>(monitoringActive, timestampServerIp,
 			timestampServerPort, topologyParallelism, simulateRealisticScenario, allowedLateness);
 	[input.eGet('name')/]_p.setStreamToProtect((DataStream<SubjectSpecific>) app.getStreamByID("[input.eGet('name')/]").getConcreteStream());
 
