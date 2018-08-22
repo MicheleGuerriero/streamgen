@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_LO9uYIWvEeihsYYunbczKQ/98" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_LO9uYIWvEeihsYYunbczKQ/98 ../profile/StreamUML.profile.uml#_LO-8gIWvEeihsYYunbczKQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_ikGoAKC6EeiwhIrfg6iPxw/109" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_ikGoAKC6EeiwhIrfg6iPxw/109 ../profile/StreamUML.profile.uml#_ikK5cKC6EeiwhIrfg6iPxw">
   <uml:Model xmi:id="_u4upYGu-EeeNCPsCczzD3A" name="StreamingWordCount">
     <packagedElement xmi:type="uml:Model" xmi:id="_MYzxwITzEei9Rsf_rXDXjw" name="StreaminWordCount">
       <ownedComment xmi:type="uml:Comment" xmi:id="_XLLigEcWEeivGM4wdwugiQ" annotatedElement="_-GaUgGu-EeeNCPsCczzD3A">
@@ -43,8 +43,7 @@ windowSize = 3 Minutes
 isSliding = false</body>
       </ownedComment>
       <ownedComment xmi:type="uml:Comment" xmi:id="_XGIlMIT1Eei9Rsf_rXDXjw" annotatedElement="_MYzxwITzEei9Rsf_rXDXjw">
-        <body>applicationParallelism=4
-latencyTrackingEnabled = false</body>
+        <body>latencyTrackingEnabled = true</body>
       </ownedComment>
       <packagedElement xmi:type="uml:Class" xmi:id="_4EBUQGu-EeeNCPsCczzD3A" name="TextLineDataSource"/>
       <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Bg8hsGu_EeeNCPsCczzD3A" name="text" informationSource="_4EBUQGu-EeeNCPsCczzD3A" informationTarget="_6TGa8Gu-EeeNCPsCczzD3A">
@@ -97,21 +96,21 @@ latencyTrackingEnabled = false</body>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_VzcmcFDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2WcfAIW8EeihsYYunbczKQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfAYW8EeihsYYunbczKQ" key="Version" value="0.0.99"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfAoW8EeihsYYunbczKQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfA4W8EeihsYYunbczKQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfBIW8EeihsYYunbczKQ" key="Date" value="2018-07-12"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2WcfBYW8EeihsYYunbczKQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h8Q7MKDWEeiERsNuM0fCXw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h8Q7MaDWEeiERsNuM0fCXw" key="Version" value="0.0.110"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h8Q7MqDWEeiERsNuM0fCXw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h8Q7M6DWEeiERsNuM0fCXw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h8Q7NKDWEeiERsNuM0fCXw" key="Date" value="2018-08-15"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h8Q7NaDWEeiERsNuM0fCXw" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vzd0kFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_LO-8gIWvEeihsYYunbczKQ"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_ikK5cKC6EeiwhIrfg6iPxw"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
   </uml:Model>
   <StreamUML:StreamDatatype xmi:id="_lV-EQGu_EeeNCPsCczzD3A" base_Class="_1TyoUGu-EeeNCPsCczzD3A"/>
-  <StreamUML:FlatmapOperation xmi:id="_oyl8IGu_EeeNCPsCczzD3A" base_Class="_6TGa8Gu-EeeNCPsCczzD3A" parallelism="4" flatmapFunction="String [] words = tuple.split(&quot; &quot;);&#xA;&#xA;for(String word: words){&#xA;out.collect(new WordToken(word,1));&#xA;}"/>
+  <StreamUML:FlatmapTransformation xmi:id="_oyl8IGu_EeeNCPsCczzD3A" base_Class="_6TGa8Gu-EeeNCPsCczzD3A" parallelism="4" flatmapFunction="String [] words = tuple.split(&quot; &quot;);&#xA;&#xA;for(String word: words){&#xA;out.collect(new WordToken(word,1));&#xA;}"/>
   <StreamUML:KeyedStream xmi:id="_4HzyoGu_EeeNCPsCczzD3A" base_InformationFlow="_Ck21wGu_EeeNCPsCczzD3A" key="_d_Y4QGu_EeeNCPsCczzD3A"/>
   <StreamUML:KeyedStream xmi:id="_7rBasGu_EeeNCPsCczzD3A" base_InformationFlow="_C8_B4Gu_EeeNCPsCczzD3A" key="_d_Y4QGu_EeeNCPsCczzD3A"/>
   <StreamUML:TextFileSink xmi:id="_7rjM4GvEEeeNCPsCczzD3A" base_Class="_-GaUgGu-EeeNCPsCczzD3A" filepath="/home/utente/word-count-output.txt"/>
@@ -120,10 +119,8 @@ latencyTrackingEnabled = false</body>
       <size xmi:type="StreamUML:TimeAmount" xmi:id="_VzaxQlDNEeiynfuxK6H26Q" size="3"/>
     </window>
   </StreamUML:WindowedStream>
-  <StreamUML:WindowOperation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;&#xA;for(WordToken token: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;out.collect(new WordCount(key,count,window.getEnd()));"/>
+  <StreamUML:WindowTransformation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;&#xA;for(WordToken token: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;out.collect(new WordCount(key,count,window.getEnd()));"/>
   <StreamUML:SocketSource xmi:id="_rit6MDiuEeiSL7MXnlGM-g" base_Class="_4EBUQGu-EeeNCPsCczzD3A" host="localhost" port="9999"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_u_-QoE2pEeiV5tji1c_ulg" base_InformationFlow="_Bg8hsGu_EeeNCPsCczzD3A"/>
-  <StreamUML:SparkApplication xmi:id="_cTpZAIVPEeihsYYunbczKQ" base_Model="_MYzxwITzEei9Rsf_rXDXjw">
-    <microBatchSize xmi:type="StreamUML:TimeAmount" xmi:id="_dCKE0IVPEeihsYYunbczKQ" size="10"/>
-  </StreamUML:SparkApplication>
+  <StreamUML:FlinkApplication xmi:id="_I8bf8KAaEeiwhIrfg6iPxw" base_Model="_MYzxwITzEei9Rsf_rXDXjw" latencyTrackingEnabled="true"/>
 </xmi:XMI>
