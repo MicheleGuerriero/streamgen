@@ -4,7 +4,9 @@ Distributed streaming applications, i.e. applications that process massive and p
 
 # Repo Structure
 
-StreamGen is currently still a research prototype. Nevetheless, we are actively working on StreamGen adding new features and consolidating the current implementation towards an initial release (that we plan to publish during the upcoming weeks). Right now you can checkout this repository and try StreamGen directly into the Eclipse IDE. The repository contains the following main folders:
+StreamGen is currently still a research prototype. Nevetheless, we are actively working on StreamGen adding new features and consolidating the current implementation towards an initial release (that we plan to publish during the upcoming weeks). Right now you can checkout this repository and try StreamGen directly into the Eclipse IDE. 
+StreamGen is developed using [Eclipse Papyrus v3.1.0](https://www.eclipse.org/papyrus/) for implementing the UML profile (although more recent versions can be used as well to work with StreamGen) and [Eclipse Acceleo v3.7.2](https://www.eclipse.org/acceleo/) for the code generators. In order use StreamGen within Eclipse it is necessary to install both Papyrus and Acceleo.
+The repository contains the following main folders:
 
 
 **metamodel**: containes the Ecore metamodel for the modeling language provided in StreamGen
@@ -18,3 +20,6 @@ StreamGen is currently still a research prototype. Nevetheless, we are actively 
 **temptrack**: contains the UML model and the generated code (both for Spark and Flink) for the TempTrack case study
 
 **survey**: contains the results of a survey we conducted with a group of young software engineers in order to assess the usability and usefulness of StreamGen
+
+# Requirements
+
