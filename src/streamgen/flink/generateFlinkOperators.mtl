@@ -29,7 +29,7 @@ public class [aClass.name/] extends RichMapFunction<[getInputsConveyed(aClass)->
 	
 	@Override
 	public [getOutputsConveyed(aClass)->first()/] map([getInputsConveyed(aClass)->first()/] tuple) throws Exception {
-		[getStereotypeProperty(aClass, 'MapOperation', 'mapFunction')/]
+		[getStereotypeProperty(aClass, 'MapTransformation', 'mapFunction')/]
 	}
 	
 }
@@ -64,7 +64,7 @@ public class [aClass.name/] extends RichFlatMapFunction<[getInputsConveyed(aClas
 	
 	@Override
 	public void flatMap([getInputsConveyed(aClass)->first()/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
-		[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction')/]
+		[getStereotypeProperty(aClass, 'FlatmapTransformation', 'flatmapFunction')/]
 	}
 	
 }
@@ -114,12 +114,12 @@ public class [aClass.name/] extends RichCoFlatMapFunction<[getInputsConveyed(aCl
 	
 	@Override
 	public void flatMap1([getInputsConveyed(aClass)->at(1)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
-		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmaps') -> collect(f| f) -> asSequence() -> at(2)/]
+		[getStereotypeProperty(aClass, 'NFlatmapTransformation', 'flatmaps') -> collect(f| f) -> asSequence() -> at(2)/]
 	}
 
 	@Override
 	public void flatMap2([getInputsConveyed(aClass)->at(2)/] tuple, Collector<[getOutputsConveyed(aClass)->first()/]> out) throws Exception {
-		[getStereotypeProperty(aClass, 'NFlatmapOperation', 'flatmaps') -> collect(f| f) -> asSequence() -> at(1)/]
+		[getStereotypeProperty(aClass, 'NFlatmapTransformation', 'flatmaps') -> collect(f| f) -> asSequence() -> at(1)/]
 	}
 	
 }
@@ -156,7 +156,7 @@ public class [aClass.name/] implements WindowFunction<[getInputsConveyed(aClass)
 			windowContent.add(x);
 		}
 		
-		[getStereotypeProperty(aClass, 'WindowOperation', 'windowFunction').toString().substitute('key', 'key.getField(0)')/]
+		[getStereotypeProperty(aClass, 'WindowTransformation', 'windowFunction').toString().substitute('key', 'key.getField(0)')/]
 	}
 
 

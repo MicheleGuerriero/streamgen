@@ -3,35 +3,35 @@
 
 [import streamgen::main::queryUtils/]
 
-[template public generateFlinkMapOperation(aClass : Class) 
+[template public generateFlinkMapTransformation(aClass : Class) 
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
       	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
       	[/if]
 		.map(new [aClass.name/]())
-		[if getParallelism(aClass, 'MapOperation') > 1 ]
-		.setParallelism([getParallelism(aClass, 'MapOperation')/]);
+		[if getParallelism(aClass, 'MapTransformation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'MapTransformation')/]);
 		[else]
 		;
 		[/if]
 [/template]
 
-[template public generateFlinkFlatmapOperation(aClass : Class)
+[template public generateFlinkFlatmapTransformation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
       	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
       	[/if]
 		.flatMap(new [aClass.name/]())
-		[if getParallelism(aClass, 'FlatmapOperation').toString().toInteger() > 1 ]
-		.setParallelism([getParallelism(aClass, 'FlatmapOperation')/]);
+		[if getParallelism(aClass, 'FlatmapTransformation').toString().toInteger() > 1 ]
+		.setParallelism([getParallelism(aClass, 'FlatmapTransformation')/]);
 		[else]
 		;
 		[/if]
 [/template]
 
-[template public generateFlinkCoFlatmapOperation(aClass : Class)
+[template public generateFlinkCoFlatmapTransformation(aClass : Class)
 	{first : DirectedRelationship = getInputs(aClass)->at(1);
 	 second : DirectedRelationship = getInputs(aClass)->at(2);}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [first.eGet('name')/]
@@ -49,34 +49,34 @@
       	[/if]
 		)
 		.flatMap(new [aClass.name/]())
-		[if getParallelism(aClass, 'NFlatmapOperation').toString().toInteger() > 1 ]
-		.setParallelism([getParallelism(aClass, 'FlatmapOperation')/]);
+		[if getParallelism(aClass, 'NFlatmapTransformation').toString().toInteger() > 1 ]
+		.setParallelism([getParallelism(aClass, 'FlatmapTransformation')/]);
 		[else]
 		;
 		[/if]
 [/template]
 
-[template public generateFlinkReduceOperation(aClass : Class)]
+[template public generateFlinkReduceTransformation(aClass : Class)]
 [/template]
 
-[template public generateFlinkFilterOperation(aClass : Class)
+[template public generateFlinkFilterTransformation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
       	.keyBy("[getStereotypeProperty(input, 'KeyedStream', 'key').eGet('name')/]")
       	[/if]
-		.filter(([getInputsConveyed(aClass) ->first()/] tuple) -> [getStereotypeProperty(aClass, 'FilterOperation', 'filteringCondition')/])
-		[if getParallelism(aClass, 'FilterOperation').toString().toInteger() > 1 ]
-		.setParallelism([getParallelism(aClass, 'FilterOperation')/]);
+		.filter(([getInputsConveyed(aClass) ->first()/] tuple) -> [getStereotypeProperty(aClass, 'FilterTransformation', 'filteringCondition')/])
+		[if getParallelism(aClass, 'FilterTransformation').toString().toInteger() > 1 ]
+		.setParallelism([getParallelism(aClass, 'FilterTransformation')/]);
 		[else]
 		;
 		[/if]
 [/template]
 
-[template public generateFlinkJoinOperation(aClass : Class)]
+[template public generateFlinkJoinTransformation(aClass : Class)]
 [/template]
 
-[template public generateFlinkWindowOperation(aClass : Class)
+[template public generateFlinkWindowTransformation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
@@ -96,14 +96,14 @@
             [/if]
       	[/if] 
         .apply(new [aClass.name/]())
-		[if getParallelism(aClass, 'WindowOperation') > 1 ]
-		.setParallelism([getParallelism(aClass, 'WindowOperation')/]);
+		[if getParallelism(aClass, 'WindowTransformation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'WindowTransformation')/]);
 		[else]
 		;
 		[/if]
 [/template]
 
-[template public generateFlinkSumOperation(aClass : Class)
+[template public generateFlinkSumTransformation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	DataStream<[getOutputsConveyed(aClass) ->first()/]> [getOutputNames(aClass)->first()/] = [input.eGet('name')/]
 		[if input.hasStereotype('KeyedStream') ]
@@ -122,9 +122,9 @@
               [/if]
             [/if]
       	[/if] 
-		.sum("[getStereotypeProperty(aClass, 'SumOperation', 'field').eGet('name')/]")
-		[if getParallelism(aClass, 'SumOperation') > 1 ]
-		.setParallelism([getParallelism(aClass, 'SumOperation')/]);
+		.sum("[getStereotypeProperty(aClass, 'SumTransformation', 'field').eGet('name')/]")
+		[if getParallelism(aClass, 'SumTransformation') > 1 ]
+		.setParallelism([getParallelism(aClass, 'SumTransformation')/]);
 		[else]
 		;
 		[/if]  

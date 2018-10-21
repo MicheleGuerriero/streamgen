@@ -3,31 +3,31 @@
 
 [import streamgen::main::queryUtils/]
  
-[template public generateSparkMapOperation(aClass : Class)]
+[template public generateSparkMapTransformation(aClass : Class)]
 	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = [getInputNames()->first()/]
-		  	.repartition([getStereotypeProperty(aClass, 'MapOperation', 'parallelism')/])
+		  	.repartition([getStereotypeProperty(aClass, 'MapTransformation', 'parallelism')/])
 			.map(new [aClass.name/]());
 [/template]
 
-[template public generateSparkFlatmapOperation(aClass : Class)]
+[template public generateSparkFlatmapTransformation(aClass : Class)]
 	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = [getInputNames()->first()/]
-		  	.repartition([getStereotypeProperty(aClass, 'FlatmapOperation', 'parallelism')/])
+		  	.repartition([getStereotypeProperty(aClass, 'FlatmapTransformation', 'parallelism')/])
 			.flatMap(new [aClass.name/]());
 [/template]
 
-[template public generateSparkReduceOperation(aClass : Class)]
+[template public generateSparkReduceTransformation(aClass : Class)]
 [/template]
 
-[template public generateSparkFilterOperation(aClass : Class)]
+[template public generateSparkFilterTransformation(aClass : Class)]
 	   JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames()->first()/] = [getInputNames()->first()/]
-		  	.repartition([getStereotypeProperty(aClass, 'FilterOperation', 'parallelism')/])
-			.filter(([getInputsConveyed(aClass) ->first()/] tuple) -> [getStereotypeProperty(aClass, 'FilterOperation', 'filteringCondition')/]);
+		  	.repartition([getStereotypeProperty(aClass, 'FilterTransformation', 'parallelism')/])
+			.filter(([getInputsConveyed(aClass) ->first()/] tuple) -> [getStereotypeProperty(aClass, 'FilterTransformation', 'filteringCondition')/]);
 [/template]
 
-[template public generateSparkJoinOperation(aClass : Class)]
+[template public generateSparkJoinTransformation(aClass : Class)]
 [/template]
 
-[template public generateSparkSumOperation(aClass : Class)
+[template public generateSparkSumTransformation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 			[if input.hasStereotype('KeyedStream') ]
 		
@@ -39,13 +39,13 @@
 		 				keyed[getInputNames(aClass)->first().toUpperFirst()/]
 							.reduceByKeyAndWindow(((i1, i2) -> new [getOutputsConveyed(aClass)->first()/](
 								i1.get[getStereotypeProperty(input,'KeyedStream', 'key').eGet('name').toString().toUpperFirst()/](),
-		 						i1.get[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]() + i2.get[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]())),
+		 						i1.get[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]() + i2.get[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]())),
 							[if getStereotypeProperty(input,'WindowedStream', 'window').eGet('isSliding') = false]
 							Durations.[getStereotypeProperty(input,'WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(input,'WindowedStream', 'window').eGet('size').eGet('size')/]),
 			 				Durations.[getStereotypeProperty(input,'WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(input,'WindowedStream', 'window').eGet('size').eGet('size')/])
 				            [else] 
 							Durations.[getStereotypeProperty(input,'WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(input,'WindowedStream', 'window').eGet('size').eGet('size')/]),
-			 				Durations.[getStereotypeProperty(input,'WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(input,'WindowedStream', 'window').eGet('slideSize').eGet('size')/])[/if], [getStereotypeProperty(aClass, 'SumOperation', 'parallelism')/]).map(x -> x._2); 
+			 				Durations.[getStereotypeProperty(input,'WindowedStream', 'window').eGet('slideSize').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(input,'WindowedStream', 'window').eGet('slideSize').eGet('size')/])[/if], [getStereotypeProperty(aClass, 'SumTransformation', 'parallelism')/]).map(x -> x._2); 
 
 
 				[else]
@@ -61,7 +61,7 @@
 					updated = state.get();
 					if(values.size() > 0) {
 						for ([getOutputsConveyed(aClass)->first()/] i : values) {
-							updated.set[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/](updated.get[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]() + i.get[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]());
+							updated.set[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/](updated.get[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]() + i.get[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]());
 						}	
 						
 					}
@@ -72,7 +72,7 @@
 					if(values.size() > 0) {
 						updated = new [getOutputsConveyed(aClass)->first()/]();
 						for ([getOutputsConveyed(aClass)->first()/] i : values) {
-							updated.setCount(updated.get[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]() + i.get[getStereotypeProperty(aClass,'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]());
+							updated.setCount(updated.get[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]() + i.get[getStereotypeProperty(aClass,'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]());
 						}	
 						return Optional.of(updated);
 					} else {
@@ -84,7 +84,7 @@
 		};
 		
        JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] =
-        	keyed[getInputNames(aClass)->first()/].repartition([getStereotypeProperty(aClass, 'SumOperation', 'parallelism')/]).updateStateByKey(updateFunction)
+        	keyed[getInputNames(aClass)->first()/].repartition([getStereotypeProperty(aClass, 'SumTransformation', 'parallelism')/]).updateStateByKey(updateFunction)
         	.map(x -> x._2);	
 
 				[/if]
@@ -94,7 +94,7 @@
 						[comment case in which the input is not keyed but windowed/]
 						JavaDStream<[getOutputsConveyed(aClass)->first()/]> [getOutputNames(aClass)->first()/] =
 		 				[getInputNames(aClass)->first()/]
-							.reduceByWindow(((i1, i2) -> {i1.set[getStereotypeProperty(aClass, 'SumOperation', 'field').eGet('name').toString().toUpperFirst()/](i1.get[getStereotypeProperty(aClass, 'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]() + i2.get[getStereotypeProperty(aClass, 'SumOperation', 'field').eGet('name').toString().toUpperFirst()/]()); return i1;}),
+							.reduceByWindow(((i1, i2) -> {i1.set[getStereotypeProperty(aClass, 'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/](i1.get[getStereotypeProperty(aClass, 'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]() + i2.get[getStereotypeProperty(aClass, 'SumTransformation', 'field').eGet('name').toString().toUpperFirst()/]()); return i1;}),
 							[if getStereotypeProperty(aClass, 'WindowedStream', 'window').eGet('isSliding') = false]
 							Durations.[getStereotypeProperty(aClass, 'WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(aClass, 'WindowedStream', 'window').eGet('size').eGet('size')/]),
 			 				Durations.[getStereotypeProperty(aClass, 'WindowedStream', 'window').eGet('size').eGet('timeUnit').toString().toLower()/]([getStereotypeProperty(aClass, 'WindowedStream', 'window').eGet('size').eGet('size')/])
@@ -108,7 +108,7 @@
 			[/if]
 [/template]
 
-[template public generateSparkWindowOperation(aClass : Class)
+[template public generateSparkWindowTransformation(aClass : Class)
 	{input : DirectedRelationship = getInputs(aClass)->first();}]
 	[comment: the following if should be guaranteed by the constraints/]
 	[if hasStereotype(input, 'WindowedStream')] 

@@ -1,7 +1,0 @@
-[comment encoding = UTF-8 /]
-[module generateApexSources('http://www.eclipse.org/uml2/5.0.0/UML', 'http://www.eclipse.org/emf/2002/Ecore')]
-
-
-[template public generateApexSources(aClass : Class)]
-
-[/template]

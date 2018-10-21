@@ -60,19 +60,6 @@ public class [aClass.name/] implements Serializable{
     }
     [/for]
 
-    @Override
-    public String toString() {
-    	
-    	StringBuilder sb = new StringBuilder();
-    	
-        sb.append("@" + this.eventTime);
-        sb.append(" " + this.streamId+ " (");
-		sb.append([for (p: Property | aClass.attribute) separator(' + "," + ')]this.[p.name/][/for] );
-        sb.append(")");
-        
-        return sb.toString();
-    }
-
 	@Override
 	public int hashCode() {
 		return this.tupleId.hashCode();

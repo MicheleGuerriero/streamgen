@@ -24,7 +24,7 @@ public class [aClass.name.toUpperFirst()/] implements Function<[getInputsConveye
 
 	@Override
 	public [getOutputsConveyed(aClass)->first()/] call([getInputsConveyed(aClass)->first()/] tuple) throws Exception {
-		[getStereotypeProperty(aClass, 'MapOperation', 'mapFunction')/]
+		[getStereotypeProperty(aClass, 'MapTransformation', 'mapFunction')/]
 	}
 
 }
@@ -57,7 +57,7 @@ public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<[getInputs
 	public Iterator<[getOutputsConveyed(aClass)->first()/]> call([getInputsConveyed(aClass)->first()/] tuple) throws Exception {		
 		List<[getOutputsConveyed(aClass)->first()/]> out = new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
 		
- 		[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction').toString().replace('collect', 'add')/]        
+ 		[getStereotypeProperty(aClass, 'FlatmapTransformation', 'flatmapFunction').toString().replace('collect', 'add')/]        
         return out.iterator();
 
 	}
@@ -109,7 +109,7 @@ public Iterator<[getOutputsConveyed(aClass)->first()/]> call(Tuple2<[getStereoty
 	window.setEnd(t._2.get(t._2.size())._2);
 
 	
-	[getStereotypeProperty(aClass, 'WindowOperation', 'windowFunction').toString().substituteAll('collect', 'add')/]        
+	[getStereotypeProperty(aClass, 'WindowTransformation', 'windowFunction').toString().substituteAll('collect', 'add')/]        
 	
 	return out.iterator();
 }
@@ -148,7 +148,7 @@ public Iterator<WordCount> call(List<[getInputsConveyed(aClass)->first()/]> t) t
 	List<[getInputsConveyed(aClass)->first()/]> windowContent = t;
 	List<[getOutputsConveyed(aClass)->first()/]> out= new ArrayList<[getOutputsConveyed(aClass)->first()/]>();
 	
-	[getStereotypeProperty(aClass, 'FlatmapOperation', 'flatmapFunction')/]        
+	[getStereotypeProperty(aClass, 'FlatmapTransformation', 'flatmapFunction')/]        
 	
 	return out.iterator();
 }
