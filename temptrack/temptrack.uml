@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_ikGoAKC6EeiwhIrfg6iPxw/109" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_ikGoAKC6EeiwhIrfg6iPxw/109 ../profile/StreamUML.profile.uml#_ikK5cKC6EeiwhIrfg6iPxw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUML="http:///schemas/StreamUML/_9OZ_8NWKEeiCJq80tjZ76w/110" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUML/_9OZ_8NWKEeiCJq80tjZ76w/110 ../profile/StreamUML.profile.uml#_9OgGkNWKEeiCJq80tjZ76w">
   <uml:Model xmi:id="_4lHykOsoEeeFgI61BIgfhg" name="TempTrack">
     <packagedElement xmi:type="uml:Model" xmi:id="_fQzEEIT2Eei9Rsf_rXDXjw" name="TempTrack">
       <ownedComment xmi:type="uml:Comment" xmi:id="_bDleIE0OEeiV5tji1c_ulg" annotatedElement="_ZEY6QOspEeeFgI61BIgfhg">
@@ -12,7 +12,7 @@
 parallelism=3</body>
       </ownedComment>
       <ownedComment xmi:type="uml:Comment" xmi:id="_U682gE0PEeiV5tji1c_ulg" annotatedElement="_L9fIAEQWEei8PPfmmH1h8A">
-        <body>fileteringCondition = 
+        <body>filteringCondition = 
 &quot;tuple.getTemperature() &lt;9999 &amp; 
 tuple.getTemperature() > -9999 &amp; 
 tuple.getTemperature() != null &amp;
@@ -147,15 +147,15 @@ isSliding=false </body>
       <appliedProfile xmi:type="uml:Profile" href="../uml/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hF3V4FDNEeiynfuxK6H26Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o_UlsKMwEei8guVe8Sgj4A" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o_UlsaMwEei8guVe8Sgj4A" key="Version" value="0.0.110"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o_UlsqMwEei8guVe8Sgj4A" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o_Uls6MwEei8guVe8Sgj4A" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o_UltKMwEei8guVe8Sgj4A" key="Date" value="2018-08-15"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o_UltaMwEei8guVe8Sgj4A" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D_YBwOn1EeisXuzpVLSyTA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D_YBwen1EeisXuzpVLSyTA" key="Version" value="0.0.111"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D_YBwun1EeisXuzpVLSyTA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D_YBw-n1EeisXuzpVLSyTA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D_YBxOn1EeisXuzpVLSyTA" key="Date" value="2018-10-21"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D_YBxen1EeisXuzpVLSyTA" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hF5LEFDNEeiynfuxK6H26Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_ikK5cKC6EeiwhIrfg6iPxw"/>
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML.profile.uml#_9OgGkNWKEeiCJq80tjZ76w"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML.profile.uml#_Ke2mwGuREeeNCPsCczzD3A"/>
     </profileApplication>
@@ -191,4 +191,5 @@ isSliding=false </body>
   <StreamUML:FilterTransformation xmi:id="_TrnK0IUQEei9Rsf_rXDXjw" base_Class="_KQWKQIUQEei9Rsf_rXDXjw" filteringCondition="tuple.getAvgPrediction() > 50"/>
   <StreamUML:NonParallelStream xmi:id="_14PMMIUQEei9Rsf_rXDXjw" base_InformationFlow="_gWKK0IUQEei9Rsf_rXDXjw"/>
   <StreamUML:KeyedStream xmi:id="_rTUTkIUeEeihsYYunbczKQ" base_InformationFlow="_mc7MYIUeEeihsYYunbczKQ" key="_Tnm7QFLhEeiOxu-cmkz02w"/>
+  <StreamUML:SocketSource xmi:id="_Hny58On1EeisXuzpVLSyTA" base_Class="_eM3aMFMXEeiOxu-cmkz02w" host="localhost" port="5555"/>
 </xmi:XMI>

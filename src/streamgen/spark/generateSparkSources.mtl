@@ -16,14 +16,14 @@
 
 [template public generateSparkKafkaSource(aClass : Class)]
 	   Map<String, Object> [aClass.name.toString().concat('_kafkaParams')/] = new HashMap<>();
-	   kafkaParams.put("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerPort')/]");
-	   kafkaParams.put("key.deserializer", StringDeserializer.class);
-	   kafkaParams.put("value.deserializer", StringDeserializer.class);
-	   kafkaParams.put("group.id", "[aClass.name.toString().concat('_groupId')/]");
-	   kafkaParams.put("auto.offset.reset", "latest");
-	   kafkaParams.put("enable.auto.commit", false);
+	   [aClass.name.toString().concat('_kafkaParams')/].put("bootstrap.servers", "[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerIp')/]:[getStereotypeProperty(aClass, 'KafkaSource', 'kafkaBrokerPort')/]");
+	   [aClass.name.toString().concat('_kafkaParams')/].put("key.deserializer", StringDeserializer.class);
+	   [aClass.name.toString().concat('_kafkaParams')/].put("value.deserializer", StringDeserializer.class);
+	   [aClass.name.toString().concat('_kafkaParams')/].put("group.id", "[aClass.name.toString().concat('_groupId')/]");
+	   [aClass.name.toString().concat('_kafkaParams')/].put("auto.offset.reset", "latest");
+	   [aClass.name.toString().concat('_kafkaParams')/].put("enable.auto.commit", false);
 
-	   Collection<String> topic = Arrays.asList([aClass.name.toString()/]);
+	   Collection<String> topic = Arrays.asList([aClass.name.toString().concat('_kafkaParams')/]);
 
 	   JavaInputDStream<ConsumerRecord<String, String>> tmpStream =
 	     KafkaUtils.createDirectStream(
