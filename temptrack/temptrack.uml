@@ -192,4 +192,5 @@ isSliding=false </body>
   <StreamUML:NonParallelStream xmi:id="_14PMMIUQEei9Rsf_rXDXjw" base_InformationFlow="_gWKK0IUQEei9Rsf_rXDXjw"/>
   <StreamUML:KeyedStream xmi:id="_rTUTkIUeEeihsYYunbczKQ" base_InformationFlow="_mc7MYIUeEeihsYYunbczKQ" key="_Tnm7QFLhEeiOxu-cmkz02w"/>
   <StreamUML:SocketSource xmi:id="_Hny58On1EeisXuzpVLSyTA" base_Class="_eM3aMFMXEeiOxu-cmkz02w" host="localhost" port="5555"/>
+  <StreamUML:SparkApplication xmi:id="_9vtBkOpDEeisXuzpVLSyTA" base_Model="_fQzEEIT2Eei9Rsf_rXDXjw"/>
 </xmi:XMI>

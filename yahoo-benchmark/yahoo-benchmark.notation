@@ -511,13 +511,13 @@
     <element xmi:type="uml:Model" href="yahoo-benchmark.uml#_oOpNMIUUEei9Rsf_rXDXjw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oOp0QYUUEei9Rsf_rXDXjw" x="160" y="-180" width="1401" height="781"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_CDnAFIUVEei9Rsf_rXDXjw" type="StereotypeComment">
-    <styles xmi:type="notation:TitleStyle" xmi:id="_CDnAFYUVEei9Rsf_rXDXjw"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_CDnAF4UVEei9Rsf_rXDXjw" name="BASE_ELEMENT">
+  <children xmi:type="notation:Shape" xmi:id="_vIGpmOpEEeisXuzpVLSyTA" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_vIGpmepEEeisXuzpVLSyTA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_vIGpm-pEEeisXuzpVLSyTA" name="BASE_ELEMENT">
       <eObjectValue xmi:type="uml:Model" href="yahoo-benchmark.uml#_oOpNMIUUEei9Rsf_rXDXjw"/>
     </styles>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CDnAFoUVEei9Rsf_rXDXjw" x="220"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vIGpmupEEeisXuzpVLSyTA" x="360" y="-180"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_ctAWAYUUEei9Rsf_rXDXjw" name="diagram_compatibility_version" stringValue="1.3.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ctAWAoUUEei9Rsf_rXDXjw"/>
@@ -525,16 +525,6 @@
     <owner xmi:type="uml:Model" href="yahoo-benchmark.uml#_csnUcIUUEei9Rsf_rXDXjw"/>
   </styles>
   <element xmi:type="uml:Model" href="yahoo-benchmark.uml#_csnUcIUUEei9Rsf_rXDXjw"/>
-  <edges xmi:type="notation:Connector" xmi:id="_CDnAGIUVEei9Rsf_rXDXjw" type="StereotypeCommentLink" source="_oOp0QIUUEei9Rsf_rXDXjw" target="_CDnAFIUVEei9Rsf_rXDXjw">
-    <styles xmi:type="notation:FontStyle" xmi:id="_CDnAGYUVEei9Rsf_rXDXjw"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_CDnnIIUVEei9Rsf_rXDXjw" name="BASE_ELEMENT">
-      <eObjectValue xmi:type="uml:Model" href="yahoo-benchmark.uml#_oOpNMIUUEei9Rsf_rXDXjw"/>
-    </styles>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CDnAGoUVEei9Rsf_rXDXjw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CDnAG4UVEei9Rsf_rXDXjw"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CDnAHIUVEei9Rsf_rXDXjw"/>
-  </edges>
   <edges xmi:type="notation:Connector" xmi:id="_DTU7joUVEei9Rsf_rXDXjw" type="StereotypeCommentLink" source="_ktjsEIUUEei9Rsf_rXDXjw" target="_DTU7ioUVEei9Rsf_rXDXjw">
     <styles xmi:type="notation:FontStyle" xmi:id="_DTU7j4UVEei9Rsf_rXDXjw"/>
     <styles xmi:type="notation:EObjectValueStyle" xmi:id="_DTU7k4UVEei9Rsf_rXDXjw" name="BASE_ELEMENT">
@@ -925,5 +915,15 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UT0xkqDAEeiwhIrfg6iPxw" points="[927, 371, -643984, -643984]$[875, 401, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UdfD4KDAEeiwhIrfg6iPxw" id="(0.375,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UdfD4aDAEeiwhIrfg6iPxw" id="(1.0,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_vIGpnOpEEeisXuzpVLSyTA" type="StereotypeCommentLink" source="_oOp0QIUUEei9Rsf_rXDXjw" target="_vIGpmOpEEeisXuzpVLSyTA">
+    <styles xmi:type="notation:FontStyle" xmi:id="_vIGpnepEEeisXuzpVLSyTA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_vIGpoepEEeisXuzpVLSyTA" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Model" href="yahoo-benchmark.uml#_oOpNMIUUEei9Rsf_rXDXjw"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vIGpnupEEeisXuzpVLSyTA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vIGpn-pEEeisXuzpVLSyTA"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vIGpoOpEEeisXuzpVLSyTA"/>
   </edges>
 </notation:Diagram>

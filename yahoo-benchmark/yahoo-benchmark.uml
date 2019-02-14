@@ -198,7 +198,5 @@ this.adsToCampaigns.add(toAdd);</flatmaps>
 			out.collect(output);</flatmaps>
   </StreamUML:NFlatmapTransformation>
   <StreamUML:StreamDatatype xmi:id="_1p1BEIXyEeihsYYunbczKQ" base_Class="_UfsqcIUhEeihsYYunbczKQ"/>
-  <StreamUML:SparkApplication xmi:id="_ABmT4OoREeisXuzpVLSyTA" base_Model="_oOpNMIUUEei9Rsf_rXDXjw">
-    <microBatchSize xmi:type="StreamUML:TimeAmount" xmi:id="_Aj03MOoREeisXuzpVLSyTA" timeUnit="Milliseconds" size="1"/>
-  </StreamUML:SparkApplication>
+  <StreamUML:SparkApplication xmi:id="_vCeisOpEEeisXuzpVLSyTA" base_Model="_oOpNMIUUEei9Rsf_rXDXjw"/>
 </xmi:XMI>
