@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1KeXsHgKEemAPvp_yujxcQ" name="StreamUML-activity" metaclassReference="_cKFPMHh0EemAPvp_yujxcQ _dZCVoHh0EemAPvp_yujxcQ _fI5JsHh0EemAPvp_yujxcQ _g7skEHh0EemAPvp_yujxcQ _Rk5uUHh2EemAPvp_yujxcQ _VTAtEHsOEemDus1FFwvsig">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZQg0Hh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Rk1c4Hh2EemAPvp_yujxcQ" source="PapyrusVersion">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rk1c4Xh2EemAPvp_yujxcQ" key="Version" value="0.0.0"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rk1c4nh2EemAPvp_yujxcQ" key="Comment" value="&lt;undefined>"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rk1c43h2EemAPvp_yujxcQ" key="Copyright" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rk1c5Hh2EemAPvp_yujxcQ" key="Date" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rk1c5Xh2EemAPvp_yujxcQ" key="Author" value="&lt;undefined>"/>
+    </eAnnotations>
+    <contents xmi:type="ecore:EPackage" xmi:id="_aTSwEHsOEemDus1FFwvsig" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_aTSJAHsOEemDus1FFwvsig/6" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwEXsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTSwEnsOEemDus1FFwvsig" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTT-N3sOEemDus1FFwvsig" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTT-OHsOEemDus1FFwvsig" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTT-OXsOEemDus1FFwvsig" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTT-OnsOEemDus1FFwvsig" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTT-O3sOEemDus1FFwvsig" key="Date" value="2019-05-20"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTT-PHsOEemDus1FFwvsig" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwE3sOEemDus1FFwvsig" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwFHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwFXsOEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwF3sOEemDus1FFwvsig" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwGHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwGXsOEemDus1FFwvsig" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwG3sOEemDus1FFwvsig" name="WindowTransformation" eSuperTypes="_aTSwHnsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwHHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwHnsOEemDus1FFwvsig" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwH3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwIHsOEemDus1FFwvsig" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwInsOEemDus1FFwvsig" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwI3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwJHsOEemDus1FFwvsig" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwJnsOEemDus1FFwvsig" name="FlatMapTransformation" eSuperTypes="_aTSwHnsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwJ3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwKXsOEemDus1FFwvsig" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwKnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwK3sOEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwLXsOEemDus1FFwvsig" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwLnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwL3sOEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwMXsOEemDus1FFwvsig" name="DataStream">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwMnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwM3sOEemDus1FFwvsig" name="base_ObjectFlow" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwNXsOEemDus1FFwvsig" name="WindowedStream" eSuperTypes="_aTSwMXsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwNnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VvsTwHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwOHsOEemDus1FFwvsig" name="KeydStream" eSuperTypes="_aTSwMXsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwOXsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WwTcMHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwO3sOEemDus1FFwvsig" name="OutputWriter">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwPHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_rnep8Hh3EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwPXsOEemDus1FFwvsig" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwP3sOEemDus1FFwvsig" name="TextFileSink" eSuperTypes="_aTSwO3sOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwQHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9USC4Hh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwQnsOEemDus1FFwvsig" name="CassandraWriter" eSuperTypes="_aTSwO3sOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwQ3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_-LUYkHh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwRXsOEemDus1FFwvsig" name="RandomlyPartitionedStream" eSuperTypes="_aTSwMXsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwRnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_jzctIHsNEemDus1FFwvsig"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwSHsOEemDus1FFwvsig" name="DistributedStreamingApplication">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwSXsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WZ-8MHsOEemDus1FFwvsig"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_aTSwSnsOEemDus1FFwvsig" name="base_Activity" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_aTSwTHsOEemDus1FFwvsig" name="SparkApplication" eSuperTypes="_aTSwSHsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aTSwTXsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_YlACQHsOEemDus1FFwvsig"/>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_KSrMIHsOEemDus1FFwvsig" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_KSqlEHsOEemDus1FFwvsig/5" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMIXsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KSrMInsOEemDus1FFwvsig" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSsaRHsOEemDus1FFwvsig" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KSsaRXsOEemDus1FFwvsig" key="Version" value="0.0.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KSsaRnsOEemDus1FFwvsig" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KSsaR3sOEemDus1FFwvsig" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KSsaSHsOEemDus1FFwvsig" key="Date" value="2019-05-20"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KSsaSXsOEemDus1FFwvsig" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMI3sOEemDus1FFwvsig" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMJHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMJXsOEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMJ3sOEemDus1FFwvsig" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMKHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMKXsOEemDus1FFwvsig" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMK3sOEemDus1FFwvsig" name="WindowTransformation" eSuperTypes="_KSrMLnsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMLHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMLnsOEemDus1FFwvsig" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrML3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMMHsOEemDus1FFwvsig" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMMnsOEemDus1FFwvsig" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMM3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMNHsOEemDus1FFwvsig" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMNnsOEemDus1FFwvsig" name="FlatMapTransformation" eSuperTypes="_KSrMLnsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMN3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMOXsOEemDus1FFwvsig" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMOnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMO3sOEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMPXsOEemDus1FFwvsig" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMPnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMP3sOEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMQXsOEemDus1FFwvsig" name="DataStream">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMQnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMQ3sOEemDus1FFwvsig" name="base_ObjectFlow" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMRXsOEemDus1FFwvsig" name="WindowedStream" eSuperTypes="_KSrMQXsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMRnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VvsTwHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMSHsOEemDus1FFwvsig" name="KeydStream" eSuperTypes="_KSrMQXsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMSXsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WwTcMHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMS3sOEemDus1FFwvsig" name="OutputWriter">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMTHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_rnep8Hh3EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KSrMTXsOEemDus1FFwvsig" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMT3sOEemDus1FFwvsig" name="TextFileSink" eSuperTypes="_KSrMS3sOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMUHsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9USC4Hh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMUnsOEemDus1FFwvsig" name="CassandraWriter" eSuperTypes="_KSrMS3sOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMU3sOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_-LUYkHh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KSrMVXsOEemDus1FFwvsig" name="RandomlyPartitionedStream" eSuperTypes="_KSrMQXsOEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KSrMVnsOEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_jzctIHsNEemDus1FFwvsig"/>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_6XRfYHsNEemDus1FFwvsig" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_6XOcEHsNEemDus1FFwvsig/4" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfYXsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6XRfYnsNEemDus1FFwvsig" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XT7o3sNEemDus1FFwvsig" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6XT7pHsNEemDus1FFwvsig" key="Version" value="0.0.5"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6XT7pXsNEemDus1FFwvsig" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6XT7pnsNEemDus1FFwvsig" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6XT7p3sNEemDus1FFwvsig" key="Date" value="2019-05-20"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6XT7qHsNEemDus1FFwvsig" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfY3sNEemDus1FFwvsig" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfZHsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfZXsNEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfZ3sNEemDus1FFwvsig" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfaHsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfaXsNEemDus1FFwvsig" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfa3sNEemDus1FFwvsig" name="WindowTransformation" eSuperTypes="_6XRfbnsNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfbHsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfbnsNEemDus1FFwvsig" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfb3sNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfcHsNEemDus1FFwvsig" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfcnsNEemDus1FFwvsig" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfc3sNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfdHsNEemDus1FFwvsig" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfdnsNEemDus1FFwvsig" name="FlatMapTransformation" eSuperTypes="_6XRfbnsNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfd3sNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfeXsNEemDus1FFwvsig" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfensNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfe3sNEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRffXsNEemDus1FFwvsig" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRffnsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRff3sNEemDus1FFwvsig" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfgXsNEemDus1FFwvsig" name="DataStream">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfgnsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfg3sNEemDus1FFwvsig" name="base_ObjectFlow" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfhXsNEemDus1FFwvsig" name="WindowedStream" eSuperTypes="_6XRfgXsNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfhnsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VvsTwHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfiHsNEemDus1FFwvsig" name="KeydStream" eSuperTypes="_6XRfgXsNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfiXsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WwTcMHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfi3sNEemDus1FFwvsig" name="OutputWriter">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfjHsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_rnep8Hh3EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6XRfjXsNEemDus1FFwvsig" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfj3sNEemDus1FFwvsig" name="TextFileWriter" eSuperTypes="_6XRfi3sNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfkHsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9USC4Hh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRfknsNEemDus1FFwvsig" name="CassandraWriter" eSuperTypes="_6XRfi3sNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRfk3sNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_-LUYkHh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6XRflXsNEemDus1FFwvsig" name="RandomlyPartitionedStream" eSuperTypes="_6XRfgXsNEemDus1FFwvsig">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6XRflnsNEemDus1FFwvsig" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_jzctIHsNEemDus1FFwvsig"/>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_AMp-MXh4EemAPvp_yujxcQ" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_AMp-MHh4EemAPvp_yujxcQ/3" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-Mnh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AMp-M3h4EemAPvp_yujxcQ" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMrMWHh4EemAPvp_yujxcQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AMrMWXh4EemAPvp_yujxcQ" key="Version" value="0.0.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AMrMWnh4EemAPvp_yujxcQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AMrMW3h4EemAPvp_yujxcQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AMrMXHh4EemAPvp_yujxcQ" key="Date" value="2019-05-17"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AMrMXXh4EemAPvp_yujxcQ" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-NHh4EemAPvp_yujxcQ" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-NXh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-Nnh4EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-OHh4EemAPvp_yujxcQ" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-OXh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-Onh4EemAPvp_yujxcQ" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-PHh4EemAPvp_yujxcQ" name="WindowTransformation" eSuperTypes="_AMp-P3h4EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-PXh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-P3h4EemAPvp_yujxcQ" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-QHh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-QXh4EemAPvp_yujxcQ" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-Q3h4EemAPvp_yujxcQ" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-RHh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-RXh4EemAPvp_yujxcQ" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-R3h4EemAPvp_yujxcQ" name="FlatMapTransformation" eSuperTypes="_AMp-P3h4EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-SHh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-Snh4EemAPvp_yujxcQ" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-S3h4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-THh4EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-Tnh4EemAPvp_yujxcQ" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-T3h4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-UHh4EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-Unh4EemAPvp_yujxcQ" name="DataStream">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-U3h4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-VHh4EemAPvp_yujxcQ" name="base_ObjectFlow" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-Vnh4EemAPvp_yujxcQ" name="WindowedStream" eSuperTypes="_AMp-Unh4EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-V3h4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VvsTwHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-WXh4EemAPvp_yujxcQ" name="KeydStream" eSuperTypes="_AMp-Unh4EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-Wnh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WwTcMHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-XHh4EemAPvp_yujxcQ" name="OutputWriter">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-XXh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_rnep8Hh3EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AMp-Xnh4EemAPvp_yujxcQ" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMp-YHh4EemAPvp_yujxcQ" name="TextFileWriter" eSuperTypes="_AMp-XHh4EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMp-YXh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9USC4Hh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_AMqlQXh4EemAPvp_yujxcQ" name="CassandraWriter" eSuperTypes="_AMp-XHh4EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AMqlQnh4EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_-LUYkHh3EemAPvp_yujxcQ"/>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_tV-zIHh3EemAPvp_yujxcQ" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_tV-MEHh3EemAPvp_yujxcQ/2" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zIXh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tV-zInh3EemAPvp_yujxcQ" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tWBPY3h3EemAPvp_yujxcQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tWBPZHh3EemAPvp_yujxcQ" key="Version" value="0.0.3"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tWBPZXh3EemAPvp_yujxcQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tWBPZnh3EemAPvp_yujxcQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tWBPZ3h3EemAPvp_yujxcQ" key="Date" value="2019-05-17"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tWBPaHh3EemAPvp_yujxcQ" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zI3h3EemAPvp_yujxcQ" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zJHh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zJXh3EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zJ3h3EemAPvp_yujxcQ" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zKHh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zKXh3EemAPvp_yujxcQ" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zK3h3EemAPvp_yujxcQ" name="WindowTransformation" eSuperTypes="_tV-zLnh3EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zLHh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zLnh3EemAPvp_yujxcQ" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zL3h3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zMHh3EemAPvp_yujxcQ" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zMnh3EemAPvp_yujxcQ" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zM3h3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zNHh3EemAPvp_yujxcQ" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zNnh3EemAPvp_yujxcQ" name="FlatMapTransformation" eSuperTypes="_tV-zLnh3EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zN3h3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zOXh3EemAPvp_yujxcQ" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zOnh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zO3h3EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zPXh3EemAPvp_yujxcQ" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zPnh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zP3h3EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zQXh3EemAPvp_yujxcQ" name="DataStream">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zQnh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zQ3h3EemAPvp_yujxcQ" name="base_ObjectFlow" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zRXh3EemAPvp_yujxcQ" name="WindowedStream" eSuperTypes="_tV-zQXh3EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zRnh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VvsTwHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zSHh3EemAPvp_yujxcQ" name="KeydStream" eSuperTypes="_tV-zQXh3EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zSXh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WwTcMHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tV-zS3h3EemAPvp_yujxcQ" name="OutputWriter">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tV-zTHh3EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_rnep8Hh3EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tV-zTXh3EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_akp3kHh2EemAPvp_yujxcQ" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_akpQgHh2EemAPvp_yujxcQ/1" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3kXh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_akp3knh2EemAPvp_yujxcQ" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akth83h2EemAPvp_yujxcQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_akth9Hh2EemAPvp_yujxcQ" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_akth9Xh2EemAPvp_yujxcQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_akth9nh2EemAPvp_yujxcQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_akth93h2EemAPvp_yujxcQ" key="Date" value="2019-05-17"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_akth-Hh2EemAPvp_yujxcQ" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3k3h2EemAPvp_yujxcQ" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3lHh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3lXh2EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3l3h2EemAPvp_yujxcQ" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3mHh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3mXh2EemAPvp_yujxcQ" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3m3h2EemAPvp_yujxcQ" name="WindowTransformation" eSuperTypes="_akp3nnh2EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3nHh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3nnh2EemAPvp_yujxcQ" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3n3h2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3oHh2EemAPvp_yujxcQ" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3onh2EemAPvp_yujxcQ" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3o3h2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3pHh2EemAPvp_yujxcQ" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3pnh2EemAPvp_yujxcQ" name="FlatMapTransformation" eSuperTypes="_akp3nnh2EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3p3h2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3qXh2EemAPvp_yujxcQ" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3qnh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3q3h2EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3rXh2EemAPvp_yujxcQ" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3rnh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3r3h2EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3sXh2EemAPvp_yujxcQ" name="DataStream">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3snh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_akp3s3h2EemAPvp_yujxcQ" name="base_ObjectFlow" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3tXh2EemAPvp_yujxcQ" name="WindowedStream" eSuperTypes="_akp3sXh2EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3tnh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VvsTwHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_akp3uHh2EemAPvp_yujxcQ" name="KeydStream" eSuperTypes="_akp3sXh2EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_akp3uXh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_WwTcMHh2EemAPvp_yujxcQ"/>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_3ZRH4Hh1EemAPvp_yujxcQ" name="StreamUMLactivity" nsURI="http:///schemas/StreamUMLactivity/_3ZOroHh1EemAPvp_yujxcQ/0" nsPrefix="StreamUMLactivity">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH4Xh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ZRH4nh1EemAPvp_yujxcQ" key="originalName" value="StreamUML-activity"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZSWBHh1EemAPvp_yujxcQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ZSWBXh1EemAPvp_yujxcQ" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ZSWBnh1EemAPvp_yujxcQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ZSWB3h1EemAPvp_yujxcQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ZSWCHh1EemAPvp_yujxcQ" key="Date" value="2019-05-17"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ZSWCXh1EemAPvp_yujxcQ" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH43h1EemAPvp_yujxcQ" name="SocketSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH5Hh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_BiiTYHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3ZRH5Xh1EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH53h1EemAPvp_yujxcQ" name="TextFile">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH6Hh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DSw64Hh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3ZRH6Xh1EemAPvp_yujxcQ" name="base_DataStoreNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH63h1EemAPvp_yujxcQ" name="WindowTransformation" eSuperTypes="_3ZRH7nh1EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH7Hh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_G4BxYHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH7nh1EemAPvp_yujxcQ" name="Transformation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH73h1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_k8j8AHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3ZRH8Hh1EemAPvp_yujxcQ" name="base_OpaqueAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH8nh1EemAPvp_yujxcQ" name="Window">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH83h1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KKkgMHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3ZRH9Hh1EemAPvp_yujxcQ" name="base_CentralBufferNode" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH9nh1EemAPvp_yujxcQ" name="FlatMapTransformation" eSuperTypes="_3ZRH7nh1EemAPvp_yujxcQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH93h1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ivXrsHh1EemAPvp_yujxcQ"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH-Xh1EemAPvp_yujxcQ" name="TextFileSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH-nh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAHJAHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3ZRH-3h1EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3ZRH_Xh1EemAPvp_yujxcQ" name="KafkaSource">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ZRH_nh1EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xxHMkHh1EemAPvp_yujxcQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3ZRH_3h1EemAPvp_yujxcQ" name="base_AcceptEventAction" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_cKFPMHh0EemAPvp_yujxcQ" alias="AcceptEventAction">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#AcceptEventAction"/>
+  </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_dZCVoHh0EemAPvp_yujxcQ" alias="OpaqueAction">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#OpaqueAction"/>
+  </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_fI5JsHh0EemAPvp_yujxcQ" alias="DataStoreNode">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataStoreNode"/>
+  </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_g7skEHh0EemAPvp_yujxcQ" alias="CentralBufferNode">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#CentralBufferNode"/>
+  </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_Rk5uUHh2EemAPvp_yujxcQ" alias="ObjectFlow">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ObjectFlow"/>
+  </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_VTAtEHsOEemDus1FFwvsig" alias="Activity">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+  </elementImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_1ayroHgKEemAPvp_yujxcQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_1a2WAHgKEemAPvp_yujxcQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_BiiTYHh1EemAPvp_yujxcQ" name="SocketSource">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_JhKW0Xh1EemAPvp_yujxcQ" name="base_AcceptEventAction" association="_JhJvwHh1EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#AcceptEventAction"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JhKW0nh1EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_DSw64Hh1EemAPvp_yujxcQ" name="TextFile">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_I-fHkXh1EemAPvp_yujxcQ" name="base_DataStoreNode" association="_I-d5cHh1EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataStoreNode"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I-fHknh1EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_G4BxYHh1EemAPvp_yujxcQ" name="WindowTransformation">
+    <generalization xmi:type="uml:Generalization" xmi:id="_qZp20Hh1EemAPvp_yujxcQ" general="_k8j8AHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_I-d5cHh1EemAPvp_yujxcQ" name="E_TextFile_DataStoreNode11" memberEnd="_I-fHkHh1EemAPvp_yujxcQ _I-fHkXh1EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_I-fHkHh1EemAPvp_yujxcQ" name="extension_TextFile" type="_DSw64Hh1EemAPvp_yujxcQ" aggregation="composite" association="_I-d5cHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_JhJvwHh1EemAPvp_yujxcQ" name="E_SocketSource_AcceptEventAction12" memberEnd="_JhKW0Hh1EemAPvp_yujxcQ _JhKW0Xh1EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_JhKW0Hh1EemAPvp_yujxcQ" name="extension_SocketSource" type="_BiiTYHh1EemAPvp_yujxcQ" aggregation="composite" association="_JhJvwHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_KKkgMHh1EemAPvp_yujxcQ" name="Window">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_K1yncHh1EemAPvp_yujxcQ" name="base_CentralBufferNode" association="_K1yAYHh1EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#CentralBufferNode"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K1yncXh1EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_K1yAYHh1EemAPvp_yujxcQ" name="E_Window_CentralBufferNode14" memberEnd="_K1yAYXh1EemAPvp_yujxcQ _K1yncHh1EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_K1yAYXh1EemAPvp_yujxcQ" name="extension_Window" type="_KKkgMHh1EemAPvp_yujxcQ" aggregation="composite" association="_K1yAYHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ivXrsHh1EemAPvp_yujxcQ" name="FlatMapTransformation">
+    <generalization xmi:type="uml:Generalization" xmi:id="_p_QZ0Hh1EemAPvp_yujxcQ" general="_k8j8AHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_k8j8AHh1EemAPvp_yujxcQ" name="Transformation">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pgxuEHh1EemAPvp_yujxcQ" name="base_OpaqueAction" association="_pgwf8Hh1EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#OpaqueAction"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pgxuEXh1EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_pgwf8Hh1EemAPvp_yujxcQ" name="E_Transformation_OpaqueAction16" memberEnd="_pgxHAHh1EemAPvp_yujxcQ _pgxuEHh1EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_pgxHAHh1EemAPvp_yujxcQ" name="extension_Transformation" type="_k8j8AHh1EemAPvp_yujxcQ" aggregation="composite" association="_pgwf8Hh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_wAHJAHh1EemAPvp_yujxcQ" name="TextFileSource">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xPUHEXh1EemAPvp_yujxcQ" name="base_AcceptEventAction" association="_xPTgAHh1EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#AcceptEventAction"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xPUHEnh1EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_xPTgAHh1EemAPvp_yujxcQ" name="E_TextFileSource_AcceptEventAction18" memberEnd="_xPUHEHh1EemAPvp_yujxcQ _xPUHEXh1EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_xPUHEHh1EemAPvp_yujxcQ" name="extension_TextFileSource" type="_wAHJAHh1EemAPvp_yujxcQ" aggregation="composite" association="_xPTgAHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_xxHMkHh1EemAPvp_yujxcQ" name="KafkaSource">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_y6qOkXh1EemAPvp_yujxcQ" name="base_AcceptEventAction" association="_y6pngHh1EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#AcceptEventAction"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y6qOknh1EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_y6pngHh1EemAPvp_yujxcQ" name="E_KafkaSource_AcceptEventAction20" memberEnd="_y6qOkHh1EemAPvp_yujxcQ _y6qOkXh1EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_y6qOkHh1EemAPvp_yujxcQ" name="extension_KafkaSource" type="_xxHMkHh1EemAPvp_yujxcQ" aggregation="composite" association="_y6pngHh1EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_SZ7R0Hh2EemAPvp_yujxcQ" name="DataStream">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_UG_3oXh2EemAPvp_yujxcQ" name="base_ObjectFlow" association="_UG_QkHh2EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ObjectFlow"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UG_3onh2EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_UG_QkHh2EemAPvp_yujxcQ" name="E_DataStream_ObjectFlow24" memberEnd="_UG_3oHh2EemAPvp_yujxcQ _UG_3oXh2EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_UG_3oHh2EemAPvp_yujxcQ" name="extension_DataStream" type="_SZ7R0Hh2EemAPvp_yujxcQ" aggregation="composite" association="_UG_QkHh2EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_VvsTwHh2EemAPvp_yujxcQ" name="WindowedStream">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Xt8JIHh2EemAPvp_yujxcQ" general="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_WwTcMHh2EemAPvp_yujxcQ" name="KeydStream">
+    <generalization xmi:type="uml:Generalization" xmi:id="_YK38wHh2EemAPvp_yujxcQ" general="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_rnep8Hh3EemAPvp_yujxcQ" name="OutputWriter">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6mF-UXh3EemAPvp_yujxcQ" name="base_OpaqueAction" association="_6mFXQHh3EemAPvp_yujxcQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#OpaqueAction"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mF-Unh3EemAPvp_yujxcQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_6mFXQHh3EemAPvp_yujxcQ" name="E_OutputWriter_OpaqueAction28" memberEnd="_6mF-UHh3EemAPvp_yujxcQ _6mF-UXh3EemAPvp_yujxcQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_6mF-UHh3EemAPvp_yujxcQ" name="extension_OutputWriter" type="_rnep8Hh3EemAPvp_yujxcQ" aggregation="composite" association="_6mFXQHh3EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_9USC4Hh3EemAPvp_yujxcQ" name="TextFileSink">
+    <generalization xmi:type="uml:Generalization" xmi:id="__O7xsHh3EemAPvp_yujxcQ" general="_rnep8Hh3EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_-LUYkHh3EemAPvp_yujxcQ" name="CassandraWriter">
+    <generalization xmi:type="uml:Generalization" xmi:id="__wjRAHh3EemAPvp_yujxcQ" general="_rnep8Hh3EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_jzctIHsNEemDus1FFwvsig" name="RandomlyPartitionedStream">
+    <generalization xmi:type="uml:Generalization" xmi:id="_l_d4wHsNEemDus1FFwvsig" general="_SZ7R0Hh2EemAPvp_yujxcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_WZ-8MHsOEemDus1FFwvsig" name="DistributedStreamingApplication">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_YTCvkXsOEemDus1FFwvsig" name="base_Activity" association="_YTA6YHsOEemDus1FFwvsig">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YTCvknsOEemDus1FFwvsig"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_YTA6YHsOEemDus1FFwvsig" name="E_DistributedStreamingApplication_Activity34" memberEnd="_YTCvkHsOEemDus1FFwvsig _YTCvkXsOEemDus1FFwvsig">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_YTCvkHsOEemDus1FFwvsig" name="extension_DistributedStreamingApplication" type="_WZ-8MHsOEemDus1FFwvsig" aggregation="composite" association="_YTA6YHsOEemDus1FFwvsig"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_YlACQHsOEemDus1FFwvsig" name="SparkApplication">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Z_dOEHsOEemDus1FFwvsig" general="_WZ-8MHsOEemDus1FFwvsig"/>
+  </packagedElement>
+</uml:Profile>

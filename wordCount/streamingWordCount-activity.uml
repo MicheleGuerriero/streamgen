@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:StreamUMLactivity="http:///schemas/StreamUMLactivity/_aTSJAHsOEemDus1FFwvsig/6" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/StreamUMLactivity/_aTSJAHsOEemDus1FFwvsig/6 ../profile/StreamUML-activity.profile.uml#_aTSwEHsOEemDus1FFwvsig">
+  <uml:Model xmi:id="_78IRsHgKEemAPvp_yujxcQ" name="streamingWordCount-activity">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_8DjvYHgKEemAPvp_yujxcQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Activity" xmi:id="_79AbcHgKEemAPvp_yujxcQ" name="StreamingWordCount" node="_KFlfsHgLEemAPvp_yujxcQ _IfpcoHgLEemAPvp_yujxcQ _GDp7UHgLEemAPvp_yujxcQ _VtNNoHgMEemAPvp_yujxcQ _lCJXUHgMEemAPvp_yujxcQ">
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_zc4YAHgLEemAPvp_yujxcQ" target="_zdO9UHgLEemAPvp_yujxcQ" source="_zc5mIHgLEemAPvp_yujxcQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_zdrpQHgLEemAPvp_yujxcQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_zdrpQXgLEemAPvp_yujxcQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_oX-qsHgMEemAPvp_yujxcQ" target="_oYAf4XgMEemAPvp_yujxcQ" source="_oX_40HgMEemAPvp_yujxcQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_oYMtIHgMEemAPvp_yujxcQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_oYMtIXgMEemAPvp_yujxcQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_pHomAHgMEemAPvp_yujxcQ" target="_KFlfsHgLEemAPvp_yujxcQ" source="_pHp0IHgMEemAPvp_yujxcQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_pH6S0HgMEemAPvp_yujxcQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_pH6S0XgMEemAPvp_yujxcQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_nEME8Hh3EemAPvp_yujxcQ" target="_nENTEHh3EemAPvp_yujxcQ" source="_ke8hAHh3EemAPvp_yujxcQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_nEY5QHh3EemAPvp_yujxcQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_nEY5QXh3EemAPvp_yujxcQ" value="1"/>
+      </edge>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_GDp7UHgLEemAPvp_yujxcQ" name="LineSplitter">
+        <inputValue xmi:type="uml:InputPin" xmi:id="_nENTEHh3EemAPvp_yujxcQ" name="textLine" incoming="_nEME8Hh3EemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_nEN6IHh3EemAPvp_yujxcQ" value="1"/>
+        </inputValue>
+        <outputValue xmi:type="uml:OutputPin" xmi:id="_zc5mIHgLEemAPvp_yujxcQ" name="wordToken" outgoing="_zc4YAHgLEemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_zc60QHgLEemAPvp_yujxcQ" value="1"/>
+        </outputValue>
+      </node>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_IfpcoHgLEemAPvp_yujxcQ" name="WordCounter">
+        <inputValue xmi:type="uml:InputPin" xmi:id="_zdO9UHgLEemAPvp_yujxcQ" name="wordToken" incoming="_zc4YAHgLEemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_zdVrAHgLEemAPvp_yujxcQ" value="1"/>
+        </inputValue>
+        <outputValue xmi:type="uml:OutputPin" xmi:id="_oX_40HgMEemAPvp_yujxcQ" name="wordCount" outgoing="_oX-qsHgMEemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_oYAf4HgMEemAPvp_yujxcQ" value="1"/>
+        </outputValue>
+      </node>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_KFlfsHgLEemAPvp_yujxcQ" name="DataStoreNode4" incoming="_pHomAHgMEemAPvp_yujxcQ">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_KFpxIHgLEemAPvp_yujxcQ" value="1"/>
+      </node>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_VtNNoHgMEemAPvp_yujxcQ" name="SocketSource">
+        <result xmi:type="uml:OutputPin" xmi:id="_ke8hAHh3EemAPvp_yujxcQ" name="textLine" outgoing="_nEME8Hh3EemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_ke9IEHh3EemAPvp_yujxcQ" value="1"/>
+        </result>
+      </node>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_lCJXUHgMEemAPvp_yujxcQ" name="OutputWriter">
+        <inputValue xmi:type="uml:InputPin" xmi:id="_oYAf4XgMEemAPvp_yujxcQ" name="wordCount" incoming="_oX-qsHgMEemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_oYBG8HgMEemAPvp_yujxcQ" value="1"/>
+        </inputValue>
+        <outputValue xmi:type="uml:OutputPin" xmi:id="_pHp0IHgMEemAPvp_yujxcQ" name="wordCount" outgoing="_pHomAHgMEemAPvp_yujxcQ">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_pHrCQHgMEemAPvp_yujxcQ" value="1"/>
+        </outputValue>
+      </node>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ykC60Hh0EemAPvp_yujxcQ" name="comp1"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zPnnYHh0EemAPvp_yujxcQ" name="comp2"/>
+    <packagedElement xmi:type="uml:InformationFlow" xmi:id="_0WGHQHh0EemAPvp_yujxcQ" informationSource="_ykC60Hh0EemAPvp_yujxcQ" informationTarget="_zPnnYHh0EemAPvp_yujxcQ"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_d7PHIHsOEemDus1FFwvsig" name="WordCount"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ewJV4HsOEemDus1FFwvsig" name="WordToken"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_CkWgQHh2EemAPvp_yujxcQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_i-UmgHsOEemDus1FFwvsig" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i-UmgXsOEemDus1FFwvsig" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i-UmgnsOEemDus1FFwvsig" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i-Umg3sOEemDus1FFwvsig" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i-UmhHsOEemDus1FFwvsig" key="Date" value="2019-05-20"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i-UmhXsOEemDus1FFwvsig" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CkaxsHh2EemAPvp_yujxcQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../profile/StreamUML-activity.profile.uml#_aTSwEHsOEemDus1FFwvsig"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../profile/StreamUML-activity.profile.uml#_1KeXsHgKEemAPvp_yujxcQ"/>
+    </profileApplication>
+  </uml:Model>
+  <StreamUMLactivity:SocketSource xmi:id="_IIs5oHh2EemAPvp_yujxcQ" base_AcceptEventAction="_VtNNoHgMEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:FlatMapTransformation xmi:id="_OO6p8Hh2EemAPvp_yujxcQ" base_OpaqueAction="_GDp7UHgLEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:WindowTransformation xmi:id="_PVAIQHh2EemAPvp_yujxcQ" base_OpaqueAction="_IfpcoHgLEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:TextFile xmi:id="_PSgYcHh3EemAPvp_yujxcQ" base_DataStoreNode="_KFlfsHgLEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:TextFileSink xmi:id="_M-BX4Hh4EemAPvp_yujxcQ" base_OpaqueAction="_lCJXUHgMEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:WindowedStream xmi:id="_efUhEHsNEemDus1FFwvsig" base_ObjectFlow="_zc4YAHgLEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:RandomlyPartitionedStream xmi:id="_Fb8twHsOEemDus1FFwvsig" base_ObjectFlow="_nEME8Hh3EemAPvp_yujxcQ"/>
+  <StreamUMLactivity:KeydStream xmi:id="_OoHiYHsOEemDus1FFwvsig" base_ObjectFlow="_zc4YAHgLEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:KeydStream xmi:id="_RFb5YHsOEemDus1FFwvsig" base_ObjectFlow="_oX-qsHgMEemAPvp_yujxcQ"/>
+  <StreamUMLactivity:SparkApplication xmi:id="_k03RYHsOEemDus1FFwvsig" base_Activity="_79AbcHgKEemAPvp_yujxcQ"/>
+</xmi:XMI>
