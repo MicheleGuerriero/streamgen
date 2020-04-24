@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="streamgen" name="streamgen">
-    <property name="ECLIPSE_HOME" value="../../../tools/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../ucsb-workspace"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="streamgen.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/streamgen/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.13.0.v20170207-1030.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.12.50.v20170928-1321.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.12.100.v20180210-1608.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.9.0.v20170207-1454.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.9.1.v20170714-0547.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.9.3.v20180115-1757.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.7.0.v20170222-1344.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.7.0.v20170126-2132.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.6.0.v20170207-1037.jar"/>

@@ -12,14 +12,18 @@
 package [aModel.name.toLower().concat('.application')/];
 
 [for (c:Class | aModel.eContents(Class)) ]
-  [if hasStereotype(c, 'StreamDatatype')]
-     [for (subc:Class | c.eContents(Class)) ]
-import [aModel.name.toLower()/].datatypes.[subc.name/];
-    [/for]
-  [elseif c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Transformation') and not (s.name = 'FilterTransformation'))]
+  [if c.getAppliedStereotypes()->asSequence()->exists(s | s.name.strstr('Transformation') and not (s.name = 'FilterTransformation') and not (s.name = 'SumTransformation'))]
 import [aModel.name.toLower()/].functions.[c.name/];
   [/if]
 [/for]
+
+  [for (p:Package | aModel.eAllContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
+import [aModel.name.toLower()/].datatypes.[subc.name/];
+      [/for]
+    [/if]
+  [/for]
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

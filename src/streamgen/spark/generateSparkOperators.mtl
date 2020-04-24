@@ -7,9 +7,9 @@
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]
@@ -36,9 +36,9 @@ public class [aClass.name.toUpperFirst()/] implements Function<[getInputsConveye
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]
@@ -70,9 +70,9 @@ public class [aClass.name.toUpperFirst()/] implements FlatMapFunction<[getInputs
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]

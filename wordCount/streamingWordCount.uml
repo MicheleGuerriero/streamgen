@@ -15,7 +15,7 @@ parallelism=1</body>
 for(WordToken token: windowContent){
 count++;
 }
-out.collect(new WordCount(key,count,window.getEnd()));&quot;
+out.collect(new WordCount(key,count));&quot;
 parallelism=4
 </body>
       </ownedComment>
@@ -55,19 +55,19 @@ isSliding = false</body>
       <packagedElement xmi:type="uml:InformationFlow" xmi:id="_C8_B4Gu_EeeNCPsCczzD3A" name="counts" conveyed="_Bgs04IkfEemue6VFuGW40w" informationSource="_TMmdQPhrEeeKSONCJjVf9A" informationTarget="_-GaUgGu-EeeNCPsCczzD3A"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_-GaUgGu-EeeNCPsCczzD3A" name="CountsFileWriter"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_-mftkIkeEemue6VFuGW40w" name="StreamingWordCountDataTypes">
-        <packagedElement xmi:type="uml:DataType" xmi:id="_Bgs04IkfEemue6VFuGW40w" name="WordCount">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_xvkpAIkfEemue6VFuGW40w" name="word">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_0r4pIIkfEemue6VFuGW40w" name="count">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-          </ownedAttribute>
-        </packagedElement>
         <packagedElement xmi:type="uml:DataType" xmi:id="_QhP6kIktEemue6VFuGW40w" name="WordToken">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_lF5DUIktEemue6VFuGW40w" name="word">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_2jI9UIktEemue6VFuGW40w" name="token">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_Bgs04IkfEemue6VFuGW40w" name="WordCount">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_xvkpAIkfEemue6VFuGW40w" name="word">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_0r4pIIkfEemue6VFuGW40w" name="count">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           </ownedAttribute>
         </packagedElement>
@@ -109,17 +109,15 @@ isSliding = false</body>
   <StreamUML:FlatmapTransformation xmi:id="_oyl8IGu_EeeNCPsCczzD3A" base_Class="_6TGa8Gu-EeeNCPsCczzD3A" parallelism="4" flatmapFunction="String [] words = tuple.split(&quot; &quot;);&#xA;&#xA;for(String word: words){&#xA;out.collect(new WordToken(word,1));&#xA;}"/>
   <StreamUML:KeyedStream xmi:id="_4HzyoGu_EeeNCPsCczzD3A" base_InformationFlow="_Ck21wGu_EeeNCPsCczzD3A" key="_lF5DUIktEemue6VFuGW40w"/>
   <StreamUML:KeyedStream xmi:id="_7rBasGu_EeeNCPsCczzD3A" base_InformationFlow="_C8_B4Gu_EeeNCPsCczzD3A" key="_xvkpAIkfEemue6VFuGW40w"/>
-  <StreamUML:TextFileSink xmi:id="_7rjM4GvEEeeNCPsCczzD3A" base_Class="_-GaUgGu-EeeNCPsCczzD3A" filepath="/home/utente/word-count-output.txt"/>
+  <StreamUML:TextFileSink xmi:id="_7rjM4GvEEeeNCPsCczzD3A" base_Class="_-GaUgGu-EeeNCPsCczzD3A" filepath="/home/deepse/word-count-output.txt"/>
   <StreamUML:WindowedStream xmi:id="_3L3WYPhqEeeKSONCJjVf9A" base_InformationFlow="_Ck21wGu_EeeNCPsCczzD3A">
     <window xmi:type="StreamUML:Window" xmi:id="_VzaxQVDNEeiynfuxK6H26Q">
       <size xmi:type="StreamUML:TimeAmount" xmi:id="_VzaxQlDNEeiynfuxK6H26Q" size="3"/>
     </window>
   </StreamUML:WindowedStream>
-  <StreamUML:WindowTransformation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;&#xA;for(WordToken token: windowContent){&#xA;&#x9;count++;&#xA;}&#xA;&#xA;out.collect(new WordCount(key,count,window.getEnd()));"/>
+  <StreamUML:WindowTransformation xmi:id="_iLL8cPhrEeeKSONCJjVf9A" base_Class="_TMmdQPhrEeeKSONCJjVf9A" parallelism="4" windowFunction="int count = 0;&#xA;for(WordToken token: windowContent){&#xA;count++;&#xA;}&#xA;out.collect(new WordCount(key,count));"/>
   <StreamUML:SocketSource xmi:id="_rit6MDiuEeiSL7MXnlGM-g" base_Class="_4EBUQGu-EeeNCPsCczzD3A" host="localhost" port="9999"/>
   <StreamUML:RandomlyPartitionedStream xmi:id="_u_-QoE2pEeiV5tji1c_ulg" base_InformationFlow="_Bg8hsGu_EeeNCPsCczzD3A"/>
   <StreamUML:StreamDatatypes xmi:id="_s65ZEIkfEemue6VFuGW40w" base_Package="_-mftkIkeEemue6VFuGW40w"/>
-  <StreamUML:SparkApplication xmi:id="_9kdoYGo0EeqXt_UVVcuvWA" base_Model="_MYzxwITzEei9Rsf_rXDXjw">
-    <microBatchSize xmi:type="StreamUML:TimeAmount" xmi:id="__C4uMGo0EeqXt_UVVcuvWA" size="5"/>
-  </StreamUML:SparkApplication>
+  <StreamUML:FlinkApplication xmi:id="_aqadgHHNEeq_PLFG5KmoEA" base_Model="_MYzxwITzEei9Rsf_rXDXjw"/>
 </xmi:XMI>

@@ -20,6 +20,7 @@ public class [aClass.name/] implements Serializable{
     private [p.type.name.substitute('ELong', 'Long')/] [p.name/];
   [/for]
 
+[comment] the following should be useful when integrating the privacy library
 	private String tupleId;
 
 	private String streamId;
@@ -38,7 +39,7 @@ public class [aClass.name/] implements Serializable{
 	
 	public void setStreamId(String streamId) {
 		this.streamId = streamId;
-	}
+	}[/comment]
  
     public [aClass.name/]() {
 
@@ -60,6 +61,19 @@ public class [aClass.name/] implements Serializable{
     }
     [/for]
 
+    @Override
+    public String toString() {
+
+    	StringBuilder sb = new StringBuilder();
+
+		sb.append([for (p: Property | aClass.attribute) separator(' + "," + ')]this.[p.name/][/for] );
+
+        return sb.toString();
+    }
+
+
+
+[comment]	this should be useful when integrating the privacy library
 	@Override
 	public int hashCode() {
 		return this.tupleId.hashCode();
@@ -82,7 +96,7 @@ public class [aClass.name/] implements Serializable{
 		
 		return false;
 
-	}
+	}[/comment]
 
 }
 [/file]

@@ -6,9 +6,9 @@
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]
@@ -41,9 +41,9 @@ public class [aClass.name/] extends RichMapFunction<[getInputsConveyed(aClass)->
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]
@@ -77,9 +77,9 @@ public class [aClass.name/] extends RichFlatMapFunction<[getInputsConveyed(aClas
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]
@@ -131,9 +131,9 @@ public class [aClass.name/] extends RichCoFlatMapFunction<[getInputsConveyed(aCl
 [file (aClass.getModel().name.toLower().concat('/functions/').concat(aClass.name).concat('.java'), false)]
 package [aClass.getModel().name.toLower().concat('.functions')/];
 
-  [for (c:Class | aClass.getModel().eContents(Class)) ]
-    [if hasStereotype(c, 'StreamDatatype')]
-      [for (subc:Class | c.eContents(Class)) ]
+  [for (p:Package | aClass.getModel().eContents(Package)) ]
+    [if hasStereotype(p, 'StreamDatatypes')]
+      [for (subc:DataType | p.eContents(DataType)) ]
 import [aClass.getModel().name.toLower()/].datatypes.[subc.name/];
       [/for]
     [/if]
